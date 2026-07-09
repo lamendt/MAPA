@@ -1,0 +1,5 @@
+module reg (input logic [7:0] in,
+input logic clk, we, 
+output logic [7:0] out);
+
+endmodule

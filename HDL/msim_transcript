@@ -1,0 +1,525 @@
+vsim -gui -l msim_transcript -voptargs=+acc work.tb work.top
+# vsim -gui -l msim_transcript -voptargs="+acc" work.tb work.top 
+# Start time: 13:46:41 on Jul 09,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.top(fast__1)
+# Loading work.register(fast__1)
+# Loading work.count(fast__1)
+# Loading work.alu(fast)
+# Loading work.ram(fast__1)
+# Loading work.lut(fast__1)
+# Loading work.decoder(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /top/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /top/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /top/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /top/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /top/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /top/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+add wave -position insertpoint  \
+sim:/top/LUT/addr
+add wave -position insertpoint  \
+sim:/top/LUT/out
+add wave -position insertpoint  \
+sim:/top/RAM/addr
+add wave -position insertpoint  \
+sim:/top/RAM/out
+add wave -position insertpoint  \
+sim:/top/A
+add wave -position insertpoint  \
+sim:/top/P
+add wave -position insertpoint  \
+sim:/top/PC
+add wave -position insertpoint  \
+sim:/top/addr
+add wave -position insertpoint  \
+sim:/top/stateout
+add wave -position insertpoint  \
+sim:/top/clk
+add wave -position insertpoint  \
+sim:/top/rst
+run 10
+run
+# Load canceled
+quit -sim
+# End time: 13:48:30 on Jul 09,2026, Elapsed time: 0:01:49
+# Errors: 0, Warnings: 23
+vsim -gui -l msim_transcript -voptargs=+acc work.tb
+# vsim -gui -l msim_transcript -voptargs="+acc" work.tb 
+# Start time: 13:48:37 on Jul 09,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.alu(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# Loading work.decoder(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+add wave -position insertpoint  \
+sim:/tb/dut/LUT/addr
+add wave -position insertpoint  \
+sim:/tb/dut/LUT/out
+add wave -position insertpoint  \
+sim:/tb/dut/RAM/addr
+add wave -position insertpoint  \
+sim:/tb/dut/RAM/out
+add wave -position insertpoint  \
+sim:/tb/dut/stateout
+add wave -position insertpoint  \
+sim:/tb/dut/A
+add wave -position insertpoint  \
+sim:/tb/dut/P
+add wave -position insertpoint  \
+sim:/tb/dut/PC
+add wave -position insertpoint  \
+sim:/tb/dut/clk
+add wave -position insertpoint  \
+sim:/tb/dut/rst
+run 10
+run 20
+# Causality operation skipped due to absence of debug database file
+add wave -position insertpoint  \
+sim:/tb/dut/OpOut
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.tb(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.alu(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# Loading work.decoder(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+run 30
+# Compile of tb.sv was successful.
+# Compile of top.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.alu(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# Loading work.decoder(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+run 20
+run 20
+# Compile of tb.sv was successful.
+# Compile of top.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.alu(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# Loading work.decoder(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+run 50
+# Compile of tb.sv was successful.
+# Compile of top.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.alu(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# Loading work.decoder(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+run 50
+add wave -position insertpoint  \
+sim:/tb/dut/dec/out
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.tb(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.alu(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# Loading work.decoder(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+run 50
+add wave -position insertpoint  \
+sim:/tb/dut/addr
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.tb(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.alu(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# Loading work.decoder(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+run 50
+# Compile of tb.sv was successful.
+# Compile of top.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.alu(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# Loading work.decoder(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+run 50
+# Compile of tb.sv was successful.
+# Compile of top.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.alu(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# Loading work.decoder(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+run 20
+# Compile of tb.sv was successful.
+# Compile of top.sv failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of tb.sv was successful.
+# Compile of top.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.alu(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# Loading work.decoder(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+run 50
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.tb(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.alu(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# Loading work.decoder(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+run 50
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.tb(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.alu(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# Loading work.decoder(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+run 200
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.tb(fast)
+# Loading work.top(fast)
+# Loading work.register(fast)
+# Loading work.count(fast)
+# Loading work.alu(fast)
+# Loading work.ram(fast)
+# Loading work.lut(fast)
+# Loading work.decoder(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 6
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/tb.sv(6): [TFMPC] - Missing connection for port 'test'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/statereg File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 13
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'in'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(76).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/FR File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'PChi'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/PChi File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 22
+# ** Warning: (vsim-3722) C:/Users/levia/Documents/hardisa/HDL/top.sv(22): [TFMPC] - Missing connection for port 'ovf'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (9) does not match connection size (8) for port 'out'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(117).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/ALU File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 23
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (8) for port 'addr'. The port definition is at: C:/Users/levia/Documents/hardisa/HDL/top.sv(147).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/dut/RAM File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 24
+run 200
+run 200
+run 1000
+# End time: 14:56:19 on Jul 09,2026, Elapsed time: 1:07:42
+# Errors: 0, Warnings: 12

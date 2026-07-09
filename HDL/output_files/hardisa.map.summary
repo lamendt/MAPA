@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Thu Jul  9 13:07:32 2026
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : hardisa
+Top-level Entity Name : top
+Family : MAX 10
+Total logic elements : 345
+    Total combinational functions : 312
+    Dedicated logic registers : 73
+Total registers : 73
+Total pins : 10
+Total virtual pins : 0
+Total memory bits : 198,656
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

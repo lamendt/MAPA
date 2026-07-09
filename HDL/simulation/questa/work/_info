@@ -1,0 +1,229 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+!s11f vlog 2024.3 2024.09, Sep 10 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 dC:/Users/levia/Documents/hardisa/HDL/simulation/questa
+T_opt
+!s110 1783628872
+VG::1TP8EOGWC8?UkHOEA@1
+04 2 4 work tb fast 0
+=1-2cf05d3f1102-6a500447-3dc-df4
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U16 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2024.3;79
+valu
+Z4 2C:/Users/levia/Documents/hardisa/HDL/top.sv
+Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z6 !s110 1783628847
+!i10b 1
+!s100 goSOAD@?_hd[;I<o[@zl[3
+IL<ke_LAe@4UcDoQKIKM243
+S1
+R2
+Z7 w1783628519
+Z8 8C:/Users/levia/Documents/hardisa/HDL/top.sv
+Z9 FC:/Users/levia/Documents/hardisa/HDL/top.sv
+!i122 5
+L0 114 29
+Z10 VDg1SIo80bB@j0V0VzS_@n1
+Z11 OL;L;2024.3;79
+r1
+!s85 0
+31
+Z12 !s108 1783628847.000000
+Z13 !s107 C:/Users/levia/Documents/hardisa/HDL/top.sv|
+Z14 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/levia/Documents/hardisa/HDL/top.sv|
+!i113 0
+Z15 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vcount
+R4
+R5
+R6
+!i10b 1
+!s100 iT@QC5<nAO?D2_9KMGOLY2
+ILkW7`J:>?ZMAS^fiUFSo72
+S1
+R2
+R7
+R8
+R9
+!i122 5
+L0 88 25
+R10
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R3
+vdecoder
+R4
+R5
+R6
+!i10b 1
+!s100 1PgzR[di[S^[bCOnNA[H20
+Id0CB>:1kG=kl7YGH[n>^M3
+S1
+R2
+R7
+R8
+R9
+!i122 5
+L0 183 8
+R10
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R3
+vlut
+R4
+R5
+R6
+!i10b 1
+!s100 Rmg]k;:`4@THYTWz[nZ871
+I2;:eU=U77S1hOfMA;>6Wj1
+S1
+R2
+R7
+R8
+R9
+!i122 5
+L0 166 16
+R10
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R3
+vram
+R4
+R5
+R6
+!i10b 1
+!s100 5ODiNzGe3CI8XfjPBbbID3
+IbjDdTYe9nR4NTBZIcY5a33
+S1
+R2
+R7
+R8
+R9
+!i122 5
+L0 144 21
+R10
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R3
+vregister
+R4
+R5
+R6
+!i10b 1
+!s100 BHQd1[aS`6K_h_GgcWeNh0
+I0Mk03TIZ[JL[M2g3OQN8`2
+S1
+R2
+R7
+R8
+R9
+!i122 5
+L0 75 12
+R10
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R3
+vtb
+2C:/Users/levia/Documents/hardisa/HDL/tb.sv
+R5
+!s110 1783628846
+!i10b 1
+!s100 Ld8;9NEz[=N]FfFW2:mm:3
+IgDFKL=9_XjUiYG8b:RfZS1
+S1
+R2
+w1783628246
+8C:/Users/levia/Documents/hardisa/HDL/tb.sv
+FC:/Users/levia/Documents/hardisa/HDL/tb.sv
+!i122 4
+L0 1 14
+R10
+R11
+r1
+!s85 0
+31
+!s108 1783628846.000000
+!s107 C:/Users/levia/Documents/hardisa/HDL/tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/levia/Documents/hardisa/HDL/tb.sv|
+!i113 0
+R15
+R3
+vtop
+R4
+R5
+R6
+!i10b 1
+!s100 444Dh]Kd>^MK5Qd__X2[k3
+I93GamfI2o<3h0Y2[6gO^U2
+S1
+R2
+R7
+R8
+R9
+!i122 5
+L0 1 73
+R10
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R3

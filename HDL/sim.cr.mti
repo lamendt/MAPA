@@ -1,0 +1,21 @@
+C:/Users/levia/Documents/hardisa/HDL/tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/levia/Documents/hardisa/HDL/tb.sv
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module tb
+
+Top level modules:
+	tb
+
+} {} {}} C:/Users/levia/Documents/hardisa/HDL/top.sv {1 {vlog -work work -vopt -sv -stats=none {C:\Users\levia\Documents\hardisa\HDL\top.sv}
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module top
+-- Compiling module register
+-- Compiling module count
+-- Compiling module alu
+-- Compiling module ram
+-- Compiling module lut
+-- Compiling module decoder
+
+Top level modules:
+	top
+
+} {} {}}

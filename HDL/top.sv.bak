@@ -1,0 +1,9 @@
+module top (input logic MAX10_CLK1_50, 
+input logic [7:0] SW,
+output logic [7:0] LEDR
+);
+
+logic clk;
+assign clk = MAX10_CLK1_50;
+
+endmodule

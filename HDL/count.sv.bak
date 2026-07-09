@@ -1,0 +1,6 @@
+module count (input logic clk, we,
+input logic [7:0] in,
+output logic [7:0] out,
+input logic ce);
+
+endmodule

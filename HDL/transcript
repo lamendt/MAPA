@@ -1,0 +1,16 @@
+# Compile of tb.sv was successful.
+# Compile of top.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Load canceled
+# Load canceled
+vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Load canceled
+# Compile of tb.sv was successful.
+# Compile of top.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vmap work work
+# Questa Intel Starter FPGA Edition-64 vmap 2024.3 Lib Mapping Utility 2024.09 Sep 10 2024
+# vmap work work 
+# Modifying C:/Users/levia/Documents/hardisa/HDL/sim.mpf
