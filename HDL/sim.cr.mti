@@ -13,6 +13,7 @@ Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
 -- Compiling module alu
 -- Compiling module ram
 -- Compiling module lut
+-- Compiling module flash
 -- Compiling module decoder
 
 Top level modules:

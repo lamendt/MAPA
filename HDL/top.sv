@@ -1,17 +1,21 @@
-module top(input logic MAX10_CLK1_50, input logic rst, output logic [7:0] test);
+module top(input logic MAX10_CLK1_50, input logic [9:0] SW, output logic [9:0] LEDR);
 
-logic clk;
+logic clk, rst;
+logic [7:0] switch, led;
 assign clk = MAX10_CLK1_50;
+assign rst = SW[9];
+assign switch = SW[7:0];
+assign LEDR = {2'b0, led};
 
-logic ovf;
+logic ovf, RAMen, leden;
 logic [3:0] flags;
-logic [7:0] RAMout, RAMaddr, ALUa, ALUb, ALUout, A, stateout, FRout, OpOut;
+logic [7:0] RAMout, BOOTout, MEMout, ALUa, ALUb, ALUout, A, stateout, FRout, OpOut, delaysin, delaysout;
 logic [12:0] LUTin;
-logic [15:0] addr, PC, decodeout, P;
+logic [15:0] addr, MEMaddr, PC, decodeout, P;
 logic [23:0] LUTout;
 
 register statereg(clk, rst, 1, LUTout[3:0], stateout);
-register opcodereg(clk, rst, stateout == 0, RAMout, OpOut);
+register opcodereg(clk, rst, stateout == 0, MEMout, OpOut);
 register ABlo(clk, rst, decodeout[3], ALUout, addr[7:0]);
 register ABhi(clk, rst, decodeout[4], ALUout, addr[15:8]);
 register Plo(clk, rst, decodeout[6], ALUout, P[7:0]);
@@ -21,24 +25,60 @@ register FR(clk, rst, LUTout[16], flags, FRout);
 count PClo(clk, rst, decodeout[1], ALUout, PC[7:0], LUTout[14], ovf);
 count PChi(clk, rst, decodeout[2], ALUout, PC[15:8], ovf);
 alu ALU(LUTout[9],LUTout[8],LUTout[7:4],ALUa,ALUb,ALUout,flags);
-ram RAM(clk, decodeout[0],ALUout,RAMout,RAMaddr);
-lut LUT(~clk, LUTout,LUTin);
+ram RAM(~clk, RAMen,ALUout,RAMout,MEMaddr);
+lut LUT(clk, LUTout,LUTin);
+flash BOOT(~clk, BOOTout,MEMaddr);
 decoder dec(LUTout[12:10], decodeout);
-
-assign test = A;
+register coutdelay(clk, rst, 1, delaysin, delaysout);
+register ledreg(clk, rst, leden, ALUout, led);
 
 always_comb begin
+	case(LUTout[15])
+		1'b0: MEMaddr = PC;
+		1'b1: MEMaddr = addr;
+		default: MEMaddr = 0;
+	endcase
+	
+	RAMen = 0;
+	leden = 0;
+	MEMout = 0;
+	casez(MEMaddr[15:13])
+		3'b000:
+			MEMout = BOOTout;
+		3'b001: begin
+			case(MEMaddr[12:0])
+				13'h0000:
+					MEMout = switch;
+				13'h0001:
+					leden = decodeout[0];
+			endcase
+		end
+		3'b010: begin
+			MEMout = RAMout;
+			if (decodeout[0] && !PC[15])
+				RAMen = 1;
+			else
+				RAMen = 0;
+		end
+		default: begin
+			MEMout = RAMout;
+			RAMen = decodeout[0];
+		end
+	endcase
+	
+	delaysin = 0;
+	delaysin[0] = flags[2];
 	if (!LUTout[13]) begin	
 		case(LUTout[18:17])
 			2'b00: ALUa = A;
-			2'b01: ALUa = RAMout;
+			2'b01: ALUa = 0;
 			2'b10: ALUa = addr[7:0];
 			2'b11: ALUa = addr[15:8];
 			default: ALUa = 0;
 		endcase
 		case(LUTout[20:19])
 			2'b00: ALUb = addr[15:8];
-			2'b01: ALUb = RAMout;
+			2'b01: ALUb = MEMout;
 			2'b10: ALUb = P[7:0];
 			2'b11: ALUb = P[15:8];
 			default: ALUb = 0;
@@ -50,20 +90,15 @@ always_comb begin
 			2'b01: ALUa = PC[15:8];
 			default: ALUa = 0;
 		endcase
-		ALUb = 8'b00000100;
+		ALUb = 8'b00000011;
 	end
-	case(LUTout[15])
-		1'b0: RAMaddr = PC;
-		1'b1: RAMaddr = addr;
-		default: RAMaddr = 0;
-	endcase
 	case(LUTout[23:21])
 		3'b000: LUTin[0] = FRout[0];
 		3'b001: LUTin[0] = FRout[1];
 		3'b010: LUTin[0] = FRout[2];
 		3'b011: LUTin[0] = FRout[3];
 		3'b100: LUTin[0] = FRout[0] ^ FRout[3];
-		3'b101: LUTin[0] = flags[2];
+		3'b101: LUTin[0] = delaysout[0];
 		default: LUTin[0] = 0;
 	endcase
 	LUTin[12:5] = OpOut;
@@ -135,7 +170,10 @@ always_comb begin
 	endcase
 		flags[0] = out[7];
 		flags[1] = out[7:0] == 0;
-		flags[2] = out[8];
+		if ({cin, mode, s} == 6'b000110)
+			flags[2] = ~out[8];
+		else
+			flags[2] = out[8];
 		flags[3] = (a[7] != b[7]) && (out[7] == b[7]);
 end
 
@@ -146,16 +184,17 @@ input logic [7:0] in,
 output logic [7:0] out,
 input logic [15:0] addr);
 
-(* ramstyle = "M10K" *) logic [7:0] RAM [32767:0];
+(* ramstyle = "M10K" *) logic [7:0] RAM [65535:0];
 initial begin
-    $readmemb("../testcode/initialtest.bin", RAM);
+    $readmemh("../testcode/SWtoLED.hex", RAM);
 end
 
-assign out = RAM[addr];
+//assign out = RAM[addr];
 
 always_ff @(posedge clk) begin
 	if (we)
 		RAM[addr] <= in;
+	out <= RAM[addr];
 end
 
 endmodule
@@ -169,10 +208,21 @@ initial begin
     $readmemb("../microcode/microcode.bin", LUT);
 end
 
+assign out = LUT[addr];
 
-always_ff @(posedge clk) begin
-	out <= LUT[addr];
+endmodule
+
+module flash(input logic clk,
+output logic [7:0] out,
+input logic [15:0] addr);
+
+(* ramstyle = "M10K" *) logic [7:0] BOOT [8191:0];
+initial begin
+    $readmemh("../boot/boot.hex", BOOT);
 end
+
+always_ff @(posedge clk)
+	out <= BOOT[addr];
 
 endmodule
 

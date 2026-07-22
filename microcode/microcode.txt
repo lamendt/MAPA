@@ -12,11 +12,13 @@ end +, A, NoLink, NoCE, AB, FRE, A, R
 
 00000100
 FetchAll
-end +, R, NoLink, NoCE, AB, FRE, A, R
++, A, NoLink, NoCE, AB, FRE, A, R
+end A, R, NoLink, NoCE, AB, FRE, A, R
 
 00000101
 FetchAndAdd
-end +, R, NoLink, NoCE, AB, FRE, A, R
++, A, NoLink, NoCE, AB, FRE, A, R
+end A, R, NoLink, NoCE, AB, FRE, A, R
 
 00001000
 FetchHi
@@ -109,6 +111,10 @@ end -, ABhi, NoLink, NoCE, AB, FRE, A, R
 00101011
 FetchAndAdd
 end -, ABhi, NoLink, NoCE, AB, FRE, A, R
+
+00101100
+FetchHi
+end &, ABhi, NoLink, NoCE, PC, FRE, A, ABhi
 
 00110000
 FetchHi
@@ -365,14 +371,14 @@ man
 101011000000110000000111
 101000000001010111110110
 101011100001000000000110
-101000001010000111110000
-101000001010000111110000
+101000101010000111110000
+101000101010000111110000
 101000000001010111111000
 101011100001000000001000
-101000001010000000000000
-101000001010000000000000
+101000101010000000000000
+101000101010000000000000
 
-01101101
+01100101
 FetchAndAdd
 man
 000000001010001010010110
@@ -394,9 +400,10 @@ A, Plo, NoLink, NoCE, AB, NoFRE, ABlo, R
 end A, Phi, NoLink, NoCE, AB, NoFRE, ABhi, R
 
 01101001
-FetchAndAdd
-A, Plo, NoLink, NoCE, AB, NoFRE, ABlo, R
-end A, Phi, NoLink, NoCE, AB, NoFRE, ABhi, R
+FetchAll
++, Plo, NoLink, NoCE, PC, NoFRE, ABlo, Plo
+end if Cout: +C, Phi, NoLink, NoCE, PC, NoFRE, ABhi, Phi
+end else Cout: +, Phi, NoLink, NoCE, PC, NoFRE, ABlo, Phi
 
 01101100
 FetchAll
@@ -455,3 +462,16 @@ end A-1, R, NoLink, NoCE, AB, FRE, A, ABhi
 01111000
 FetchHi
 end B, A, NoLink, NoCE, AB, NoFRE, A, ABhi
+
+01111001
+end A, A, NoLink, NoCE, PC, NoFRE, A, ABhi
+
+01111010
++C, Plo, NoLink, NoCE, PC, NoFRE, 0, Plo
+end if Cout: +C, Phi, NoLink, NoCE, PC, NoFRE, 0, Phi
+end else Cout: A, A, NoLink, NoCE, PC, NoFRE, A, ABhi
+
+01111011
++C, Plo, NoLink, NoCE, PC, NoFRE, A, Plo
+end if Cout: +C, Phi, NoLink, NoCE, PC, NoFRE, 0, Phi
+end else Cout: A, A, NoLink, NoCE, PC, NoFRE, A, ABhi
