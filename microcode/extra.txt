@@ -1,0 +1,11 @@
+FetchAll
+A, PClo, NoLink, NoCE, AB, NoFRE, ABlo, ABhi
+end A, PChi, NoLink, NoCE, AB, NoFRE, ABhi, ABhi
+
+FetchAll
+B, PClo, NoLink, NoCE, AB, NoFRE, ABlo, R
+A+1, ABlo, NoLink, NoCE, PC, NoFRE, ABlo, R
+if Cout: A+1, ABhi, NoLink, NoCE, PC, NoFRE, ABhi, R
+else Cout: A, A, NoLink, NoCE, PC, NoFRE, A, ABhi
+B, PChi, NoLink, NoCE, AB, NoFRE, A, R
+

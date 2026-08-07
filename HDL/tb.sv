@@ -1,19 +1,15 @@
 module tb;
     logic clk = 0;
-	 logic [9:0] switch = 0;
-	 logic [9:0] led;
+	 logic switch = 0;
+	 logic PCMSB;
     always #1 clk = ~clk;
 		
-    top dut (clk, switch, led);
+    top dut (clk, switch, PCMSB);
 	 
 	 initial begin
-		switch[9] = 1;
+		switch = 0;
 		#3;
-		switch[9] = 0;
-		#200;
-		switch[7:0] = 8'b10101010;
-		#200;
-		switch[7:0] = 0;
+		switch = 1;
 		#200;
 	 end
 endmodule

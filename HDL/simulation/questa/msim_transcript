@@ -24,23 +24,45 @@
 # Copying c:/intelfpga_lite/24.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+C:/Users/levia/Documents/hardisa/HDL {C:/Users/levia/Documents/hardisa/HDL/mhz25.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:42:01 on Jul 26,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/levia/Documents/hardisa/HDL" C:/Users/levia/Documents/hardisa/HDL/mhz25.v 
+# -- Compiling module mhz25
+# 
+# Top level modules:
+# 	mhz25
+# End time: 21:42:01 on Jul 26,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/levia/Documents/hardisa/HDL/db {C:/Users/levia/Documents/hardisa/HDL/db/mhz25_altpll.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 21:42:01 on Jul 26,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/levia/Documents/hardisa/HDL/db" C:/Users/levia/Documents/hardisa/HDL/db/mhz25_altpll.v 
+# -- Compiling module mhz25_altpll
+# 
+# Top level modules:
+# 	mhz25_altpll
+# End time: 21:42:01 on Jul 26,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/levia/Documents/hardisa/HDL {C:/Users/levia/Documents/hardisa/HDL/top.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
-# Start time: 19:40:16 on Jul 10,2026
+# Start time: 21:42:01 on Jul 26,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/levia/Documents/hardisa/HDL" C:/Users/levia/Documents/hardisa/HDL/top.sv 
 # -- Compiling module top
+# ** Warning: C:/Users/levia/Documents/hardisa/HDL/top.sv(1): (vlog-13314) Defaulting port 'KEY' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Error: C:/Users/levia/Documents/hardisa/HDL/top.sv(1): Illegal array size of 0 specified for C-style array
 # -- Compiling module register
 # -- Compiling module count
 # -- Compiling module alu
 # -- Compiling module ram
+# -- Compiling module kernel
 # -- Compiling module lut
+# -- Compiling module flash
 # -- Compiling module decoder
-# 
-# Top level modules:
-# 	top
-# End time: 19:40:16 on Jul 10,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-project open C:/Users/levia/Documents/hardisa/HDL/sim
-# reading c:/intelfpga_lite/24.1std/questa_fse/win64/../modelsim.ini
-# Loading project sim
+# End time: 21:42:01 on Jul 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+# ** Error: c:/intelfpga_lite/24.1std/questa_fse/win64/vlog failed.
+# Error in macro ./hardisa_run_msim_rtl_verilog.do line 10
+# c:/intelfpga_lite/24.1std/questa_fse/win64/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+C:/Users/levia/Documents/hardisa/HDL {C:/Users/levia/Documents/hardisa/HDL/top.sv}"

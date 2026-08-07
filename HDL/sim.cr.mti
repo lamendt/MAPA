@@ -5,18 +5,15 @@ Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
 Top level modules:
 	tb
 
-} {} {}} C:/Users/levia/Documents/hardisa/HDL/top.sv {1 {vlog -work work -vopt -sv -stats=none {C:\Users\levia\Documents\hardisa\HDL\top.sv}
+} {} {}} C:/Users/levia/Documents/hardisa/HDL/PCU.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/levia/Documents/hardisa/HDL/PCU.sv
 Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
--- Compiling module top
--- Compiling module register
--- Compiling module count
--- Compiling module alu
--- Compiling module ram
--- Compiling module lut
--- Compiling module flash
--- Compiling module decoder
+-- Compiling module PCU
+-- Compiling module VGA
+-- Compiling module buffer
+-- Compiling module PS2
+-- Compiling module SD
 
 Top level modules:
-	top
+	PCU
 
 } {} {}}

@@ -1,0 +1,1 @@
+module PCU(input logic clk, input logic rst, input logic [7:0] addr, input logic [7:0] din, input logic [7:0] dout

@@ -23,6 +23,70 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
 Z2 !s12c _opt1
 R1
 R2
@@ -64,19 +128,20 @@ R1
 cModel Technology
 Z3 dC:/Users/levia/Documents/hardisa/HDL/simulation/questa
 T_opt
-!s110 1784699051
-Vj>cQNkAg6P;@e@^2QI<<12
+!s110 1786030455
+VU_D5gh[9bMajQIlgeEj^[2
 Z4 04 2 4 work tb fast 0
-=21-2cf05d3f1102-6a6058aa-1e6-4f98
+=32-2cf05d3f1102-6a74a976-300-6608
 R1
 Z5 !s12f OEM100
 Z6 !s12b OEM100
-!s124 OEM10U19 
+!s124 OEM10U24 
 Z7 !s135 nogc
 Z8 o-quiet -auto_acc_if_foreign -work work +acc
 Z9 tCvgOpt 0
 n@_opt
 Z10 OL;O;2024.3;79
+R3
 T_opt1
 !s110 1783970240
 VOjL_SM`k[GJBPTbUagCE@0
@@ -108,44 +173,69 @@ n@_opt2
 R10
 R3
 valu
-Z11 2C:\Users\levia\Documents\hardisa\HDL\top.sv
+Z11 2C:/Users/levia/Documents/hardisa/HDL/top.sv
 Z12 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z13 !s110 1784699048
+Z13 !s110 1786125558
 !i10b 1
-!s100 5MOR^1Qi^>K1WI:DdFVjk1
-IUHGRm0XdY`0P5zbQ:[KoO2
+!s100 k?0L5I4^jj49XT=K?P7Rg2
+IMkTY2fRHgLL=CB@;MFn<P1
 S1
 Z14 dC:/Users/levia/Documents/hardisa/HDL
-Z15 w1784698998
-Z16 8C:\Users\levia\Documents\hardisa\HDL\top.sv
-Z17 FC:\Users\levia\Documents\hardisa\HDL\top.sv
-!i122 61
-L0 149 32
+Z15 w1786125553
+Z16 8C:/Users/levia/Documents/hardisa/HDL/top.sv
+Z17 FC:/Users/levia/Documents/hardisa/HDL/top.sv
+!i122 205
+L0 152 32
 Z18 VDg1SIo80bB@j0V0VzS_@n1
 Z19 OL;L;2024.3;79
 r1
 !s85 0
 31
-Z20 !s108 1784699048.000000
-Z21 !s107 C:\\Users\\levia\\Documents\\hardisa\\HDL\\top.sv|
-Z22 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:\Users\levia\Documents\hardisa\HDL\top.sv|
+Z20 !s108 1786125557.000000
+Z21 !s107 C:/Users/levia/Documents/hardisa/HDL/top.sv|
+Z22 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/levia/Documents/hardisa/HDL/top.sv|
 !i113 0
 Z23 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R9
+vbuffer
+Z24 2C:/Users/levia/Documents/hardisa/HDL/PCU.sv
+R12
+R13
+!i10b 1
+!s100 QgdgKB5kH`Z<mOMmN7]Do0
+IcKZWXS:VURz7YLK5]I9>X1
+S1
+R14
+Z25 w1785896401
+Z26 8C:/Users/levia/Documents/hardisa/HDL/PCU.sv
+Z27 FC:/Users/levia/Documents/hardisa/HDL/PCU.sv
+!i122 206
+L0 90 18
+R18
+R19
+r1
+!s85 0
+31
+Z28 !s108 1786125558.000000
+!s107 C:/Users/levia/Documents/hardisa/HDL/PCU.sv|
+Z29 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/levia/Documents/hardisa/HDL/PCU.sv|
+!i113 0
+R23
 R9
 vcount
 R11
 R12
 R13
 !i10b 1
-!s100 2?f<ZU:N8b`ccnf8OS7_b1
-Io7Dn]cVYA`aMHFKlgkBO@1
+!s100 MFD9zlE_Pb]V`R=`Uka>j0
+IGDGfk[@W2FLWci<30GYI82
 S1
 R14
 R15
 R16
 R17
-!i122 61
-L0 123 25
+!i122 205
+L0 128 23
 R18
 R19
 r1
@@ -162,15 +252,15 @@ R11
 R12
 R13
 !i10b 1
-!s100 AW09S;INDPBPYVlAm_TOf1
-Ig2RjKXnQmjPz75CTgzZ140
+!s100 O0@3b8Z`_[amAMZ?VU60V1
+IbCJ9mj8T`Q`h01Rj@U<No2
 S1
 R14
 R15
 R16
 R17
-!i122 61
-L0 229 8
+!i122 205
+L0 252 8
 R18
 R19
 r1
@@ -187,15 +277,40 @@ R11
 R12
 R13
 !i10b 1
-!s100 43dX[6:fPFjBNg4_ELhOF2
-I3n6Yh8Pf0L=E1T`Co;Y`g0
+!s100 jBG[e;;JE:Cjn4SS>9e<;1
+Ii:DFJjfUBTj1ZX@Xjm?lf3
 S1
 R14
 R15
 R16
 R17
-!i122 61
-L0 215 13
+!i122 205
+L0 238 13
+R18
+R19
+r1
+!s85 0
+31
+R20
+R21
+R22
+!i113 0
+R23
+R9
+vkernel
+R11
+R12
+R13
+!i10b 1
+!s100 OWm7BBbDihaj72obfdR113
+IB`4BYnU:K9n=KE[UFV8C70
+S1
+R14
+R15
+R16
+R17
+!i122 205
+L0 205 19
 R18
 R19
 r1
@@ -212,15 +327,15 @@ R11
 R12
 R13
 !i10b 1
-!s100 6KdfBZbamXiB=NWG^356;0
-IWd2mPEZ<g?Jf[U2bA>kmN2
+!s100 A^Ib>4[mkai_KkCF0NNA60
+Ia4DmoF@WZfiC_8UHV>5a=0
 S1
 R14
 R15
 R16
 R17
-!i122 61
-L0 202 12
+!i122 205
+L0 225 12
 R18
 R19
 r1
@@ -232,20 +347,95 @@ R22
 !i113 0
 R23
 R9
+vmhz25
+2C:/Users/levia/Documents/hardisa/HDL/mhz25_bb.v
+!s110 1785215377
+!i10b 1
+!s100 [eB22zFPVZ<E5ih4SFC@L2
+IP67T7gI[QmYb>P@aMgDBa1
+R14
+w1784919635
+8C:/Users/levia/Documents/hardisa/HDL/mhz25_bb.v
+FC:/Users/levia/Documents/hardisa/HDL/mhz25_bb.v
+!i122 122
+L0 35 8
+R18
+R19
+r1
+!s85 0
+31
+!s108 1785215377.000000
+!s107 C:/Users/levia/Documents/hardisa/HDL/mhz25_bb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/levia/Documents/hardisa/HDL/mhz25_bb.v|
+!i113 0
+o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R9
+vPCU
+R24
+R12
+R13
+!i10b 1
+!s100 bXHLk`0iCHaKg;99UggE81
+Ifb8b7XJXk9UhAPJGJ;_SC3
+S1
+R14
+R25
+R26
+R27
+!i122 206
+L0 1 12
+R18
+R19
+r1
+!s85 0
+31
+R28
+Z30 !s107 C:/Users/levia/Documents/hardisa/HDL/PCU.sv|
+R29
+!i113 0
+R23
+R9
+n@p@c@u
+vPS2
+R24
+R12
+R13
+!i10b 1
+!s100 nTcA4>1n;JI]C^[Ui4oAT2
+IRH=;Tj19V@h[1NC`;3fF=0
+S1
+R14
+R25
+R26
+R27
+!i122 206
+L0 109 3
+R18
+R19
+r1
+!s85 0
+31
+R28
+R30
+R29
+!i113 0
+R23
+R9
+n@p@s2
 vram
 R11
 R12
 R13
 !i10b 1
-!s100 hP<eWV_3?5D8fWJNK5^L@0
-IZYKHXdc44333;MR[VeWA10
+!s100 iT87]GRok>l;63VISNBJI3
+I;D5XhSUfS1_Kb^fi=2j6i1
 S1
 R14
 R15
 R16
 R17
-!i122 61
-L0 182 19
+!i122 205
+L0 185 19
 R18
 R19
 r1
@@ -262,15 +452,15 @@ R11
 R12
 R13
 !i10b 1
-!s100 59ikYC2glbP_d633?JNKa1
-I9G6PkUU?^8Wm5[d77MEeG2
+!s100 6[lhl4zhDI@<Q2MJPzc;D1
+Ia<JRIi8i6F<D=ob_lYM<91
 S1
 R14
 R15
 R16
 R17
-!i122 61
-L0 110 12
+!i122 205
+L0 115 12
 R18
 R19
 r1
@@ -282,20 +472,46 @@ R22
 !i113 0
 R23
 R9
-vtb
-2C:/Users/levia/Documents/hardisa/HDL/tb.sv
+vSD
+R24
 R12
 R13
 !i10b 1
-!s100 X?HQ;<=fS2VjN1:Q8<;DC0
-ICS<cPKgXIN]JX7jPSQF?L1
+!s100 @C]oNB9R@fXBz_^491AN]1
+Ik[OMk9:hMO=?`jHHQal3X1
 S1
 R14
-w1784699044
+R25
+R26
+R27
+!i122 206
+L0 113 3
+R18
+R19
+r1
+!s85 0
+31
+R28
+R30
+R29
+!i113 0
+R23
+R9
+n@s@d
+vtb
+2C:/Users/levia/Documents/hardisa/HDL/tb.sv
+R12
+!s110 1786125557
+!i10b 1
+!s100 @K>503;MMJcRfg;4T5bi`3
+Ik<`6LN>kKRaa7mXRUiZA:1
+S1
+R14
+w1785179985
 8C:/Users/levia/Documents/hardisa/HDL/tb.sv
 FC:/Users/levia/Documents/hardisa/HDL/tb.sv
-!i122 60
-L0 1 19
+!i122 204
+L0 1 15
 R18
 R19
 r1
@@ -312,15 +528,15 @@ R11
 R12
 R13
 !i10b 1
-!s100 =:kG7Y;iiJ[[2hg<0EZZ]1
-I`d>NnKH3UmeIRZ5z0g>Ba2
+!s100 >j@=>UW?O@RBXi8kUeZ5h0
+Ih4iKE0ZX]UW3nI@0cNOJ=1
 S1
 R14
 R15
 R16
 R17
-!i122 61
-L0 1 108
+!i122 205
+L0 1 113
 R18
 R19
 r1
@@ -332,3 +548,29 @@ R22
 !i113 0
 R23
 R9
+vVGA
+R24
+R12
+R13
+!i10b 1
+!s100 cBSC0Z6T>o`mN]OD=c>>]0
+I885>zMTGeJemdc5jk]Rh42
+S1
+R14
+R25
+R26
+R27
+!i122 206
+L0 14 75
+R18
+R19
+r1
+!s85 0
+31
+R28
+R30
+R29
+!i113 0
+R23
+R9
+n@v@g@a

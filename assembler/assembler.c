@@ -32,36 +32,38 @@ opdict opcode_table[] = {
     {"CMPP", 0x2b},
     {"CMP&", 0x2c},
     {"SLA", 0x30},
-    {"SLR", 0x32},
+    {"SLD", 0x32},
+    {"SLP", 0x33},
     {"SRA", 0x38},
-    {"SRR", 0x3a},
+    {"SRD", 0x3a},
+    {"SRP", 0x3b},
     {"BEQD", 0x40},
-    {"BEQ*D", 0x41},
-    {"BEQP", 0x42},
+    {"BEQ*D", 0x42},
+    {"BEQP", 0x41},
     {"BEQ*P", 0x43},
     {"BNED", 0x44},
-    {"BNE*D", 0x45},
-    {"BNEP", 0x46},
+    {"BNE*D", 0x46},
+    {"BNEP", 0x45},
     {"BNE*P", 0x47},
     {"BLTUD", 0x48},
-    {"BLTU*D", 0x49},
-    {"BLTUP", 0x4a},
+    {"BLTU*D", 0x4a},
+    {"BLTUP", 0x49},
     {"BLTU*P", 0x4b},
     {"BGEUD", 0x4c},
-    {"BGEU*D", 0x4d},
-    {"BGEUP", 0x4e},
+    {"BGEU*D", 0x4e},
+    {"BGEUP", 0x4d},
     {"BGEU*P", 0x4f},
     {"BLTSD", 0x50},
-    {"BLTS*D", 0x51},
-    {"BLTSP", 0x52},
+    {"BLTS*D", 0x52},
+    {"BLTSP", 0x51},
     {"BLTS*P", 0x53},
     {"BGESD", 0x54},
-    {"BGES*D", 0x55},
-    {"BGESP", 0x56},
+    {"BGES*D", 0x56},
+    {"BGESP", 0x55},
     {"BGES*P", 0x57},
     {"JMPD", 0x58},
-    {"JMP*D", 0x59},
-    {"JMPP", 0x5a},
+    {"JMP*D", 0x5a},
+    {"JMPP", 0x59},
     {"JMP*P", 0x5b},
     {"STRAD", 0x60},
     {"STRAP", 0x61},
@@ -69,23 +71,41 @@ opdict opcode_table[] = {
     {"LDAP", 0x63},
     {"LINKD", 0x64},
     {"LINKP", 0x65},
-    {"IMMP", 0x66},
-    {"ADDIP", 0x67},
+    {"IMMP", 0x68},
+    {"ADDIP", 0x69},
     {"LDPD", 0x6c},
     {"LDPP", 0x6d},
     {"STRPD", 0x6e},
     {"STRPP", 0x6f},
     {"INCAA", 0x70},
-    {"INCAR", 0x71},
-    {"DECAA", 0x72},
-    {"DECAR", 0x73},
-    {"IMMA", 0x74},
-    {"NOP", 0x75},
-    {"INCP", 0x76},
-    {"ADDAP", 0x77},
+    {"INCAD", 0x72},
+    {"INCAP", 0x73},
+    {"DECAA", 0x75},
+    {"DECAD", 0x76},
+    {"DECAP", 0x77},
+    {"IMMA", 0x78},
+    {"NOP", 0x79},
+    {"INCP", 0x7a},
+    {"ADDAP", 0x7b},
+    {"RET", 0x7c},
+    {"CALL", 0x7d},
+    {"ADCI", 0x80},
+    {"ADCD", 0x82},
+    {"ADCP", 0x83},
+    {"ADCRD", 0x84},
+    {"ADCRP", 0x85},
+    {"SLCA", 0xb0},
+    {"SLCD", 0xb2},
+    {"SLCP", 0xb3},
+    {"ICCAA", 0xf0},
+    {"ICCAD", 0xf2},
+    {"ICCAP", 0xf3},
+    {"DCCAA", 0xf5},
+    {"DCCAD", 0xf6},
+    {"DCCAP", 0xf7},
 };
 
-int optabsize = 73;
+int optabsize = 90;
 
 typedef struct {
     byte name[14];
@@ -133,11 +153,11 @@ byte bytetobin(byte *p) {
     if (p[0] < 58)
         out += (p[0] - 48) << 4;
     else
-        out += (p[0] - 87) << 4;
+        out += (p[0] - 55) << 4;
     if (p[1] < 58)
         out += (p[1] - 48);
     else
-        out += (p[1] - 87);
+        out += (p[1] - 55);
     return out;
 }   
 
@@ -147,7 +167,7 @@ addr addrtobin(byte *p) {
         if (p[i] < 58)
             out += (p[i] - 48) << (12-4*i);
         else
-            out += (p[i] - 87) << (12-4*i);
+            out += (p[i] - 55) << (12-4*i);
     }
     return out;
 }   
@@ -164,7 +184,12 @@ int main(int argc, char *argv[]) {
     if (argc == 4) {
         infilename = argv[1];
         outfilename = argv[2];
-        offset = addrtobin(argv[3]);
+        if (argv[3] == 'b')
+            offset = 0x0000;
+        else if (argv[3] == 'k')
+            offset = 0x4000;
+        else
+            offset = 0x8000;
     }
 
     FILE *infile = fopen(infilename, "r");
@@ -201,8 +226,6 @@ int main(int argc, char *argv[]) {
     //pass 2
     line = 0;
     rewind(infile);
-    for (int i = 0; i < offset; i++)
-        fprintf(outfile, "%02X\n", 0);
 
     while (fgets(line_buffer, sizeof(line_buffer), infile) != NULL) {
         if (*line_buffer == '$') {
@@ -225,7 +248,7 @@ int main(int argc, char *argv[]) {
                 }
                 if (!found) {
                     fprintf(outfile, "%02X\n", bytetobin(&(line_buffer[1])));
-                    fprintf(outfile, "%02X\n", bytetobin(&(line_buffer[2])));
+                    fprintf(outfile, "%02X\n", bytetobin(&(line_buffer[3])));
                 }
             }
         }

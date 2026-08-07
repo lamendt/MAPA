@@ -1,18 +1,21 @@
-module top(input logic MAX10_CLK1_50, input logic [9:0] SW, output logic [9:0] LEDR);
+module top(input logic MAX10_CLK1_50, input logic [1:0] KEY, output logic [9:0] LEDR, output logic [3:0] VGA_R, VGA_G, VGA_B, output logic VGA_HS, VGA_VS, inout wire [35:0] GPIO);
 
-logic clk, rst;
-logic [7:0] switch, led;
-assign clk = MAX10_CLK1_50;
-assign rst = SW[9];
-assign switch = SW[7:0];
-assign LEDR = {2'b0, led};
+logic clk, invclk, rst;
+clocks pll (MAX10_CLK1_50, clk, invclk, VGAclk);
+//assign clk = MAX10_CLK1_50;
+//assign invclk = ~clk;
+assign rst = ~KEY[0];
 
-logic ovf, RAMen, leden;
+logic ovf, RAMen, KERen, PCUen;
 logic [3:0] flags;
-logic [7:0] RAMout, BOOTout, MEMout, ALUa, ALUb, ALUout, A, stateout, FRout, OpOut, delaysin, delaysout;
+logic [7:0] RAMout, KERout, BOOTout, MEMout, PCUout, ALUa, ALUb, ALUout, A, stateout, FRout, OpOut, delaysin, delaysout;
 logic [12:0] LUTin;
 logic [15:0] addr, MEMaddr, PC, decodeout, P;
 logic [23:0] LUTout;
+
+assign PCMSB = PC[15];
+
+assign LEDR = A;
 
 register statereg(clk, rst, 1, LUTout[3:0], stateout);
 register opcodereg(clk, rst, stateout == 0, MEMout, OpOut);
@@ -25,12 +28,13 @@ register FR(clk, rst, LUTout[16], flags, FRout);
 count PClo(clk, rst, decodeout[1], ALUout, PC[7:0], LUTout[14], ovf);
 count PChi(clk, rst, decodeout[2], ALUout, PC[15:8], ovf);
 alu ALU(LUTout[9],LUTout[8],LUTout[7:4],ALUa,ALUb,ALUout,flags);
-ram RAM(~clk, RAMen,ALUout,RAMout,MEMaddr);
+ram RAM(invclk, RAMen,ALUout,RAMout,{1'h0,MEMaddr[14:0]});
+kernel KER(invclk, KERen,ALUout,KERout,{2'h0,MEMaddr[13:0]});
 lut LUT(clk, LUTout,LUTin);
-flash BOOT(~clk, BOOTout,MEMaddr);
+flash BOOT(invclk, BOOTout,{3'h0,MEMaddr[12:0]});
 decoder dec(LUTout[12:10], decodeout);
 register coutdelay(clk, rst, 1, delaysin, delaysout);
-register ledreg(clk, rst, leden, ALUout, led);
+PCU PCU(invclk, rst, PCUen, ALUout, PCUout, MEMaddr[7:0], VGA_R, VGA_G, VGA_B, VGA_HS, VGA_VS, GPIO, VGAclk);
 
 always_comb begin
 	case(LUTout[15])
@@ -40,25 +44,22 @@ always_comb begin
 	endcase
 	
 	RAMen = 0;
-	leden = 0;
+	KERen = 0;
+	PCUen = 0;
 	MEMout = 0;
 	casez(MEMaddr[15:13])
 		3'b000:
 			MEMout = BOOTout;
 		3'b001: begin
-			case(MEMaddr[12:0])
-				13'h0000:
-					MEMout = switch;
-				13'h0001:
-					leden = decodeout[0];
-			endcase
+			MEMout = PCUout;
+			PCUen = decodeout[0];
 		end
-		3'b010: begin
-			MEMout = RAMout;
-			if (decodeout[0] && !PC[15])
-				RAMen = 1;
+		3'b01?: begin
+			MEMout = KERout;
+			if (decodeout[0] && !PCMSB)
+				KERen = 1;
 			else
-				RAMen = 0;
+				KERen = 0;
 		end
 		default: begin
 			MEMout = RAMout;
@@ -90,7 +91,11 @@ always_comb begin
 			2'b01: ALUa = PC[15:8];
 			default: ALUa = 0;
 		endcase
-		ALUb = 8'b00000011;
+		case(LUTout[18:17])
+			2'b00: ALUb = 8'b00000011;
+			2'b01: ALUb = 8'b00000010;
+			default: ALUb = 0;
+		endcase
 	end
 	case(LUTout[23:21])
 		3'b000: LUTin[0] = FRout[0];
@@ -126,22 +131,20 @@ output logic [7:0] out,
 input logic ce,
 output logic ovf);
 
+always_comb begin
+	if (ce && out == 8'b11111111 && !rst)
+		ovf = 1;
+	else
+		ovf = 0;
+end
+
 always_ff @(posedge clk) begin
-	if (rst) begin
+	if (rst)
 		out <= 0;
-		ovf <= 0;
-	end
-	else if (we) begin
+	else if (we)
 		out <= in;
-		ovf <= 0;
-	end
-	else if (ce) begin
+	else if (ce)
 		out <= out + 1;
-		if (out == 8'b11111111)
-			ovf <= 1;
-		else
-			ovf <= 0;
-	end
 end
 
 endmodule
@@ -153,7 +156,7 @@ output logic [8:0] out,
 output logic [3:0] flags);
 
 always_comb begin
-		casez({cin, mode, s})
+		casez({cin, mode, s}) 
 			6'b101001: out = a+b;
 			6'b001001: out = a+b+1;
 			6'b000110: out = a-b;
@@ -184,9 +187,29 @@ input logic [7:0] in,
 output logic [7:0] out,
 input logic [15:0] addr);
 
-(* ramstyle = "M10K" *) logic [7:0] RAM [65535:0];
+(* ramstyle = "M10K" *) logic [7:0] RAM [32767:0];
 initial begin
-    $readmemh("../testcode/SWtoLED.hex", RAM);
+    $readmemh("../testcode/realHelloWorld.hex", RAM);
+end
+
+//assign out = RAM[addr];
+
+always_ff @(posedge clk) begin
+	if (we)
+		RAM[addr] <= in;
+	out <= RAM[addr];
+end
+
+endmodule
+
+module kernel(input logic clk, we,
+input logic [7:0] in,
+output logic [7:0] out,
+input logic [15:0] addr);
+
+(* ramstyle = "M10K" *) logic [7:0] RAM [16383:0];
+initial begin
+    $readmemh("../kernel/kernel.hex", RAM);
 end
 
 //assign out = RAM[addr];

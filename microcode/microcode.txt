@@ -34,11 +34,13 @@ end -, A, NoLink, NoCE, AB, FRE, A, R
 
 00001100
 FetchAll
-end -, R, NoLink, NoCE, AB, FRE, A, R
+-, A, NoLink, NoCE, AB, FRE, A, R
+end A, R, NoLink, NoCE, AB, FRE, A, R
 
 00001101
 FetchAndAdd
-end -, R, NoLink, NoCE, AB, FRE, A, R
+-, A, NoLink, NoCE, AB, FRE, A, R
+end A, R, NoLink, NoCE, AB, FRE, A, R
 
 00010000
 FetchHi
@@ -117,7 +119,6 @@ FetchHi
 end &, ABhi, NoLink, NoCE, PC, FRE, A, ABhi
 
 00110000
-FetchHi
 end <, A, NoLink, NoCE, PC, FRE, A, ABhi
 
 00110010
@@ -129,7 +130,6 @@ FetchAndAdd
 end <, R, NoLink, NoCE, AB, FRE, A, R
 
 00111000
-FetchHi
 end >, A, NoLink, NoCE, PC, FRE, A, ABhi
 
 00111010
@@ -475,3 +475,109 @@ end else Cout: A, A, NoLink, NoCE, PC, NoFRE, A, ABhi
 +C, Plo, NoLink, NoCE, PC, NoFRE, A, Plo
 end if Cout: +C, Phi, NoLink, NoCE, PC, NoFRE, 0, Phi
 end else Cout: A, A, NoLink, NoCE, PC, NoFRE, A, ABhi
+
+01111100
+B, ABlo, NoLink, NoCE, AB, NoFRE, A, Plo
+B, ABhi, NoLink, NoCE, AB, NoFRE, A, Phi
+B, PClo, NoLink, NoCE, AB, NoFRE, ABlo, R
+A+1, ABlo, NoLink, NoCE, PC, NoFRE, ABlo, R
+if Cout: A+1, ABhi, NoLink, NoCE, PC, NoFRE, ABhi, R
+else Cout: A, A, NoLink, NoCE, PC, NoFRE, A, ABhi
+end B, PChi, NoLink, NoCE, AB, NoFRE, A, R
+
+01111101
+B, ABlo, NoLink, NoCE, AB, NoFRE, A, Plo
+B, ABhi, NoLink, NoCE, AB, NoFRE, A, Phi
+man
+000000001010001010010100
+000000001010001010010100
+101011000000110000000101
+101011000000110000000111
+101000000001010111110110
+101011100001000000000110
+101000101010000111111001
+101000101010000111111001
+101000000001010111111000
+101011100001000000001000
+101000101010000000001001
+101000101010000000001001
+000010100101000110101010
+000010100101000110101010
+000010100100110110101011
+000010100100110110101011
+000001001000010111111100
+000001001000010111111100
+000001101000100111110000
+000001101000100111110000
+
+10000000
+FetchHi
+end if C: +C, A, NoLink, NoCE, PC, FRE, A, ABhi
+end else C: +, A, NoLink, NoCE, PC, FRE, A, ABhi
+
+10000010
+FetchAll
+end if C: +C, A, NoLink, NoCE, PC, FRE, A, R
+end else C: +, A, NoLink, NoCE, PC, FRE, A, R
+
+10000011
+FetchAndAdd
+end if C: +C, A, NoLink, NoCE, PC, FRE, A, R
+end else C: +, A, NoLink, NoCE, PC, FRE, A, R
+
+10000100
+FetchAll
+if C: +C, A, NoLink, NoCE, AB, NoFRE, A, R
+else C: +, A, NoLink, NoCE, AB, NoFRE, A, R
+end A, R, NoLink, NoCE, AB, FRE, A, R
+
+10000101
+FetchAndAdd
+if C: +C, A, NoLink, NoCE, PC, FRE, A, R
+else C: +, A, NoLink, NoCE, PC, FRE, A, R
+end A, R, NoLink, NoCE, AB, FRE, A, R
+
+10110000
+if C: <, A, NoLink, NoCE, PC, FRE, A, ABhi
+end else C: <, A, NoLink, NoCE, PC, FRE, A, ABhi
+end A+1, A, NoLink, NoCE, PC, NoFRE, A, ABhi
+
+10110010
+FetchAll
+if C: <, A, NoLink, NoCE, PC, FRE, A, ABhi
+end else C: <, R, NoLink, NoCE, PC, FRE, A, ABhi
+end A+1, R, NoLink, NoCE, PC, NoFRE, A, ABhi
+
+10110011
+FetchAndAdd
+if C: <, A, NoLink, NoCE, PC, NoFRE, A, ABhi
+end else C: <, R, NoLink, NoCE, AB, NoFRE, A, ABhi
+end A+1, R, NoLink, NoCE, AB, NoFRE, A, ABhi
+
+11110000
+end if C: A+1, A, NoLink, NoCE, AB, FRE, A, ABhi
+end else C: A, A, NoLink, NoCE, AB, NoFRE, A, ABhi
+
+11110010
+FetchAll
+end if C: A+1, R, NoLink, NoCE, AB, FRE, A, ABhi
+end else C: A, A, NoLink, NoCE, AB, NoFRE, A, ABhi
+
+11110011
+FetchAndAdd
+end if C: A+1, R, NoLink, NoCE, AB, FRE, A, ABhi
+end else C: A, R, NoLink, NoCE, AB, NoFRE, A, ABhi
+
+11110100
+end if C: A-1, A, NoLink, NoCE, AB, FRE, A, ABhi
+end else C: A, A, NoLink, NoCE, AB, NoFRE, A, ABhi
+
+11110110
+FetchAll
+end if C: A-1, R, NoLink, NoCE, AB, FRE, A, ABhi
+end else C: A, A, NoLink, NoCE, AB, NoFRE, A, ABhi
+
+11110111
+FetchAndAdd
+end if C: A-1, R, NoLink, NoCE, AB, FRE, A, ABhi
+end else C: A, A, NoLink, NoCE, AB, NoFRE, A, ABhi
