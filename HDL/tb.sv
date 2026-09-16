@@ -8,7 +8,7 @@ module tb;
 	 
 	 initial begin
 		switch = 0;
-		#3;
+		#20;
 		switch = 1;
 		#200;
 	 end

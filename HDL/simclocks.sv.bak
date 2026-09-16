@@ -1,0 +1,5 @@
+module simclocks (input logic clock, output logic clk, invclk, VGAclk)
+
+always_ff @(posedge clk)
+
+endmodule

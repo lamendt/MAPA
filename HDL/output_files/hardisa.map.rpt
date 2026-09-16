@@ -1,5 +1,5 @@
 Analysis & Synthesis report for hardisa
-Fri Aug  7 12:05:15 2026
+Tue Sep 15 22:49:30 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -20,30 +20,34 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  12. Registers Removed During Synthesis
  13. General Register Statistics
  14. Registers Packed Into Inferred Megafunctions
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated
- 17. Source assignments for kernel:KER|altsyncram:RAM_rtl_0|altsyncram_2ce1:auto_generated
- 18. Source assignments for flash:BOOT|altsyncram:BOOT_rtl_0|altsyncram_d081:auto_generated
- 19. Source assignments for PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated
- 20. Parameter Settings for User Entity Instance: clocks:pll|altpll:altpll_component
- 21. Parameter Settings for Inferred Entity Instance: ram:RAM|altsyncram:RAM_rtl_0
- 22. Parameter Settings for Inferred Entity Instance: kernel:KER|altsyncram:RAM_rtl_0
- 23. Parameter Settings for Inferred Entity Instance: flash:BOOT|altsyncram:BOOT_rtl_0
- 24. Parameter Settings for Inferred Entity Instance: PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0
- 25. altpll Parameter Settings by Entity Instance
- 26. altsyncram Parameter Settings by Entity Instance
- 27. Port Connectivity Checks: "register:coutdelay"
- 28. Port Connectivity Checks: "decoder:dec"
- 29. Port Connectivity Checks: "flash:BOOT"
- 30. Port Connectivity Checks: "kernel:KER"
- 31. Port Connectivity Checks: "ram:RAM"
- 32. Port Connectivity Checks: "alu:ALU"
- 33. Port Connectivity Checks: "count:PChi"
- 34. Port Connectivity Checks: "register:FR"
- 35. Port Connectivity Checks: "register:statereg"
- 36. Post-Synthesis Netlist Statistics for Top Partition
- 37. Elapsed Time Per Partition
- 38. Analysis & Synthesis Messages
+ 15. Registers Added for RAM Pass-Through Logic
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated
+ 18. Source assignments for kernel:KER|altsyncram:RAM_rtl_0|altsyncram_2ce1:auto_generated
+ 19. Source assignments for flash:BOOT|altsyncram:BOOT_rtl_0|altsyncram_d081:auto_generated
+ 20. Source assignments for PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated
+ 21. Source assignments for PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated
+ 22. Parameter Settings for User Entity Instance: clocks:pll|altpll:altpll_component
+ 23. Parameter Settings for Inferred Entity Instance: ram:RAM|altsyncram:RAM_rtl_0
+ 24. Parameter Settings for Inferred Entity Instance: kernel:KER|altsyncram:RAM_rtl_0
+ 25. Parameter Settings for Inferred Entity Instance: flash:BOOT|altsyncram:BOOT_rtl_0
+ 26. Parameter Settings for Inferred Entity Instance: PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0
+ 27. Parameter Settings for Inferred Entity Instance: PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0
+ 28. altpll Parameter Settings by Entity Instance
+ 29. altsyncram Parameter Settings by Entity Instance
+ 30. Port Connectivity Checks: "register:coutdelay"
+ 31. Port Connectivity Checks: "decoder:dec"
+ 32. Port Connectivity Checks: "flash:BOOT"
+ 33. Port Connectivity Checks: "kernel:KER"
+ 34. Port Connectivity Checks: "ram:RAM"
+ 35. Port Connectivity Checks: "alu:ALU"
+ 36. Port Connectivity Checks: "count:PChi"
+ 37. Port Connectivity Checks: "register:FR"
+ 38. Port Connectivity Checks: "register:statereg"
+ 39. Port Connectivity Checks: "clocks:pll"
+ 40. Post-Synthesis Netlist Statistics for Top Partition
+ 41. Elapsed Time Per Partition
+ 42. Analysis & Synthesis Messages
 
 
 
@@ -70,18 +74,18 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Aug  7 12:05:15 2026           ;
+; Analysis & Synthesis Status        ; Successful - Tue Sep 15 22:49:30 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; hardisa                                         ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 1,702                                           ;
-;     Total combinational functions  ; 1,654                                           ;
-;     Dedicated logic registers      ; 133                                             ;
-; Total registers                    ; 133                                             ;
+; Total logic elements               ; 1,979                                           ;
+;     Total combinational functions  ; 1,890                                           ;
+;     Dedicated logic registers      ; 235                                             ;
+; Total registers                    ; 235                                             ;
 ; Total pins                         ; 63                                              ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 950,272                                         ;
+; Total memory bits                  ; 950,400                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
 ; Total PLLs                         ; 1                                               ;
 ; UFM blocks                         ; 0                                               ;
@@ -183,12 +187,12 @@ on the Quartus Prime software download page.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
@@ -199,50 +203,51 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                           ;
-+------------------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                           ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                    ; Library ;
-+------------------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------+---------+
-; top.sv                                                     ; yes             ; User SystemVerilog HDL File                           ; C:/Users/levia/Documents/hardisa/HDL/top.sv                                     ;         ;
-; PCU.sv                                                     ; yes             ; User SystemVerilog HDL File                           ; C:/Users/levia/Documents/hardisa/HDL/PCU.sv                                     ;         ;
-; clocks.v                                                   ; yes             ; User Wizard-Generated File                            ; C:/Users/levia/Documents/hardisa/HDL/clocks.v                                   ;         ;
-; /users/levia/documents/hardisa/boot/boot.hex               ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /users/levia/documents/hardisa/boot/boot.hex                                    ;         ;
-; /users/levia/documents/hardisa/microcode/microcode.bin     ; yes             ; Auto-Found Unspecified File                           ; /users/levia/documents/hardisa/microcode/microcode.bin                          ;         ;
-; /users/levia/documents/hardisa/kernel/kernel.hex           ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /users/levia/documents/hardisa/kernel/kernel.hex                                ;         ;
-; /users/levia/documents/hardisa/testcode/realhelloworld.hex ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /users/levia/documents/hardisa/testcode/realhelloworld.hex                      ;         ;
-; altpll.tdf                                                 ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altpll.tdf            ;         ;
-; aglobal241.inc                                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/aglobal241.inc        ;         ;
-; stratix_pll.inc                                            ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
-; stratixii_pll.inc                                          ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
-; cycloneii_pll.inc                                          ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
-; db/clocks_altpll.v                                         ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/clocks_altpll.v                         ;         ;
-; altsyncram.tdf                                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc                                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                                                ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; a_rdenreg.inc                                              ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                                                 ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                                                 ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                                               ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_3qd1.tdf                                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_3qd1.tdf                     ;         ;
-; db/hardisa.ram0_ram_1d0cf.hdl.mif                          ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_ram_1d0cf.hdl.mif          ;         ;
-; db/decode_c7a.tdf                                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/decode_c7a.tdf                          ;         ;
-; db/decode_5j9.tdf                                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/decode_5j9.tdf                          ;         ;
-; db/mux_s1b.tdf                                             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/mux_s1b.tdf                             ;         ;
-; db/altsyncram_2ce1.tdf                                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_2ce1.tdf                     ;         ;
-; db/hardisa.ram0_kernel_db6b1fc9.hdl.mif                    ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_kernel_db6b1fc9.hdl.mif    ;         ;
-; db/decode_97a.tdf                                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/decode_97a.tdf                          ;         ;
-; db/decode_2j9.tdf                                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/decode_2j9.tdf                          ;         ;
-; db/mux_p1b.tdf                                             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/mux_p1b.tdf                             ;         ;
-; db/altsyncram_d081.tdf                                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_d081.tdf                     ;         ;
-; db/hardisa.ram0_flash_6960dea.hdl.mif                      ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_flash_6960dea.hdl.mif      ;         ;
-; db/altsyncram_hvi1.tdf                                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_hvi1.tdf                     ;         ;
-; db/hardisa.ram0_buffer_cd951201.hdl.mif                    ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_buffer_cd951201.hdl.mif    ;         ;
-; db/decode_h7a.tdf                                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/decode_h7a.tdf                          ;         ;
-; db/decode_aj9.tdf                                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/decode_aj9.tdf                          ;         ;
-; db/mux_12b.tdf                                             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/mux_12b.tdf                             ;         ;
-+------------------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                       ;
++--------------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                       ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                    ; Library ;
++--------------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------+---------+
+; top.sv                                                 ; yes             ; User SystemVerilog HDL File                           ; C:/Users/levia/Documents/hardisa/HDL/top.sv                                     ;         ;
+; PCU.sv                                                 ; yes             ; User SystemVerilog HDL File                           ; C:/Users/levia/Documents/hardisa/HDL/PCU.sv                                     ;         ;
+; clocks.v                                               ; yes             ; User Wizard-Generated File                            ; C:/Users/levia/Documents/hardisa/HDL/clocks.v                                   ;         ;
+; /users/levia/documents/hardisa/testcode/keytest.hex    ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /users/levia/documents/hardisa/testcode/keytest.hex                             ;         ;
+; /users/levia/documents/hardisa/boot/boot.hex           ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /users/levia/documents/hardisa/boot/boot.hex                                    ;         ;
+; /users/levia/documents/hardisa/microcode/microcode.bin ; yes             ; Auto-Found Unspecified File                           ; /users/levia/documents/hardisa/microcode/microcode.bin                          ;         ;
+; /users/levia/documents/hardisa/kernel/kernel.hex       ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /users/levia/documents/hardisa/kernel/kernel.hex                                ;         ;
+; altpll.tdf                                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altpll.tdf            ;         ;
+; aglobal241.inc                                         ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/aglobal241.inc        ;         ;
+; stratix_pll.inc                                        ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
+; stratixii_pll.inc                                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
+; cycloneii_pll.inc                                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
+; db/clocks_altpll.v                                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/clocks_altpll.v                         ;         ;
+; altsyncram.tdf                                         ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc                                  ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                                            ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                                         ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; a_rdenreg.inc                                          ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                                           ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_3qd1.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_3qd1.tdf                     ;         ;
+; db/hardisa.ram0_ram_1d0cf.hdl.mif                      ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_ram_1d0cf.hdl.mif          ;         ;
+; db/decode_c7a.tdf                                      ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/decode_c7a.tdf                          ;         ;
+; db/decode_5j9.tdf                                      ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/decode_5j9.tdf                          ;         ;
+; db/mux_s1b.tdf                                         ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/mux_s1b.tdf                             ;         ;
+; db/altsyncram_2ce1.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_2ce1.tdf                     ;         ;
+; db/hardisa.ram0_kernel_db6b1fc9.hdl.mif                ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_kernel_db6b1fc9.hdl.mif    ;         ;
+; db/decode_97a.tdf                                      ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/decode_97a.tdf                          ;         ;
+; db/decode_2j9.tdf                                      ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/decode_2j9.tdf                          ;         ;
+; db/mux_p1b.tdf                                         ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/mux_p1b.tdf                             ;         ;
+; db/altsyncram_d081.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_d081.tdf                     ;         ;
+; db/hardisa.ram0_flash_6960dea.hdl.mif                  ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_flash_6960dea.hdl.mif      ;         ;
+; db/altsyncram_jjh1.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_jjh1.tdf                     ;         ;
+; db/altsyncram_hvi1.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_hvi1.tdf                     ;         ;
+; db/hardisa.ram0_buffer_cd951201.hdl.mif                ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_buffer_cd951201.hdl.mif    ;         ;
+; db/decode_h7a.tdf                                      ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/decode_h7a.tdf                          ;         ;
+; db/decode_aj9.tdf                                      ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/decode_aj9.tdf                          ;         ;
+; db/mux_12b.tdf                                         ; yes             ; Auto-Generated Megafunction                           ; C:/Users/levia/Documents/hardisa/HDL/db/mux_12b.tdf                             ;         ;
++--------------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------+
@@ -250,34 +255,34 @@ on the Quartus Prime software download page.
 +---------------------------------------------+---------------------------+
 ; Resource                                    ; Usage                     ;
 +---------------------------------------------+---------------------------+
-; Estimated Total logic elements              ; 1,702                     ;
+; Estimated Total logic elements              ; 1,979                     ;
 ;                                             ;                           ;
-; Total combinational functions               ; 1654                      ;
+; Total combinational functions               ; 1890                      ;
 ; Logic element usage by number of LUT inputs ;                           ;
-;     -- 4 input functions                    ; 1223                      ;
-;     -- 3 input functions                    ; 263                       ;
-;     -- <=2 input functions                  ; 168                       ;
+;     -- 4 input functions                    ; 1380                      ;
+;     -- 3 input functions                    ; 301                       ;
+;     -- <=2 input functions                  ; 209                       ;
 ;                                             ;                           ;
 ; Logic elements by mode                      ;                           ;
-;     -- normal mode                          ; 1561                      ;
-;     -- arithmetic mode                      ; 93                        ;
+;     -- normal mode                          ; 1777                      ;
+;     -- arithmetic mode                      ; 113                       ;
 ;                                             ;                           ;
-; Total registers                             ; 133                       ;
-;     -- Dedicated logic registers            ; 133                       ;
+; Total registers                             ; 235                       ;
+;     -- Dedicated logic registers            ; 235                       ;
 ;     -- I/O registers                        ; 0                         ;
 ;                                             ;                           ;
 ; I/O pins                                    ; 63                        ;
-; Total memory bits                           ; 950272                    ;
+; Total memory bits                           ; 950400                    ;
 ;                                             ;                           ;
 ; Embedded Multiplier 9-bit elements          ; 0                         ;
 ;                                             ;                           ;
 ; Total PLLs                                  ; 1                         ;
 ;     -- PLLs                                 ; 1                         ;
 ;                                             ;                           ;
-; Maximum fan-out node                        ; register:opcodereg|out[3] ;
-; Maximum fan-out                             ; 324                       ;
-; Total fan-out                               ; 9358                      ;
-; Average fan-out                             ; 4.52                      ;
+; Maximum fan-out node                        ; register:opcodereg|out[1] ;
+; Maximum fan-out                             ; 377                       ;
+; Total fan-out                               ; 10557                     ;
+; Average fan-out                             ; 4.37                      ;
 +---------------------------------------------+---------------------------+
 
 
@@ -286,15 +291,19 @@ on the Quartus Prime software download page.
 +-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                       ; Entity Name     ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |top                                            ; 1654 (113)          ; 133 (0)                   ; 950272      ; 0          ; 0            ; 0       ; 0         ; 63   ; 0            ; 0          ; |top                                                                                                                      ; top             ; work         ;
-;    |PCU:PCU|                                    ; 131 (0)             ; 57 (0)                    ; 491520      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU                                                                                                              ; PCU             ; work         ;
-;       |VGA:VGAcontroller|                       ; 131 (114)           ; 57 (54)                   ; 491520      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller                                                                                            ; VGA             ; work         ;
-;          |buffer:buffer|                        ; 17 (0)              ; 3 (0)                     ; 491520      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller|buffer:buffer                                                                              ; buffer          ; work         ;
-;             |altsyncram:RAM_rtl_0|              ; 17 (0)              ; 3 (0)                     ; 491520      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0                                                         ; altsyncram      ; work         ;
-;                |altsyncram_hvi1:auto_generated| ; 17 (0)              ; 3 (3)                     ; 491520      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated                          ; altsyncram_hvi1 ; work         ;
+; |top                                            ; 1890 (112)          ; 235 (0)                   ; 950400      ; 0          ; 0            ; 0       ; 0         ; 63   ; 0            ; 0          ; |top                                                                                                                      ; top             ; work         ;
+;    |PCU:PCU|                                    ; 258 (3)             ; 158 (0)                   ; 491648      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU                                                                                                              ; PCU             ; work         ;
+;       |PS2:PS2controller|                       ; 49 (49)             ; 52 (52)                   ; 128         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|PS2:PS2controller                                                                                            ; PS2             ; work         ;
+;          |altsyncram:queuedKeys_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 128         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0                                                                ; altsyncram      ; work         ;
+;             |altsyncram_jjh1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 128         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated                                 ; altsyncram_jjh1 ; work         ;
+;       |SD:SDcontroller|                         ; 62 (62)             ; 41 (41)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|SD:SDcontroller                                                                                              ; SD              ; work         ;
+;       |VGA:VGAcontroller|                       ; 144 (128)           ; 65 (62)                   ; 491520      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller                                                                                            ; VGA             ; work         ;
+;          |buffer:buffer|                        ; 16 (0)              ; 3 (0)                     ; 491520      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller|buffer:buffer                                                                              ; buffer          ; work         ;
+;             |altsyncram:RAM_rtl_0|              ; 16 (0)              ; 3 (0)                     ; 491520      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0                                                         ; altsyncram      ; work         ;
+;                |altsyncram_hvi1:auto_generated| ; 16 (0)              ; 3 (3)                     ; 491520      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated                          ; altsyncram_hvi1 ; work         ;
 ;                   |decode_aj9:rden_decode_b|    ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|decode_aj9:rden_decode_b ; decode_aj9      ; work         ;
-;                   |decode_h7a:decode2|          ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|decode_h7a:decode2       ; decode_h7a      ; work         ;
-;    |alu:ALU|                                    ; 169 (169)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|alu:ALU                                                                                                              ; alu             ; work         ;
+;                   |decode_h7a:decode2|          ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|decode_h7a:decode2       ; decode_h7a      ; work         ;
+;    |alu:ALU|                                    ; 170 (170)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|alu:ALU                                                                                                              ; alu             ; work         ;
 ;    |clocks:pll|                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|clocks:pll                                                                                                           ; clocks          ; work         ;
 ;       |altpll:altpll_component|                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|clocks:pll|altpll:altpll_component                                                                                   ; altpll          ; work         ;
 ;          |clocks_altpll:auto_generated|         ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|clocks:pll|altpll:altpll_component|clocks_altpll:auto_generated                                                      ; clocks_altpll   ; work         ;
@@ -304,23 +313,25 @@ on the Quartus Prime software download page.
 ;    |flash:BOOT|                                 ; 0 (0)               ; 0 (0)                     ; 65536       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|flash:BOOT                                                                                                           ; flash           ; work         ;
 ;       |altsyncram:BOOT_rtl_0|                   ; 0 (0)               ; 0 (0)                     ; 65536       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|flash:BOOT|altsyncram:BOOT_rtl_0                                                                                     ; altsyncram      ; work         ;
 ;          |altsyncram_d081:auto_generated|       ; 0 (0)               ; 0 (0)                     ; 65536       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|flash:BOOT|altsyncram:BOOT_rtl_0|altsyncram_d081:auto_generated                                                      ; altsyncram_d081 ; work         ;
-;    |kernel:KER|                                 ; 4 (0)               ; 1 (0)                     ; 131072      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|kernel:KER                                                                                                           ; kernel          ; work         ;
-;       |altsyncram:RAM_rtl_0|                    ; 4 (0)               ; 1 (0)                     ; 131072      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|kernel:KER|altsyncram:RAM_rtl_0                                                                                      ; altsyncram      ; work         ;
-;          |altsyncram_2ce1:auto_generated|       ; 4 (0)               ; 1 (1)                     ; 131072      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|kernel:KER|altsyncram:RAM_rtl_0|altsyncram_2ce1:auto_generated                                                       ; altsyncram_2ce1 ; work         ;
-;             |decode_97a:decode3|                ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|kernel:KER|altsyncram:RAM_rtl_0|altsyncram_2ce1:auto_generated|decode_97a:decode3                                    ; decode_97a      ; work         ;
-;    |lut:LUT|                                    ; 1161 (1161)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|lut:LUT                                                                                                              ; lut             ; work         ;
-;    |ram:RAM|                                    ; 8 (0)               ; 2 (0)                     ; 262144      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|ram:RAM                                                                                                              ; ram             ; work         ;
-;       |altsyncram:RAM_rtl_0|                    ; 8 (0)               ; 2 (0)                     ; 262144      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|ram:RAM|altsyncram:RAM_rtl_0                                                                                         ; altsyncram      ; work         ;
-;          |altsyncram_3qd1:auto_generated|       ; 8 (0)               ; 2 (2)                     ; 262144      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated                                                          ; altsyncram_3qd1 ; work         ;
+;    |kernel:KER|                                 ; 10 (0)              ; 1 (0)                     ; 131072      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|kernel:KER                                                                                                           ; kernel          ; work         ;
+;       |altsyncram:RAM_rtl_0|                    ; 10 (0)              ; 1 (0)                     ; 131072      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|kernel:KER|altsyncram:RAM_rtl_0                                                                                      ; altsyncram      ; work         ;
+;          |altsyncram_2ce1:auto_generated|       ; 10 (0)              ; 1 (1)                     ; 131072      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|kernel:KER|altsyncram:RAM_rtl_0|altsyncram_2ce1:auto_generated                                                       ; altsyncram_2ce1 ; work         ;
+;             |decode_97a:decode3|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|kernel:KER|altsyncram:RAM_rtl_0|altsyncram_2ce1:auto_generated|decode_97a:decode3                                    ; decode_97a      ; work         ;
+;             |mux_p1b:mux2|                      ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|kernel:KER|altsyncram:RAM_rtl_0|altsyncram_2ce1:auto_generated|mux_p1b:mux2                                          ; mux_p1b         ; work         ;
+;    |lut:LUT|                                    ; 1245 (1245)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|lut:LUT                                                                                                              ; lut             ; work         ;
+;    |ram:RAM|                                    ; 24 (0)              ; 2 (0)                     ; 262144      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|ram:RAM                                                                                                              ; ram             ; work         ;
+;       |altsyncram:RAM_rtl_0|                    ; 24 (0)              ; 2 (0)                     ; 262144      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|ram:RAM|altsyncram:RAM_rtl_0                                                                                         ; altsyncram      ; work         ;
+;          |altsyncram_3qd1:auto_generated|       ; 24 (0)              ; 2 (2)                     ; 262144      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated                                                          ; altsyncram_3qd1 ; work         ;
 ;             |decode_5j9:rden_decode|            ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated|decode_5j9:rden_decode                                   ; decode_5j9      ; work         ;
 ;             |decode_c7a:decode3|                ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated|decode_c7a:decode3                                       ; decode_c7a      ; work         ;
+;             |mux_s1b:mux2|                      ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated|mux_s1b:mux2                                             ; mux_s1b         ; work         ;
 ;    |register:ABhi|                              ; 1 (1)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|register:ABhi                                                                                                        ; register        ; work         ;
 ;    |register:ABlo|                              ; 1 (1)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|register:ABlo                                                                                                        ; register        ; work         ;
 ;    |register:Acc|                               ; 9 (9)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|register:Acc                                                                                                         ; register        ; work         ;
-;    |register:FR|                                ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|register:FR                                                                                                          ; register        ; work         ;
+;    |register:FR|                                ; 10 (10)             ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|register:FR                                                                                                          ; register        ; work         ;
 ;    |register:Phi|                               ; 1 (1)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|register:Phi                                                                                                         ; register        ; work         ;
 ;    |register:Plo|                               ; 1 (1)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|register:Plo                                                                                                         ; register        ; work         ;
-;    |register:coutdelay|                         ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|register:coutdelay                                                                                                   ; register        ; work         ;
+;    |register:coutdelay|                         ; 0 (0)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|register:coutdelay                                                                                                   ; register        ; work         ;
 ;    |register:opcodereg|                         ; 9 (9)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|register:opcodereg                                                                                                   ; register        ; work         ;
 ;    |register:statereg|                          ; 0 (0)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|register:statereg                                                                                                    ; register        ; work         ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
@@ -332,6 +343,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+-----------------------------------------+
 ; Name                                                                                                   ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                                     ;
 +--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+-----------------------------------------+
+; PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated|ALTSYNCRAM        ; AUTO ; Simple Dual Port ; 16           ; 8            ; 16           ; 8            ; 128    ; None                                    ;
 ; PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 61440        ; 8            ; 61440        ; 8            ; 491520 ; db/hardisa.ram0_buffer_cd951201.hdl.mif ;
 ; flash:BOOT|altsyncram:BOOT_rtl_0|altsyncram_d081:auto_generated|ALTSYNCRAM                             ; AUTO ; ROM              ; 8192         ; 8            ; --           ; --           ; 65536  ; db/hardisa.ram0_flash_6960dea.hdl.mif   ;
 ; kernel:KER|altsyncram:RAM_rtl_0|altsyncram_2ce1:auto_generated|ALTSYNCRAM                              ; AUTO ; Single Port      ; 16384        ; 8            ; --           ; --           ; 131072 ; db/hardisa.ram0_kernel_db6b1fc9.hdl.mif ;
@@ -386,12 +398,12 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 133   ;
-; Number of registers using Synchronous Clear  ; 42    ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 235   ;
+; Number of registers using Synchronous Clear  ; 41    ;
+; Number of registers using Synchronous Load   ; 15    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 97    ;
+; Number of registers using Clock Enable       ; 150   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -408,26 +420,56 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +---------------------------------------------------+---------------------------------------------------+------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|register:opcodereg|out[7] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|register:FR|out[3]        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|register:ABlo|out[0]      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|register:ABhi|out[4]      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|register:Acc|out[0]       ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|register:Plo|out[5]       ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|register:Phi|out[2]       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top|count:PChi|out[6]         ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top|count:PClo|out[0]         ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; No         ; |top|Mux0                      ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |top|ALUa[6]                   ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |top|ALUb[3]                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top|ALUb[1]                   ;
-; 29:1               ; 6 bits    ; 114 LEs       ; 72 LEs               ; 42 LEs                 ; No         ; |top|alu:ALU|Selector2         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                                         ;
++-------------------------------------------------------+--------------------------------------------+
+; Register Name                                         ; RAM Name                                   ;
++-------------------------------------------------------+--------------------------------------------+
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[0]  ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[1]  ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[2]  ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[3]  ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[4]  ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[5]  ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[6]  ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[7]  ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[8]  ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[9]  ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[10] ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[11] ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[12] ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[13] ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[14] ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[15] ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
+; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0_bypass[16] ; PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0 ;
++-------------------------------------------------------+--------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|PCU:PCU|VGA:VGAcontroller|flags[1] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|register:opcodereg|out[4]          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|PCU:PCU|SD:SDcontroller|bitc[1]    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|PCU:PCU|SD:SDcontroller|bitc[0]    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |top|PCU:PCU|PS2:PS2controller|state[0] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top|PCU:PCU|PS2:PS2controller|dout[2]  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|register:FR|out[1]                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|register:ABlo|out[0]               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|register:ABhi|out[3]               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|register:Acc|out[7]                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|register:Plo|out[4]                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|register:Phi|out[7]                ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top|count:PChi|out[6]                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top|count:PClo|out[7]                  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |top|ALUa[3]                            ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |top|ALUb[2]                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top|ALUb[0]                            ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |top|Mux0                               ;
+; 29:1               ; 6 bits    ; 114 LEs       ; 72 LEs               ; 42 LEs                 ; No         ; |top|alu:ALU|Selector5                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
 
 +------------------------------------------------------------------------------------+
@@ -455,6 +497,15 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +---------------------------------+--------------------+------+--------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                        ;
 +---------------------------------+--------------------+------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Source assignments for PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                            ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                             ;
++---------------------------------+--------------------+------+-----------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -505,7 +556,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; CLK6_MULTIPLY_BY              ; 0                        ; Untyped              ;
 ; CLK5_MULTIPLY_BY              ; 1                        ; Untyped              ;
 ; CLK4_MULTIPLY_BY              ; 1                        ; Untyped              ;
-; CLK3_MULTIPLY_BY              ; 1                        ; Untyped              ;
+; CLK3_MULTIPLY_BY              ; 1                        ; Signed Integer       ;
 ; CLK2_MULTIPLY_BY              ; 1                        ; Signed Integer       ;
 ; CLK1_MULTIPLY_BY              ; 1                        ; Signed Integer       ;
 ; CLK0_MULTIPLY_BY              ; 1                        ; Signed Integer       ;
@@ -515,7 +566,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; CLK6_DIVIDE_BY                ; 0                        ; Untyped              ;
 ; CLK5_DIVIDE_BY                ; 1                        ; Untyped              ;
 ; CLK4_DIVIDE_BY                ; 1                        ; Untyped              ;
-; CLK3_DIVIDE_BY                ; 1                        ; Untyped              ;
+; CLK3_DIVIDE_BY                ; 125                      ; Signed Integer       ;
 ; CLK2_DIVIDE_BY                ; 2                        ; Signed Integer       ;
 ; CLK1_DIVIDE_BY                ; 10                       ; Signed Integer       ;
 ; CLK0_DIVIDE_BY                ; 10                       ; Signed Integer       ;
@@ -541,7 +592,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; CLK6_DUTY_CYCLE               ; 50                       ; Untyped              ;
 ; CLK5_DUTY_CYCLE               ; 50                       ; Untyped              ;
 ; CLK4_DUTY_CYCLE               ; 50                       ; Untyped              ;
-; CLK3_DUTY_CYCLE               ; 50                       ; Untyped              ;
+; CLK3_DUTY_CYCLE               ; 50                       ; Signed Integer       ;
 ; CLK2_DUTY_CYCLE               ; 50                       ; Signed Integer       ;
 ; CLK1_DUTY_CYCLE               ; 50                       ; Signed Integer       ;
 ; CLK0_DUTY_CYCLE               ; 50                       ; Signed Integer       ;
@@ -775,7 +826,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; PORT_CLK0                     ; PORT_USED                ; Untyped              ;
 ; PORT_CLK1                     ; PORT_USED                ; Untyped              ;
 ; PORT_CLK2                     ; PORT_USED                ; Untyped              ;
-; PORT_CLK3                     ; PORT_UNUSED              ; Untyped              ;
+; PORT_CLK3                     ; PORT_USED                ; Untyped              ;
 ; PORT_CLK4                     ; PORT_UNUSED              ; Untyped              ;
 ; PORT_CLK5                     ; PORT_UNUSED              ; Untyped              ;
 ; PORT_CLK6                     ; PORT_UNUSED              ; Untyped              ;
@@ -1023,6 +1074,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0 ;
++------------------------------------+----------------------+--------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                       ;
++------------------------------------+----------------------+--------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                    ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                             ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                    ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                    ;
+; WIDTH_A                            ; 8                    ; Untyped                                    ;
+; WIDTHAD_A                          ; 4                    ; Untyped                                    ;
+; NUMWORDS_A                         ; 16                   ; Untyped                                    ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                    ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                    ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                    ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                    ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                    ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                    ;
+; WIDTH_B                            ; 8                    ; Untyped                                    ;
+; WIDTHAD_B                          ; 4                    ; Untyped                                    ;
+; NUMWORDS_B                         ; 16                   ; Untyped                                    ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                    ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                    ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                    ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                    ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                    ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                    ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                    ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                    ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                    ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                    ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                    ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                    ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                    ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                    ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                    ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                    ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                    ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                    ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                    ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                    ;
+; DEVICE_FAMILY                      ; MAX 10               ; Untyped                                    ;
+; CBXI_PARAMETER                     ; altsyncram_jjh1      ; Untyped                                    ;
++------------------------------------+----------------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +---------------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0 ;
 +------------------------------------+-----------------------------------------+--------------------------------+
@@ -1106,7 +1218,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+--------------------------------------------------------------+
 ; Name                                      ; Value                                                        ;
 +-------------------------------------------+--------------------------------------------------------------+
-; Number of entity instances                ; 4                                                            ;
+; Number of entity instances                ; 5                                                            ;
 ; Entity Instance                           ; ram:RAM|altsyncram:RAM_rtl_0                                 ;
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                                                  ;
 ;     -- WIDTH_A                            ; 8                                                            ;
@@ -1140,6 +1252,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
 ;     -- RAM_BLOCK_TYPE                     ; M10K                                                         ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ;
+; Entity Instance                           ; PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0        ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                    ;
+;     -- WIDTH_A                            ; 8                                                            ;
+;     -- NUMWORDS_A                         ; 16                                                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
+;     -- WIDTH_B                            ; 8                                                            ;
+;     -- NUMWORDS_B                         ; 16                                                           ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                     ;
 ; Entity Instance                           ; PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0 ;
 ;     -- OPERATION_MODE                     ; DUAL_PORT                                                    ;
 ;     -- WIDTH_A                            ; 8                                                            ;
@@ -1161,8 +1284,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; we        ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
 ; we[-1]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; in[7..1]  ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; out[7..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; in[7..2]  ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; out[7..2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
 +-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1241,33 +1364,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clocks:pll"                                                                                              ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; c3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 63                          ;
-; cycloneiii_ff         ; 133                         ;
-;     ENA               ; 69                          ;
-;     ENA SCLR          ; 28                          ;
+; cycloneiii_ff         ; 235                         ;
+;     ENA               ; 115                         ;
+;     ENA SCLR          ; 27                          ;
+;     ENA SLD           ; 8                           ;
 ;     SCLR              ; 14                          ;
-;     plain             ; 22                          ;
+;     SLD               ; 7                           ;
+;     plain             ; 64                          ;
 ; cycloneiii_io_obuf    ; 36                          ;
-; cycloneiii_lcell_comb ; 1655                        ;
-;     arith             ; 93                          ;
-;         2 data inputs ; 69                          ;
-;         3 data inputs ; 24                          ;
-;     normal            ; 1562                        ;
+; cycloneiii_lcell_comb ; 1890                        ;
+;     arith             ; 113                         ;
+;         2 data inputs ; 88                          ;
+;         3 data inputs ; 25                          ;
+;     normal            ; 1777                        ;
 ;         0 data inputs ; 7                           ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 86                          ;
-;         3 data inputs ; 239                         ;
-;         4 data inputs ; 1223                        ;
+;         1 data inputs ; 15                          ;
+;         2 data inputs ; 99                          ;
+;         3 data inputs ; 276                         ;
+;         4 data inputs ; 1380                        ;
 ; cycloneiii_pll        ; 1                           ;
-; cycloneiii_ram_block  ; 120                         ;
+; cycloneiii_ram_block  ; 128                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 32.40                       ;
-; Average LUT depth     ; 17.35                       ;
+; Max LUT depth         ; 33.60                       ;
+; Average LUT depth     ; 16.96                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1276,7 +1410,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:11     ;
 +----------------+--------------+
 
 
@@ -1286,21 +1420,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Aug  7 12:04:50 2026
+    Info: Processing started: Tue Sep 15 22:48:41 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off hardisa -c hardisa
-Critical Warning (138067): Current license file does not support incremental compilation. The Quartus Prime software removes all the user-specified design partitions in the design automatically.
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 9 design units, including 9 entities, in source file top.sv
     Info (12023): Found entity 1: top File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
-    Info (12023): Found entity 2: register File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 115
-    Info (12023): Found entity 3: count File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 128
-    Info (12023): Found entity 4: alu File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 152
-    Info (12023): Found entity 5: ram File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 185
-    Info (12023): Found entity 6: kernel File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 205
-    Info (12023): Found entity 7: lut File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 225
-    Info (12023): Found entity 8: flash File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 238
-    Info (12023): Found entity 9: decoder File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 252
+    Info (12023): Found entity 2: register File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 116
+    Info (12023): Found entity 3: count File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 129
+    Info (12023): Found entity 4: alu File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 153
+    Info (12023): Found entity 5: ram File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 186
+    Info (12023): Found entity 6: kernel File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 206
+    Info (12023): Found entity 7: lut File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 226
+    Info (12023): Found entity 8: flash File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 239
+    Info (12023): Found entity 9: decoder File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 253
 Info (12021): Found 1 design units, including 1 entities, in source file tb.sv
     Info (12023): Found entity 1: tb File: C:/Users/levia/Documents/hardisa/HDL/tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mhz25.v
@@ -1309,20 +1442,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file khz25.v
     Info (12023): Found entity 1: khz25 File: C:/Users/levia/Documents/hardisa/HDL/khz25.v Line: 40
 Info (12021): Found 5 design units, including 5 entities, in source file pcu.sv
     Info (12023): Found entity 1: PCU File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 1
-    Info (12023): Found entity 2: VGA File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 14
-    Info (12023): Found entity 3: buffer File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 90
-    Info (12023): Found entity 4: PS2 File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 109
-    Info (12023): Found entity 5: SD File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 113
+    Info (12023): Found entity 2: VGA File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 34
+    Info (12023): Found entity 3: buffer File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 118
+    Info (12023): Found entity 4: PS2 File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 137
+    Info (12023): Found entity 5: SD File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 189
 Info (12021): Found 1 design units, including 1 entities, in source file clocks.v
     Info (12023): Found entity 1: clocks File: C:/Users/levia/Documents/hardisa/HDL/clocks.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file simclocks.sv
+    Info (12023): Found entity 1: simclocks File: C:/Users/levia/Documents/hardisa/HDL/simclocks.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file slowclocks.v
+    Info (12023): Found entity 1: slowclocks File: C:/Users/levia/Documents/hardisa/HDL/slowclocks.v Line: 40
 Warning (10236): Verilog HDL Implicit Net warning at top.sv(4): created implicit net for "VGAclk" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 4
-Warning (10236): Verilog HDL Implicit Net warning at top.sv(16): created implicit net for "PCMSB" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 16
+Warning (10236): Verilog HDL Implicit Net warning at top.sv(15): created implicit net for "PCMSB" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 15
+Warning (10236): Verilog HDL Implicit Net warning at PCU.sv(139): created implicit net for "PS2clk" File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 139
+Warning (10236): Verilog HDL Implicit Net warning at PCU.sv(140): created implicit net for "PS2data" File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 140
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at top.sv(110): truncated value with size 8 to match size of target (4) File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 110
+Warning (10230): Verilog HDL assignment warning at top.sv(111): truncated value with size 8 to match size of target (4) File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 111
 Info (12128): Elaborating entity "clocks" for hierarchy "clocks:pll" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 4
-Info (12128): Elaborating entity "altpll" for hierarchy "clocks:pll|altpll:altpll_component" File: C:/Users/levia/Documents/hardisa/HDL/clocks.v Line: 99
-Info (12130): Elaborated megafunction instantiation "clocks:pll|altpll:altpll_component" File: C:/Users/levia/Documents/hardisa/HDL/clocks.v Line: 99
-Info (12133): Instantiated megafunction "clocks:pll|altpll:altpll_component" with the following parameter: File: C:/Users/levia/Documents/hardisa/HDL/clocks.v Line: 99
+Info (12128): Elaborating entity "altpll" for hierarchy "clocks:pll|altpll:altpll_component" File: C:/Users/levia/Documents/hardisa/HDL/clocks.v Line: 103
+Info (12130): Elaborated megafunction instantiation "clocks:pll|altpll:altpll_component" File: C:/Users/levia/Documents/hardisa/HDL/clocks.v Line: 103
+Info (12133): Instantiated megafunction "clocks:pll|altpll:altpll_component" with the following parameter: File: C:/Users/levia/Documents/hardisa/HDL/clocks.v Line: 103
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "10"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1336,6 +1475,10 @@ Info (12133): Instantiated megafunction "clocks:pll|altpll:altpll_component" wit
     Info (12134): Parameter "clk2_duty_cycle" = "50"
     Info (12134): Parameter "clk2_multiply_by" = "1"
     Info (12134): Parameter "clk2_phase_shift" = "0"
+    Info (12134): Parameter "clk3_divide_by" = "125"
+    Info (12134): Parameter "clk3_duty_cycle" = "50"
+    Info (12134): Parameter "clk3_multiply_by" = "1"
+    Info (12134): Parameter "clk3_phase_shift" = "0"
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "20000"
     Info (12134): Parameter "intended_device_family" = "MAX 10"
@@ -1371,7 +1514,7 @@ Info (12133): Instantiated megafunction "clocks:pll|altpll:altpll_component" wit
     Info (12134): Parameter "port_clk0" = "PORT_USED"
     Info (12134): Parameter "port_clk1" = "PORT_USED"
     Info (12134): Parameter "port_clk2" = "PORT_USED"
-    Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk3" = "PORT_USED"
     Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
     Info (12134): Parameter "port_clkena0" = "PORT_UNUSED"
@@ -1388,39 +1531,49 @@ Info (12133): Instantiated megafunction "clocks:pll|altpll:altpll_component" wit
 Info (12021): Found 1 design units, including 1 entities, in source file db/clocks_altpll.v
     Info (12023): Found entity 1: clocks_altpll File: C:/Users/levia/Documents/hardisa/HDL/db/clocks_altpll.v Line: 30
 Info (12128): Elaborating entity "clocks_altpll" for hierarchy "clocks:pll|altpll:altpll_component|clocks_altpll:auto_generated" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "register" for hierarchy "register:statereg" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 20
-Info (12128): Elaborating entity "count" for hierarchy "count:PClo" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 28
-Warning (10230): Verilog HDL assignment warning at top.sv(147): truncated value with size 32 to match size of target (8) File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 147
-Info (12128): Elaborating entity "alu" for hierarchy "alu:ALU" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 30
-Warning (10230): Verilog HDL assignment warning at top.sv(161): truncated value with size 32 to match size of target (9) File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 161
-Warning (10230): Verilog HDL assignment warning at top.sv(168): truncated value with size 32 to match size of target (9) File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 168
+Info (12128): Elaborating entity "register" for hierarchy "register:statereg" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 19
+Info (12128): Elaborating entity "count" for hierarchy "count:PClo" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 27
+Warning (10230): Verilog HDL assignment warning at top.sv(148): truncated value with size 32 to match size of target (8) File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 148
+Info (12128): Elaborating entity "alu" for hierarchy "alu:ALU" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 29
+Warning (10230): Verilog HDL assignment warning at top.sv(162): truncated value with size 32 to match size of target (9) File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 162
 Warning (10230): Verilog HDL assignment warning at top.sv(169): truncated value with size 32 to match size of target (9) File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 169
-Info (12128): Elaborating entity "ram" for hierarchy "ram:RAM" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 31
-Warning (10850): Verilog HDL warning at top.sv(192): number of words (1328) in memory file does not match the number of elements in the address range [0:32767] File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 192
-Info (12128): Elaborating entity "kernel" for hierarchy "kernel:KER" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 32
-Warning (10850): Verilog HDL warning at top.sv(212): number of words (3) in memory file does not match the number of elements in the address range [0:16383] File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 212
-Info (12128): Elaborating entity "lut" for hierarchy "lut:LUT" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 33
-Warning (10030): Net "LUT.data_a" at top.sv(229) has no driver or initial value, using a default initial value '0' File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 229
-Warning (10030): Net "LUT.waddr_a" at top.sv(229) has no driver or initial value, using a default initial value '0' File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 229
-Warning (10030): Net "LUT.we_a" at top.sv(229) has no driver or initial value, using a default initial value '0' File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 229
-Info (12128): Elaborating entity "flash" for hierarchy "flash:BOOT" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 34
-Warning (10850): Verilog HDL warning at top.sv(244): number of words (3) in memory file does not match the number of elements in the address range [0:8191] File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 244
-Warning (10030): Net "BOOT.data_a" at top.sv(242) has no driver or initial value, using a default initial value '0' File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 242
-Warning (10030): Net "BOOT.waddr_a" at top.sv(242) has no driver or initial value, using a default initial value '0' File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 242
-Warning (10030): Net "BOOT.we_a" at top.sv(242) has no driver or initial value, using a default initial value '0' File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 242
-Info (12128): Elaborating entity "decoder" for hierarchy "decoder:dec" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 35
-Info (12128): Elaborating entity "PCU" for hierarchy "PCU:PCU" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 37
-Info (12128): Elaborating entity "VGA" for hierarchy "PCU:PCU|VGA:VGAcontroller" File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 4
-Warning (10230): Verilog HDL assignment warning at PCU.sv(67): truncated value with size 32 to match size of target (10) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 67
-Warning (10230): Verilog HDL assignment warning at PCU.sv(71): truncated value with size 32 to match size of target (10) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 71
-Info (12128): Elaborating entity "buffer" for hierarchy "PCU:PCU|VGA:VGAcontroller|buffer:buffer" File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 21
-Info (12128): Elaborating entity "PS2" for hierarchy "PCU:PCU|PS2:PS2controller" File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 5
-Info (12128): Elaborating entity "SD" for hierarchy "PCU:PCU|SD:SDcontroller" File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 6
-Critical Warning (138067): Current license file does not support incremental compilation. The Quartus Prime software removes all the user-specified design partitions in the design automatically.
+Warning (10230): Verilog HDL assignment warning at top.sv(170): truncated value with size 32 to match size of target (9) File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 170
+Info (12128): Elaborating entity "ram" for hierarchy "ram:RAM" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 30
+Warning (10850): Verilog HDL warning at top.sv(193): number of words (3494) in memory file does not match the number of elements in the address range [0:32767] File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 193
+Info (12128): Elaborating entity "kernel" for hierarchy "kernel:KER" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 31
+Warning (10850): Verilog HDL warning at top.sv(213): number of words (3) in memory file does not match the number of elements in the address range [0:16383] File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 213
+Info (12128): Elaborating entity "lut" for hierarchy "lut:LUT" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 32
+Warning (10030): Net "LUT.data_a" at top.sv(230) has no driver or initial value, using a default initial value '0' File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 230
+Warning (10030): Net "LUT.waddr_a" at top.sv(230) has no driver or initial value, using a default initial value '0' File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 230
+Warning (10030): Net "LUT.we_a" at top.sv(230) has no driver or initial value, using a default initial value '0' File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 230
+Info (12128): Elaborating entity "flash" for hierarchy "flash:BOOT" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 33
+Warning (10850): Verilog HDL warning at top.sv(245): number of words (3) in memory file does not match the number of elements in the address range [0:8191] File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 245
+Warning (10030): Net "BOOT.data_a" at top.sv(243) has no driver or initial value, using a default initial value '0' File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 243
+Warning (10030): Net "BOOT.waddr_a" at top.sv(243) has no driver or initial value, using a default initial value '0' File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 243
+Warning (10030): Net "BOOT.we_a" at top.sv(243) has no driver or initial value, using a default initial value '0' File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 243
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:dec" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 34
+Info (12128): Elaborating entity "PCU" for hierarchy "PCU:PCU" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 36
+Warning (10270): Verilog HDL Case Statement warning at PCU.sv(16): incomplete case statement has no default case item File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 16
+Info (12128): Elaborating entity "VGA" for hierarchy "PCU:PCU|VGA:VGAcontroller" File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 7
+Warning (10230): Verilog HDL assignment warning at PCU.sv(90): truncated value with size 32 to match size of target (10) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 90
+Warning (10230): Verilog HDL assignment warning at PCU.sv(94): truncated value with size 32 to match size of target (10) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 94
+Warning (10230): Verilog HDL assignment warning at PCU.sv(111): truncated value with size 32 to match size of target (8) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 111
+Info (12128): Elaborating entity "buffer" for hierarchy "PCU:PCU|VGA:VGAcontroller|buffer:buffer" File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 42
+Info (12128): Elaborating entity "PS2" for hierarchy "PCU:PCU|PS2:PS2controller" File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 8
+Warning (10230): Verilog HDL assignment warning at PCU.sv(165): truncated value with size 32 to match size of target (5) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 165
+Warning (10230): Verilog HDL assignment warning at PCU.sv(169): truncated value with size 32 to match size of target (5) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 169
+Warning (10230): Verilog HDL assignment warning at PCU.sv(179): truncated value with size 32 to match size of target (5) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 179
+Info (12128): Elaborating entity "SD" for hierarchy "PCU:PCU|SD:SDcontroller" File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 9
+Warning (10036): Verilog HDL or VHDL warning at PCU.sv(195): object "init" assigned a value but never read File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 195
+Warning (10230): Verilog HDL assignment warning at PCU.sv(259): truncated value with size 32 to match size of target (7) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 259
+Warning (10230): Verilog HDL assignment warning at PCU.sv(269): truncated value with size 32 to match size of target (7) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 269
+Warning (10230): Verilog HDL assignment warning at PCU.sv(275): truncated value with size 32 to match size of target (7) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 275
+Warning (10230): Verilog HDL assignment warning at PCU.sv(304): truncated value with size 32 to match size of target (4) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 304
+Warning (276020): Inferred RAM node "PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "PCU:PCU|VGA:VGAcontroller|buffer:buffer|RAM_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "lut:LUT|LUT" is uninferred due to asynchronous read logic File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 229
-Info (19000): Inferred 4 megafunctions from design logic
+    Info (276007): RAM logic "lut:LUT|LUT" is uninferred due to asynchronous read logic File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 230
+Info (19000): Inferred 5 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:RAM|RAM_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
         Info (286033): Parameter WIDTH_A set to 8
@@ -1459,6 +1612,22 @@ Info (19000): Inferred 4 megafunctions from design logic
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
         Info (286033): Parameter RAM_BLOCK_TYPE set to M10K
         Info (286033): Parameter INIT_FILE set to db/hardisa.ram0_flash_6960dea.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 4
+        Info (286033): Parameter NUMWORDS_A set to 16
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 4
+        Info (286033): Parameter NUMWORDS_B set to 16
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
     Info (276029): Inferred altsyncram megafunction from the following design logic: "PCU:PCU|VGA:VGAcontroller|buffer:buffer|RAM_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
         Info (286033): Parameter WIDTH_A set to 8
@@ -1493,14 +1662,6 @@ Info (12133): Instantiated megafunction "ram:RAM|altsyncram:RAM_rtl_0" with the 
 Warning (287001): Assertion warning: Device family MAX 10 does not have M10K blocks -- using available memory blocks File: C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_3qd1.tdf Line: 840
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_3qd1.tdf
     Info (12023): Found entity 1: altsyncram_3qd1 File: C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_3qd1.tdf Line: 34
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_ram_1d0cf.hdl.mif" contains "don't care" values -- overwriting them with 0s File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_ram_1d0cf.hdl.mif" contains "don't care" values -- overwriting them with 0s File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_ram_1d0cf.hdl.mif" contains "don't care" values -- overwriting them with 0s File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_ram_1d0cf.hdl.mif" contains "don't care" values -- overwriting them with 0s File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_ram_1d0cf.hdl.mif" contains "don't care" values -- overwriting them with 0s File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_ram_1d0cf.hdl.mif" contains "don't care" values -- overwriting them with 0s File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_ram_1d0cf.hdl.mif" contains "don't care" values -- overwriting them with 0s File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/levia/Documents/hardisa/HDL/db/hardisa.ram0_ram_1d0cf.hdl.mif" contains "don't care" values -- overwriting them with 0s File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_c7a.tdf
     Info (12023): Found entity 1: decode_c7a File: C:/Users/levia/Documents/hardisa/HDL/db/decode_c7a.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_5j9.tdf
@@ -1546,6 +1707,25 @@ Info (12133): Instantiated megafunction "flash:BOOT|altsyncram:BOOT_rtl_0" with 
 Warning (287001): Assertion warning: Device family MAX 10 does not have M10K blocks -- using available memory blocks File: C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_d081.tdf Line: 211
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_d081.tdf
     Info (12023): Found entity 1: altsyncram_d081 File: C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_d081.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0"
+Info (12133): Instantiated megafunction "PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "4"
+    Info (12134): Parameter "NUMWORDS_A" = "16"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "4"
+    Info (12134): Parameter "NUMWORDS_B" = "16"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jjh1.tdf
+    Info (12023): Found entity 1: altsyncram_jjh1 File: C:/Users/levia/Documents/hardisa/HDL/db/altsyncram_jjh1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0"
 Info (12133): Instantiated megafunction "PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -1573,7 +1753,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/deco
     Info (12023): Found entity 1: decode_aj9 File: C:/Users/levia/Documents/hardisa/HDL/db/decode_aj9.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_12b.tdf
     Info (12023): Found entity 1: mux_12b File: C:/Users/levia/Documents/hardisa/HDL/db/mux_12b.tdf Line: 23
-Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[27]" and its non-tri-state driver. File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[28]" and its non-tri-state driver. File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[29]" and its non-tri-state driver. File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "GPIO[0]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
     Warning (13040): bidirectional pin "GPIO[1]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
@@ -1602,35 +1786,36 @@ Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "GPIO[24]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
     Warning (13040): bidirectional pin "GPIO[25]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
     Warning (13040): bidirectional pin "GPIO[26]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
-    Warning (13040): bidirectional pin "GPIO[27]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
-    Warning (13040): bidirectional pin "GPIO[28]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
-    Warning (13040): bidirectional pin "GPIO[29]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
     Warning (13040): bidirectional pin "GPIO[30]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
     Warning (13040): bidirectional pin "GPIO[31]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
     Warning (13040): bidirectional pin "GPIO[32]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
     Warning (13040): bidirectional pin "GPIO[33]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
     Warning (13040): bidirectional pin "GPIO[34]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
     Warning (13040): bidirectional pin "GPIO[35]" has no driver File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO[27]~synth" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
+    Warning (13010): Node "GPIO[28]~synth" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
+    Warning (13010): Node "GPIO[29]~synth" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
     Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
 Info (286030): Timing-Driven Synthesis is running
-Critical Warning (138067): Current license file does not support incremental compilation. The Quartus Prime software removes all the user-specified design partitions in the design automatically.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (15899): PLL "clocks:pll|altpll:altpll_component|clocks_altpll:auto_generated|pll1" has parameters clk3_multiply_by and clk3_divide_by specified but port CLK[3] is not connected File: C:/Users/levia/Documents/hardisa/HDL/db/clocks_altpll.v Line: 44
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
-Info (21057): Implemented 1912 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2204 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 24 output pins
     Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 1728 logic cells
-    Info (21064): Implemented 120 RAM segments
+    Info (21061): Implemented 2012 logic cells
+    Info (21064): Implemented 128 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 78 warnings
-    Info: Peak virtual memory: 4907 megabytes
-    Info: Processing ended: Fri Aug  7 12:05:15 2026
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:27
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 86 warnings
+    Info: Peak virtual memory: 4911 megabytes
+    Info: Processing ended: Tue Sep 15 22:49:30 2026
+    Info: Elapsed time: 00:00:49
+    Info: Total CPU time (on all processors): 00:00:52
 
 

@@ -1,9 +1,8 @@
 module top(input logic MAX10_CLK1_50, input logic [1:0] KEY, output logic [9:0] LEDR, output logic [3:0] VGA_R, VGA_G, VGA_B, output logic VGA_HS, VGA_VS, inout wire [35:0] GPIO);
 
-logic clk, invclk, rst;
+logic clk, invclk, SPIclk, rst;
 clocks pll (MAX10_CLK1_50, clk, invclk, VGAclk);
-//assign clk = MAX10_CLK1_50;
-//assign invclk = ~clk;
+assign SPIclk = MAX10_CLK1_50;
 assign rst = ~KEY[0];
 
 logic ovf, RAMen, KERen, PCUen;
@@ -34,7 +33,7 @@ lut LUT(clk, LUTout,LUTin);
 flash BOOT(invclk, BOOTout,{3'h0,MEMaddr[12:0]});
 decoder dec(LUTout[12:10], decodeout);
 register coutdelay(clk, rst, 1, delaysin, delaysout);
-PCU PCU(invclk, rst, PCUen, ALUout, PCUout, MEMaddr[7:0], VGA_R, VGA_G, VGA_B, VGA_HS, VGA_VS, GPIO, VGAclk);
+PCU PCU(invclk, rst, PCUen, ALUout, PCUout, MEMaddr[7:0], VGA_R, VGA_G, VGA_B, VGA_HS, VGA_VS, GPIO, VGAclk, SPIclk);
 
 always_comb begin
 	case(LUTout[15])
@@ -69,6 +68,7 @@ always_comb begin
 	
 	delaysin = 0;
 	delaysin[0] = flags[2];
+	delaysin[1] = flags[1];
 	if (!LUTout[13]) begin	
 		case(LUTout[18:17])
 			2'b00: ALUa = A;
@@ -91,7 +91,7 @@ always_comb begin
 			2'b01: ALUa = PC[15:8];
 			default: ALUa = 0;
 		endcase
-		case(LUTout[18:17])
+		case(LUTout[20:19])
 			2'b00: ALUb = 8'b00000011;
 			2'b01: ALUb = 8'b00000010;
 			default: ALUb = 0;
@@ -104,6 +104,7 @@ always_comb begin
 		3'b011: LUTin[0] = FRout[3];
 		3'b100: LUTin[0] = FRout[0] ^ FRout[3];
 		3'b101: LUTin[0] = delaysout[0];
+		3'b110: LUTin[0] = delaysout[1];
 		default: LUTin[0] = 0;
 	endcase
 	LUTin[12:5] = OpOut;
@@ -189,7 +190,7 @@ input logic [15:0] addr);
 
 (* ramstyle = "M10K" *) logic [7:0] RAM [32767:0];
 initial begin
-    $readmemh("../testcode/realHelloWorld.hex", RAM);
+    $readmemh("../testcode/keyTest.hex", RAM);
 end
 
 //assign out = RAM[addr];

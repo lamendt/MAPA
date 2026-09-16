@@ -1,0 +1,1469 @@
+.SP $FFFA
+.VGA $2000
+.KEY $2002
+.SD $2004
+.SDflags $2005
+
+:printChar
+LDO $02
+STR ITLcurX
+LDO $03
+STR ITLcurY
+
+#calculates ITLfont offset, sets P to char
+LDO $04
+SLO $04
+IMM $00
+ICCO $05
+LDO $04
+SLO $04
+LDO $05
+SLCO $05
+LDO $04
+SLO $04
+LDO $05
+SLCO $05
+STRP SP
+IMMP ITLfont
+STRP ITLcharPlo
+LDP SP
+LDO $04
+ADS ITLcharPlo
+LDO $05
+ACS ITLcharPhi
+LDP ITLcharPlo
+
+LD ITLcurY
+ADDI $08
+STR ITLYstop
+
+#loops over each row
+:ITLloop1
+LD ITLYstop
+CMP ITLcurY
+BEQ ITLend1
+
+#each block is a pixel
+LDO $00
+CMP&I $80
+BEQ noPix1
+IMM $FF
+STR VGA
+LD ITLcurX
+STR VGA
+LD ITLcurY
+STR VGA
+:noPix1
+IMM $01
+ADS ITLcurX
+
+LDO $00
+CMP&I $40
+BEQ noPix2
+IMM $FF
+STR VGA
+LD ITLcurX
+STR VGA
+LD ITLcurY
+STR VGA
+:noPix2
+IMM $01
+ADS ITLcurX
+
+LDO $00
+CMP&I $20
+BEQ noPix3
+IMM $FF
+STR VGA
+LD ITLcurX
+STR VGA
+LD ITLcurY
+STR VGA
+:noPix3
+IMM $01
+ADS ITLcurX
+
+LDO $00
+CMP&I $10
+BEQ noPix4
+IMM $FF
+STR VGA
+LD ITLcurX
+STR VGA
+LD ITLcurY
+STR VGA
+:noPix4
+IMM $01
+ADS ITLcurX
+
+LDO $00
+CMP&I $08
+BEQ noPix5
+IMM $FF
+STR VGA
+LD ITLcurX
+STR VGA
+LD ITLcurY
+STR VGA
+:noPix5
+IMM $01
+ADS ITLcurX
+
+LDO $00
+CMP&I $04
+BEQ noPix6
+IMM $FF
+STR VGA
+LD ITLcurX
+STR VGA
+LD ITLcurY
+STR VGA
+:noPix6
+IMM $01
+ADS ITLcurX
+
+LDO $00
+CMP&I $02
+BEQ noPix7
+IMM $FF
+STR VGA
+LD ITLcurX
+STR VGA
+LD ITLcurY
+STR VGA
+:noPix7
+IMM $01
+ADS ITLcurX
+
+LDO $00
+CMP&I $01
+BEQ noPix8
+IMM $FF
+STR VGA
+LD ITLcurX
+STR VGA
+LD ITLcurY
+STR VGA
+:noPix8
+
+IMM $F9
+ADS ITLcurX
+IMM $01
+ADS ITLcurY
+INCP
+JMP ITLloop1
+
+:ITLend1
+IMM $F8
+ADS ITLcurY
+LDP SP
+RET
+
+#data
+:ITLcurX
+$00
+:ITLcurY
+$00
+:ITLYstop
+$00
+:ITLcharPlo
+$00
+:ITLcharPhi
+$00
+:ITLfont
++0100
+$0000
+$0000
+$0000
+$0000
+$3C18
+$183C
+$0018
+$0018
+$6666
+$0024
+$0000
+$0000
+$6C6C
+$6CFE
+$6CFE
+$006C
+$3E18
+$3C60
+$7C06
+$0018
+$C600
+$18CC
+$6630
+$00C6
+$6C38
+$7638
+$CCDC
+$0076
+$1818
+$0030
+$0000
+$0000
+$180C
+$3030
+$1830
+$000C
+$1830
+$0C0C
+$180C
+$0030
+$6600
+$FF3C
+$663C
+$0000
+$1800
+$7E18
+$1818
+$0000
+$0000
+$0000
+$1800
+$3018
+$0000
+$7E00
+$0000
+$0000
+$0000
+$0000
+$1800
+$0018
+$0C06
+$3018
+$C060
+$0080
+$6C38
+$D6C6
+$6CC6
+$0038
+$3818
+$1818
+$1818
+$007E
+$C67C
+$1C06
+$6630
+$00FE
+$C67C
+$3C06
+$C606
+$007C
+$3C1C
+$CC6C
+$0CFE
+$001E
+$C0FE
+$FCC0
+$C606
+$007C
+$6038
+$FCC0
+$C6C6
+$007C
+$C6FE
+$180C
+$3030
+$0030
+$C67C
+$7CC6
+$C6C6
+$007C
+$C67C
+$7EC6
+$0C06
+$0078
+$1800
+$0018
+$1800
+$0018
+$1800
+$0018
+$1800
+$3018
+$0C06
+$3018
+$0C18
+$0006
+$0000
+$007E
+$7E00
+$0000
+$3060
+$0C18
+$3018
+$0060
+$C67C
+$180C
+$0018
+$0018
+$C67C
+$DEDE
+$C0DE
+$0078
+$6C38
+$FEC6
+$C6C6
+$00C6
+$66FC
+$7C66
+$6666
+$00FC
+$663C
+$C0C0
+$66C0
+$003C
+$6CF8
+$6666
+$6C66
+$00F8
+$62FE
+$7868
+$6268
+$00FE
+$62FE
+$7868
+$6068
+$00F0
+$663C
+$C0C0
+$66CE
+$003A
+$C6C6
+$FEC6
+$C6C6
+$00C6
+$183C
+$1818
+$1818
+$003C
+$0C1E
+$0C0C
+$CCCC
+$0078
+$66E6
+$786C
+$666C
+$00E6
+$60F0
+$6060
+$6662
+$00FE
+$EEC6
+$FEFE
+$C6D6
+$00C6
+$E6C6
+$DEF6
+$C6CE
+$00C6
+$C67C
+$C6C6
+$C6C6
+$007C
+$66FC
+$7C66
+$6060
+$00F0
+$C67C
+$C6C6
+$CEC6
+$0E7C
+$66FC
+$7C66
+$666C
+$00E6
+$663C
+$1830
+$660C
+$003C
+$7E7E
+$185A
+$1818
+$003C
+$C6C6
+$C6C6
+$C6C6
+$007C
+$C6C6
+$C6C6
+$6CC6
+$0038
+$C6C6
+$D6C6
+$FED6
+$006C
+$C6C6
+$386C
+$C66C
+$00C6
+$6666
+$3C66
+$1818
+$003C
+$C6FE
+$188C
+$6632
+$00FE
+$303C
+$3030
+$3030
+$003C
+$60C0
+$1830
+$060C
+$0002
+$0C3C
+$0C0C
+$0C0C
+$003C
+$3810
+$C66C
+$0000
+$0000
+$0000
+$0000
+$0000
+$FF00
+$1830
+$000C
+$0000
+$0000
+$0000
+$0C78
+$CC7C
+$0076
+$60E0
+$667C
+$6666
+$00DC
+$0000
+$C67C
+$C6C0
+$007C
+$0C1C
+$CC7C
+$CCCC
+$0076
+$0000
+$C67C
+$C0FE
+$007C
+$663C
+$F860
+$6060
+$00F0
+$0000
+$CC76
+$7CCC
+$F80C
+$60E0
+$766C
+$6666
+$00E6
+$0018
+$1838
+$1818
+$003C
+$0006
+$0606
+$6606
+$3C66
+$60E0
+$6C66
+$6C78
+$00E6
+$1838
+$1818
+$1818
+$003C
+$0000
+$FEEC
+$D6D6
+$00D6
+$0000
+$66DC
+$6666
+$0066
+$0000
+$C67C
+$C6C6
+$007C
+$0000
+$66DC
+$7C66
+$F060
+$0000
+$CC76
+$7CCC
+$1E0C
+$0000
+$76DC
+$6060
+$00F0
+$0000
+$C07E
+$067C
+$00FC
+$3030
+$30FC
+$3630
+$001C
+$0000
+$CCCC
+$CCCC
+$0076
+$0000
+$C6C6
+$6CC6
+$0038
+$0000
+$D6C6
+$FED6
+$006C
+$0000
+$6CC6
+$6C38
+$00C6
+$0000
+$C6C6
+$7EC6
+$FC06
+$0000
+$4C7E
+$3218
+$007E
+$180E
+$7018
+$1818
+$000E
+$1818
+$1818
+$1818
+$0018
+$1870
+$0E18
+$7018
+$0000
+$DC76
+$0000
+$0000
+$0000
+$1000
+$6C38
+$C6C6
+$00FE
+
+
+
+:getChar
+
+:ITLloop2
+STRP SP
+PCURD KEY
+STR ITLchar
+
+BAZ ITLret
+
+#Break codes
+CMPI $F0
+BNE ITLnotbkey
+:ITLstall
+PCURD KEY
+BAZ ITLstall
+CMPI $12
+BEQ ITLshiftkb
+CMPI $59
+BNE ITLnotshiftkb
+:ITLshiftkb
+IMM $00
+STR ITLisshift
+JMP ITLloop2
+:ITLnotshiftkb
+CMPI $14
+BNE ITLnotctrlkb
+IMM $00
+STR ITLisctrl
+:ITLnotctrlkb
+JMP ITLloop2
+:ITLnotbkey
+
+CMPI $E0
+BEQ ITLloop2
+CMPI $E1
+BEQ ITLloop2
+
+CMPI $80
+BGEU ITLloop2
+
+CMPI $12
+BEQ ITLshiftk
+CMPI $59
+BNE ITLnotshiftk
+:ITLshiftk
+IMM $01
+STR ITLisshift
+JMP ITLloop2
+:ITLnotshiftk
+
+CMPI $14
+BNE ITLnotctrlk
+IMM $01
+STR ITLisctrl
+JMP ITLloop2
+:ITLnotctrlk
+
+LD ITLisshift
+BAZ ITLnotshift
+LD ITLchar
+IMMP ITLkeymapS
+ADDAP
+LDO $00
+JMP ITLctrlhandle
+
+:ITLnotshift
+LD ITLchar
+IMMP ITLkeymap
+ADDAP
+LDO $00
+
+:ITLctrlhandle
+STR ITLascii
+LD ITLisctrl
+BAZ ITLnotctrl
+LD ITLascii
+ANDI $1F
+STR ITLascii
+
+:ITLnotctrl
+LD ITLascii
+
+:ITLret
+LDP SP
+RET
+
+#data
+:ITLchar
+$00
+:ITLisshift
+$00
+:ITLisctrl
+$00
+:ITLascii
+$00
+:ITLkeymap
+#00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$09
+$60
+$00
+
+#10
+$00
+$1B
+$00
+$00
+$00
+$71
+$31
+$00
+$00
+$00
+$7A
+$73
+$61
+$77
+$32
+$00
+
+#20
+$00
+$63
+$78
+$64
+$65
+$34
+$33
+$00
+$00
+$20
+$76
+$66
+$74
+$72
+$35
+$00
+
+#30
+$00
+$6E
+$62
+$68
+$67
+$79
+$36
+$00
+$00
+$00
+$6D
+$6A
+$75
+$37
+$38
+$00
+
+#40
+$00
+$2C
+$6B
+$69
+$6F
+$30
+$39
+$00
+$00
+$2E
+$2F
+$6C
+$3B
+$70
+$2D
+$00
+
+#50
+$00
+$00
+$27
+$00
+$5B
+$3D
+$00
+$00
+$00
+$00
+$0D
+$5D
+$00
+$5C
+$00
+$00
+
+#60
+$00
+$00
+$00
+$00
+$00
+$00
+$08
+$00
+$00
+$00
+$00
+$1C
+$00
+$00
+$00
+$00
+
+#70
+$00
+$00
+$1F
+$00
+$1D
+$1E
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+
+:ITLkeymapS
+
+#00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$09
+$7E
+$00
+
+#10
+$00
+$1B
+$00
+$00
+$00
+$51
+$21
+$00
+$00
+$00
+$5A
+$53
+$41
+$57
+$40
+$00
+
+#20
+$00
+$43
+$58
+$44
+$45
+$24
+$23
+$00
+$00
+$20
+$56
+$46
+$54
+$52
+$25
+$00
+
+#30
+$00
+$4E
+$42
+$48
+$47
+$59
+$5E
+$00
+$00
+$00
+$4D
+$4A
+$55
+$26
+$2A
+$00
+
+#40
+$00
+$3C
+$4B
+$49
+$4F
+$29
+$28
+$00
+$00
+$3E
+$3F
+$4C
+$3A
+$50
+$5F
+$00
+
+#50
+$00
+$00
+$22
+$00
+$7B
+$2B
+$00
+$00
+$00
+$00
+$0D
+$7D
+$00
+$7C
+$00
+$00
+
+#60
+$00
+$00
+$00
+$00
+$00
+$00
+$08
+$00
+$00
+$00
+$00
+$1C
+$00
+$00
+$00
+$00
+
+#70
+$00
+$00
+$1F
+$00
+$1D
+$1E
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+$00
+
+:clearScreen
+IMM $00
+STR ITLcurX
+STR ITLcurY
+:ITLloop3
+IMM $00
+STR VGA
+LD ITLcurX
+STR VGA
+INC ITLcurX
+LD ITLcurY
+STR VGA
+IMM $00
+STR VGA
+LD ITLcurX
+STR VGA
+INC ITLcurX
+LD ITLcurY
+STR VGA
+IMM $00
+STR VGA
+LD ITLcurX
+STR VGA
+INC ITLcurX
+LD ITLcurY
+STR VGA
+IMM $00
+STR VGA
+LD ITLcurX
+STR VGA
+INC ITLcurX
+LD ITLcurY
+STR VGA
+ICC ITLcurY
+INCI
+CMPO $02
+BNE ITLloop3
+LDP SP
+RET
+
+:SDsendCmd
+LDO $02
+STR SDwaitTime
+STRP SP
+LDP SDcmd
+
+IMM $06
+STR SDi
+:SDlp0
+LDO $00
+INCP
+STR SD
+
+LD SDwaitTime
+STR SDj
+:SDlp1
+DECI
+BANZ SDlp1
+
+IMM $FF
+ADS SDi
+BANZ SDlp0
+
+:SDlp2
+IMM $FF
+STR SD
+
+LD SDwaitTime
+STR SDj
+:SDlp3
+DECI
+BANZ SDlp3
+
+LD SD
+CMPI $FF
+BEQ SDlp2
+
+LDP SP
+RET
+
+:SDcmd
+$00
+$00
+$00
+$00
+$00
+$00
+:SDi
+$00
+:SDj
+$00
+:SDwaitTime
+
+:SDinit
+IMM $00
+:ITLstall2
+INCI
+CMPI $E0
+BNE ITLstall2
+ADDIP $FFFC
+STR SP
+
+IMM $01
+STR SDflags
+
+IMM $40
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $95
+STR SD
+CALL SDslowstall
+
+:ITLstall4
+IMM $FF
+STR SD
+CALL SDslowstall
+LD SD
+STR debugtemp
+CALL STDbyteToHex
+LDO $02
+STR debugstring
+LDO $03
+STR debugstring 0001
+CALL ITLdebug
+IMM $00
+STR debugstring 0001
+LD debugtemp
+CMPI $01
+BNE ITLstall4
+
+:ITLinitloop
+
+IMM $00
+STR SDflags
+CALL SDslowstall
+IMM $01
+STR SDflags
+
+#CMD55
+IMM $77
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $65
+STR SD
+CALL SDslowstall
+:ITLstall5
+IMM $FF
+STR SD
+CALL SDslowstall
+LD SD
+CMPI $01
+BNE ITLstall5
+
+IMM $00
+STR SDflags
+CALL SDslowstall
+IMM $01
+STR SDflags
+
+#ACMD41
+IMM $69
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $77
+STR SD
+CALL SDslowstall
+:ITLstall6
+IMM $FF
+STR SD
+CALL SDslowstall
+LD SD
+CMPI $FF
+BEQ ITLstall6
+CMPI $00
+BEQ ITLready
+JMP ITLinitloop
+
+:ITLready
+
+IMM $02
+STR SDflags
+
+ADDIP $0004
+RET
+
+:SDslowstall
+IMM $00
+:ITLstall3
+INCI
+CMPI $16
+BNE ITLstall3
+RET
+
+:SDwrite
+LDP SP
+ADDIP $FFFA
+STRP SP
+IMM $03
+STR SDflags
+
+IMM $30
+STR debugstring
+CALL ITLdebug
+
+IMM $58
+STR SD
+NOP
+IMM $00
+STR SD
+NOP
+IMM $00
+STR SD
+NOP
+IMM $02
+STR SD
+NOP
+IMM $00
+STR SD
+NOP
+IMM $FF
+STR SD
+NOP
+:SDWstall
+IMM $FF
+STR SD
+LD SD
+STR debugtemp
+CALL STDbyteToHex
+LDO $02
+STR debugstring
+LDO $03
+STR debugstring 0001
+CALL ITLdebug
+IMM $00
+STR debugstring 0001
+LD debugtemp
+CMPI $00
+BNE SDWstall
+
+IMM $FF
+STR SD
+IMM $FE
+STR SD
+
+IMM $00
+STR SDcountlo
+STR SDcounthi
+
+STRP SP
+LDPO $02
+
+IMM $31
+STR debugstring
+CALL ITLdebug
+
+:SDwriteloop
+LDO $00
+STR debugtemp
+CALL STDbyteToHex
+LDO $02
+STR debugstring
+LDO $03
+STR debugstring 0001
+CALL ITLdebug
+IMM $00
+STR debugstring 0001
+LD debugtemp
+STR SD
+INCP
+IMM $01
+ADS SDcountlo
+IMM $00
+ACS SDcounthi
+CMPI $02
+BNE SDwriteloop
+
+IMM $FF
+STR SD
+STR SD
+STR SD
+
+IMM $32
+STR debugstring
+CALL ITLdebug
+
+:SDWstall2
+IMM $FF
+STR SD
+LD SD
+STR debugtemp
+CALL STDbyteToHex
+LDO $02
+STR debugstring
+LDO $03
+STR debugstring 0001
+CALL ITLdebug
+IMM $00
+STR debugstring 0001
+LD debugtemp
+CMPI $FF
+BNE SDWstall2
+
+IMM $02
+STR SDflags
+
+IMM $33
+STR debugstring
+CALL ITLdebug
+
+LDP SP
+ADDIP $0006
+RET
+
+:SDread
+
+LDP SP
+ADDIP $FFFA
+STRP SP
+
+IMM $03
+STR SDflags
+
+IMM $51
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $02
+STR SD
+CALL SDslowstall
+IMM $00
+STR SD
+CALL SDslowstall
+IMM $FF
+STR SD
+CALL SDslowstall
+:ITLstall7
+IMM $FF
+STR SD
+CALL SDslowstall
+LD SD
+STR debugtemp
+CALL STDbyteToHex
+LDO $02
+STR debugstring
+LDO $03
+STR debugstring 0001
+CALL ITLdebug
+IMM $00
+STR debugstring 0001
+LD debugtemp
+CMPI $00
+BNE ITLstall7
+
+:ITLstall8
+IMM $FF
+STR SD
+LD SD
+STR debugtemp
+CALL STDbyteToHex
+LDO $02
+STR debugstring
+LDO $03
+STR debugstring 0001
+CALL ITLdebug
+IMM $00
+STR debugstring 0001
+LD debugtemp
+CMPI $FE
+BNE ITLstall8
+
+IMM $00
+STR SDcountlo
+STR SDcounthi
+
+STRP SP
+LDPO $02
+
+:SDreadloop
+IMM $FF
+STR SD
+LD SD
+STRO $00
+INCP
+IMM $01
+ADS SDcountlo
+IMM $00
+ACS SDcounthi
+CMPI $02
+BNE SDreadloop
+
+IMM $FF
+STR SD
+STR SD
+
+IMM $02
+STR SDflags
+
+LDP SP
+ADDIP $0006
+RET
+
+:SDcountlo
+$00
+:SDcounthi
+$00
+:SDbufferlo
+$00
+:SDbufferhi
+$00
+
+:ITLdebug
+ADDIP $FFFA
+STRP SP
+IMM $01
+STR debugX
+IMM $08
+STRO $02
+CALL clearScreen
+:ITLdebugloop
+LDP debugP
+LDO $00
+BAZ ITLwait
+INCP
+STRP debugP
+LDP SP
+STRO $04
+LD debugX
+STRO $02
+LD debugY
+STRO $03
+CALL printChar
+IMM $08
+ADS debugX
+JMP ITLdebugloop
+:ITLwait
+LDP SP
+CALL getChar
+CMPI $0D
+BNE ITLwait
+IMMP debugstring
+STRP debugP
+LDP SP
+ADDIP $0006
+RET
+
+:debugP
+@debugstring
+:debugstring
++0020
+:debugX
+$00
+:debugY
+$00
+:debugtemp
+$00
+
+:STDbyteToHex
+STR STDchar
+ANDI $0F
+CMPI $0A
+BLTU STDisNumLo
+ADDI $07
+:STDisNumLo
+ADDI $30
+STRO $03
+LD STDchar
+SRI
+SRI
+SRI
+SRI
+ANDI $0F
+CMPI $0A
+BLTU STDisNumHi
+ADDI $07
+:STDisNumHi
+ADDI $30
+STRO $02
+RET
+
+:STDchar
+$00
