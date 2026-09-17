@@ -1,0 +1,218 @@
+&../ROM/keymap.s
+.VGA $2000
+
+:VGAprintChar
+#prints the given char in white from an 8x8 ASCII font
+#frame: 6
+#args: 2=x, 3=y, 4=char
+
+LDO $02
+STR VGAcurX
+LDO $03
+STR VGAcurY
+
+#calculates ROMfont offset, sets P to char
+LDO $04
+SLO $04
+IMM $00
+ICCO $05
+LDO $04
+SLO $04
+LDO $05
+SLCO $05
+LDO $04
+SLO $04
+LDO $05
+SLCO $05
+STRP SP
+IMMP ROMfont
+STRP VGAcharPlo
+LDP SP
+LDO $04
+ADS VGAcharPlo
+LDO $05
+ACS VGAcharPhi
+LDP VGAcharPlo
+
+LD VGAcurY
+ADDI $08
+STR VGAYstop
+
+#loops over each row
+:VGAloop1
+LD VGAYstop
+CMP VGAcurY
+BEQ VGAend1
+
+#each block is a pixel
+LDO $00
+CMP&I $80
+BEQ VGAnoPix1
+IMM $FF
+STR VGA
+LD VGAcurX
+STR VGA
+LD VGAcurY
+STR VGA
+:VGAnoPix1
+IMM $01
+ADS VGAcurX
+
+LDO $00
+CMP&I $40
+BEQ VGAnoPix2
+IMM $FF
+STR VGA
+LD VGAcurX
+STR VGA
+LD VGAcurY
+STR VGA
+:VGAnoPix2
+IMM $01
+ADS VGAcurX
+
+LDO $00
+CMP&I $20
+BEQ VGAnoPix3
+IMM $FF
+STR VGA
+LD VGAcurX
+STR VGA
+LD VGAcurY
+STR VGA
+:VGAnoPix3
+IMM $01
+ADS VGAcurX
+
+LDO $00
+CMP&I $10
+BEQ VGAnoPix4
+IMM $FF
+STR VGA
+LD VGAcurX
+STR VGA
+LD VGAcurY
+STR VGA
+:VGAnoPix4
+IMM $01
+ADS VGAcurX
+
+LDO $00
+CMP&I $08
+BEQ VGAnoPix5
+IMM $FF
+STR VGA
+LD VGAcurX
+STR VGA
+LD VGAcurY
+STR VGA
+:VGAnoPix5
+IMM $01
+ADS VGAcurX
+
+LDO $00
+CMP&I $04
+BEQ VGAnoPix6
+IMM $FF
+STR VGA
+LD VGAcurX
+STR VGA
+LD VGAcurY
+STR VGA
+:VGAnoPix6
+IMM $01
+ADS VGAcurX
+
+LDO $00
+CMP&I $02
+BEQ VGAnoPix7
+IMM $FF
+STR VGA
+LD VGAcurX
+STR VGA
+LD VGAcurY
+STR VGA
+:VGAnoPix7
+IMM $01
+ADS VGAcurX
+
+LDO $00
+CMP&I $01
+BEQ VGAnoPix8
+IMM $FF
+STR VGA
+LD VGAcurX
+STR VGA
+LD VGAcurY
+STR VGA
+:VGAnoPix8
+
+IMM $F9
+ADS VGAcurX
+IMM $01
+ADS VGAcurY
+INCP
+JMP VGAloop1
+
+:VGAend1
+IMM $F8
+ADS VGAcurY
+LDP SP
+RET
+
+:VGAclearScreen
+#fills screen with black up to row Y
+#frame: 3
+#args: 2=Y
+
+IMM $00
+STR VGAcurX
+STR VGAcurY
+:VGAloop3
+IMM $00
+STR VGA
+LD VGAcurX
+STR VGA
+INC VGAcurX
+LD VGAcurY
+STR VGA
+IMM $00
+STR VGA
+LD VGAcurX
+STR VGA
+INC VGAcurX
+LD VGAcurY
+STR VGA
+IMM $00
+STR VGA
+LD VGAcurX
+STR VGA
+INC VGAcurX
+LD VGAcurY
+STR VGA
+IMM $00
+STR VGA
+LD VGAcurX
+STR VGA
+INC VGAcurX
+LD VGAcurY
+STR VGA
+ICC VGAcurY
+INCI
+CMPO $02
+BNE VGAloop3
+LDP SP
+RET
+
+#data
+:VGAcurX
+$00
+:VGAcurY
+$00
+:VGAYstop
+$00
+:VGAcharPlo
+$00
+:VGAcharPhi
+$00
+

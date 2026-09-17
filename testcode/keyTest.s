@@ -1,4 +1,4 @@
-&../testcode/iotestlib.asm
+&iotestlib.s
 
 .SP $FFFA
 

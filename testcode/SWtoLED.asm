@@ -1,7 +1,0 @@
-:loop
-LDAD
-$2000
-STRAD
-$2001
-JMPD
-$loop
