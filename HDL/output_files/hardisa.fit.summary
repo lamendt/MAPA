@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Sep 15 22:49:44 2026
+Fitter Status : Successful - Wed Sep 16 18:29:31 2026
 Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 Revision Name : hardisa
 Top-level Entity Name : top
 Family : MAX 10
 Device : 10M50DAF484C6GES
 Timing Models : Preliminary
-Total logic elements : 1,935 / 49,760 ( 4 % )
-    Total combinational functions : 1,890 / 49,760 ( 4 % )
+Total logic elements : 1,926 / 49,760 ( 4 % )
+    Total combinational functions : 1,884 / 49,760 ( 4 % )
     Dedicated logic registers : 235 / 49,760 ( < 1 % )
 Total registers : 235
 Total pins : 63 / 360 ( 18 % )

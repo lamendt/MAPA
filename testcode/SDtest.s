@@ -21,15 +21,14 @@ IMM $02
 STRO $05
 CALL SDwrite
 
-IMM debugstring
+IMM DBGstring
 STRO $02
-IMM ^debugstring
+IMM ^DBGstring
 STRO $03
 CALL SDread
-CALL ITLdebug
+CALL DBGprint
 
 :buffer
-"Hola Amor! \"\\
-I love you!"
+"Hola Amor! \"\\\nI love you!"
 +0200
 

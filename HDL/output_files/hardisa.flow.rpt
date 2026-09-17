@@ -1,5 +1,5 @@
 Flow report for hardisa
-Tue Sep 15 22:49:56 2026
+Wed Sep 16 18:29:43 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue Sep 15 22:49:56 2026           ;
+; Flow Status                        ; Successful - Wed Sep 16 18:29:43 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; hardisa                                         ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; MAX 10                                          ;
 ; Device                             ; 10M50DAF484C6GES                                ;
 ; Timing Models                      ; Preliminary                                     ;
-; Total logic elements               ; 1,935 / 49,760 ( 4 % )                          ;
-;     Total combinational functions  ; 1,890 / 49,760 ( 4 % )                          ;
+; Total logic elements               ; 1,926 / 49,760 ( 4 % )                          ;
+;     Total combinational functions  ; 1,884 / 49,760 ( 4 % )                          ;
 ;     Dedicated logic registers      ; 235 / 49,760 ( < 1 % )                          ;
 ; Total registers                    ; 235                                             ;
 ; Total pins                         ; 63 / 360 ( 18 % )                               ;
@@ -67,7 +67,7 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/15/2026 22:48:41 ;
+; Start date & time ; 09/16/2026 18:28:43 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; hardisa             ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ on the Quartus Prime software download page.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 49410868187394.178953772114176         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 49410868187394.178960852306084         ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -118,12 +118,12 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:49     ; 1.0                     ; 4911 MB             ; 00:00:52                           ;
-; Fitter               ; 00:00:13     ; 1.9                     ; 6671 MB             ; 00:00:20                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4753 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:04     ; 2.9                     ; 5028 MB             ; 00:00:07                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4688 MB             ; 00:00:01                           ;
-; Total                ; 00:01:10     ; --                      ; --                  ; 00:01:23                           ;
+; Analysis & Synthesis ; 00:00:33     ; 1.0                     ; 4903 MB             ; 00:00:27                           ;
+; Fitter               ; 00:00:15     ; 2.0                     ; 6663 MB             ; 00:00:19                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4749 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:03     ; 2.8                     ; 5019 MB             ; 00:00:06                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4697 MB             ; 00:00:01                           ;
+; Total                ; 00:00:55     ; --                      ; --                  ; 00:00:56                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

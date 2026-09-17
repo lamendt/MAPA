@@ -1,5 +1,5 @@
 EDA Netlist Writer report for hardisa
-Tue Sep 15 22:49:56 2026
+Wed Sep 16 18:29:43 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -37,7 +37,7 @@ on the Quartus Prime software download page.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Sep 15 22:49:56 2026 ;
+; EDA Netlist Writer Status ; Successful - Wed Sep 16 18:29:43 2026 ;
 ; Revision Name             ; hardisa                               ;
 ; Top-level Entity Name     ; top                                   ;
 ; Family                    ; MAX 10                                ;
@@ -81,13 +81,13 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Sep 15 22:49:55 2026
+    Info: Processing started: Wed Sep 16 18:29:42 2026
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off hardisa -c hardisa
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file hardisa.svo in folder "C:/Users/levia/Documents/hardisa/HDL/simulation/questa/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4688 megabytes
-    Info: Processing ended: Tue Sep 15 22:49:56 2026
+    Info: Peak virtual memory: 4697 megabytes
+    Info: Processing ended: Wed Sep 16 18:29:43 2026
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

@@ -1,5 +1,5 @@
-&VGA.s
-&PS2.s
+&../lib/VGA.s
+&../lib/PS2.s
 
 :DBGprint
 #prints out the string at DBGstring on a single line and waits until enter key is pressed
@@ -11,7 +11,7 @@ IMM $01
 STR DBGx
 IMM $08
 STRO $02
-CALL VGAclearScreen
+CALL VGAclrScreen
 :DBGlp
 LDP DBGp
 LDO $00

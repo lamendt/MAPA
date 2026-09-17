@@ -185,6 +185,7 @@ addr addrtobin(byte *p) {
 
 int main(int argc, char *argv[]) {
   char *infilenames[16] = {};
+  int nextfilenum = 0;
 
   infilenames[0] = "../testcode/keyTest.s";
   char *outfilename = "../testcode/keyTest.hex";
@@ -240,9 +241,9 @@ int main(int argc, char *argv[]) {
         symbtabp->location = addrtobin(&(line_buffer[i + 1]));
         symbtabp++;
       } else if (*line_buffer == '&') {
-        infilenames[filenum + 1] = malloc(wordLen(line_buffer) - 1);
-        memocpy((byte *)line_buffer + 1, infilenames[filenum + 1]);
-        infilenames[filenum + 1][wordLen(line_buffer) - 1] = '\0';
+        infilenames[++nextfilenum] = malloc(wordLen(line_buffer) - 1);
+        memocpy((byte *)line_buffer + 1, infilenames[nextfilenum]);
+        infilenames[nextfilenum][wordLen(line_buffer) - 1] = '\0';
       } else if (*line_buffer == '#' || *line_buffer == '\0' ||
                  *line_buffer == '\n') {
         continue;
@@ -354,13 +355,13 @@ int main(int argc, char *argv[]) {
             case '\\':
               fprintf(outfile, "%02X\n", '\\');
               break;
-            case '\"':
-              fprintf(outfile, "%02X\n", '\"');
+            case '"':
+              fprintf(outfile, "%02X\n", '"');
               break;
-            case '\n':
+            case 'n':
               fprintf(outfile, "%02X\n", '\n');
               break;
-            case '\0':
+            case '0':
               fprintf(outfile, "%02X\n", '\0');
               break;
             default:

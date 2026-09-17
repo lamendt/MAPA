@@ -237,23 +237,21 @@ always_ff @(posedge SPIclk) begin
 		end*/
 		if (clkcnt == 0) begin
 			risen <= 0;
+			fallen <= 1;
 			CLKout <= 1;
 		end
-		else if (clkcnt == 7'h03) begin
-			fallen <= 1;
-		end
-		else if (clkcnt == 7'h04) begin
+		else if (clkcnt == 7'h01) begin
 			fallen <= 0;
 			CLKout <= 0;
 		end
-		else if (clkcnt == 7'h07) begin
+		else if (clkcnt == 7'h08) begin
 			risen <= 1;
 		end
 		else begin
 			fallen <= 0;
 			risen <= 0;
 		end
-		if (clkcnt == 7'h0f)
+		if (clkcnt == 7'h08)
 				clkcnt <= 0;
 		else
 				clkcnt <= clkcnt + 1;

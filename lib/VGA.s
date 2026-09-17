@@ -160,7 +160,7 @@ ADS VGAcurY
 LDP SP
 RET
 
-:VGAclearScreen
+:VGAclrScreen
 #fills screen with black up to row Y
 #frame: 3
 #args: 2=Y

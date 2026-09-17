@@ -1,5 +1,5 @@
 Timing Analyzer report for hardisa
-Tue Sep 15 22:49:54 2026
+Wed Sep 16 18:29:41 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -93,15 +93,15 @@ on the Quartus Prime software download page.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 2.96        ;
+; Average used               ; 2.78        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  15.6%      ;
-;     Processor 3            ;  15.0%      ;
-;     Processor 4            ;  14.9%      ;
-;     Processors 5-16        ;  12.5%      ;
+;     Processor 2            ;  15.8%      ;
+;     Processor 3            ;  13.7%      ;
+;     Processor 4            ;  13.5%      ;
+;     Processors 5-16        ;  11.3%      ;
 +----------------------------+-------------+
 
 
@@ -110,7 +110,7 @@ on the Quartus Prime software download page.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; de10_lite.sdc ; OK     ; Tue Sep 15 22:49:51 2026 ;
+; de10_lite.sdc ; OK     ; Wed Sep 16 18:29:38 2026 ;
 +---------------+--------+--------------------------+
 
 
@@ -131,9 +131,9 @@ on the Quartus Prime software download page.
 +-----------+-----------------+-------------------------------------------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name                                      ; Note ;
 +-----------+-----------------+-------------------------------------------------+------+
-; 31.09 MHz ; 31.09 MHz       ; pll|altpll_component|auto_generated|pll1|clk[0] ;      ;
-; 51.47 MHz ; 51.47 MHz       ; pll|altpll_component|auto_generated|pll1|clk[1] ;      ;
-; 79.15 MHz ; 79.15 MHz       ; pll|altpll_component|auto_generated|pll1|clk[2] ;      ;
+; 34.39 MHz ; 34.39 MHz       ; pll|altpll_component|auto_generated|pll1|clk[0] ;      ;
+; 56.75 MHz ; 56.75 MHz       ; pll|altpll_component|auto_generated|pll1|clk[1] ;      ;
+; 89.41 MHz ; 89.41 MHz       ; pll|altpll_component|auto_generated|pll1|clk[2] ;      ;
 +-----------+-----------------+-------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -143,9 +143,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------+--------+---------------+
 ; Clock                                           ; Slack  ; End Point TNS ;
 +-------------------------------------------------+--------+---------------+
-; pll|altpll_component|auto_generated|pll1|clk[2] ; 3.671  ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[1] ; 4.922  ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[0] ; 25.363 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; 5.198  ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; 6.492  ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[0] ; 26.734 ; 0.000         ;
 +-------------------------------------------------+--------+---------------+
 
 
@@ -154,9 +154,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------+-------+---------------+
 ; Clock                                           ; Slack ; End Point TNS ;
 +-------------------------------------------------+-------+---------------+
-; pll|altpll_component|auto_generated|pll1|clk[1] ; 0.315 ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[2] ; 0.420 ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[0] ; 0.433 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; 0.318 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; 0.419 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[0] ; 0.436 ; 0.000         ;
 +-------------------------------------------------+-------+---------------+
 
 
@@ -178,9 +178,9 @@ No paths to report.
 ; Clock                                           ; Slack  ; End Point TNS ;
 +-------------------------------------------------+--------+---------------+
 ; MAX10_CLK1_50                                   ; 9.775  ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[2] ; 19.684 ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[1] ; 99.650 ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[0] ; 99.753 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; 19.674 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; 99.649 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[0] ; 99.754 ; 0.000         ;
 +-------------------------------------------------+--------+---------------+
 
 
@@ -191,7 +191,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 1
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 395.545 ns
+Worst Case Available Settling Time: 396.076 ns
 
 
 
@@ -201,9 +201,9 @@ Worst Case Available Settling Time: 395.545 ns
 +-----------+-----------------+-------------------------------------------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name                                      ; Note ;
 +-----------+-----------------+-------------------------------------------------+------+
-; 34.14 MHz ; 34.14 MHz       ; pll|altpll_component|auto_generated|pll1|clk[0] ;      ;
-; 56.69 MHz ; 56.69 MHz       ; pll|altpll_component|auto_generated|pll1|clk[1] ;      ;
-; 86.35 MHz ; 86.35 MHz       ; pll|altpll_component|auto_generated|pll1|clk[2] ;      ;
+; 37.8 MHz  ; 37.8 MHz        ; pll|altpll_component|auto_generated|pll1|clk[0] ;      ;
+; 62.49 MHz ; 62.49 MHz       ; pll|altpll_component|auto_generated|pll1|clk[1] ;      ;
+; 98.08 MHz ; 98.08 MHz       ; pll|altpll_component|auto_generated|pll1|clk[2] ;      ;
 +-----------+-----------------+-------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -213,9 +213,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------+--------+---------------+
 ; Clock                                           ; Slack  ; End Point TNS ;
 +-------------------------------------------------+--------+---------------+
-; pll|altpll_component|auto_generated|pll1|clk[2] ; 5.171  ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[1] ; 6.363  ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[0] ; 26.726 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; 6.490  ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; 7.788  ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[0] ; 27.907 ; 0.000         ;
 +-------------------------------------------------+--------+---------------+
 
 
@@ -224,9 +224,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------+-------+---------------+
 ; Clock                                           ; Slack ; End Point TNS ;
 +-------------------------------------------------+-------+---------------+
-; pll|altpll_component|auto_generated|pll1|clk[1] ; 0.274 ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[2] ; 0.347 ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[0] ; 0.360 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; 0.272 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; 0.346 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[0] ; 0.364 ; 0.000         ;
 +-------------------------------------------------+-------+---------------+
 
 
@@ -248,9 +248,9 @@ No paths to report.
 ; Clock                                           ; Slack  ; End Point TNS ;
 +-------------------------------------------------+--------+---------------+
 ; MAX10_CLK1_50                                   ; 9.783  ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[2] ; 19.697 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; 19.691 ; 0.000         ;
 ; pll|altpll_component|auto_generated|pll1|clk[1] ; 99.670 ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[0] ; 99.712 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[0] ; 99.713 ; 0.000         ;
 +-------------------------------------------------+--------+---------------+
 
 
@@ -261,7 +261,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 1
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 395.897 ns
+Worst Case Available Settling Time: 396.366 ns
 
 
 
@@ -271,9 +271,9 @@ Worst Case Available Settling Time: 395.897 ns
 +-------------------------------------------------+--------+---------------+
 ; Clock                                           ; Slack  ; End Point TNS ;
 +-------------------------------------------------+--------+---------------+
-; pll|altpll_component|auto_generated|pll1|clk[2] ; 12.018 ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[1] ; 12.557 ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[0] ; 32.900 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; 12.753 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; 13.356 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[0] ; 33.476 ; 0.000         ;
 +-------------------------------------------------+--------+---------------+
 
 
@@ -282,9 +282,9 @@ Worst Case Available Settling Time: 395.897 ns
 +-------------------------------------------------+-------+---------------+
 ; Clock                                           ; Slack ; End Point TNS ;
 +-------------------------------------------------+-------+---------------+
-; pll|altpll_component|auto_generated|pll1|clk[1] ; 0.158 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; 0.161 ; 0.000         ;
 ; pll|altpll_component|auto_generated|pll1|clk[2] ; 0.207 ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[0] ; 0.212 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[0] ; 0.213 ; 0.000         ;
 +-------------------------------------------------+-------+---------------+
 
 
@@ -306,9 +306,9 @@ No paths to report.
 ; Clock                                           ; Slack  ; End Point TNS ;
 +-------------------------------------------------+--------+---------------+
 ; MAX10_CLK1_50                                   ; 9.530  ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[2] ; 19.721 ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[1] ; 99.711 ; 0.000         ;
-; pll|altpll_component|auto_generated|pll1|clk[0] ; 99.800 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; 19.719 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; 99.710 ; 0.000         ;
+; pll|altpll_component|auto_generated|pll1|clk[0] ; 99.799 ; 0.000         ;
 +-------------------------------------------------+--------+---------------+
 
 
@@ -319,7 +319,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 1
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 397.724 ns
+Worst Case Available Settling Time: 397.976 ns
 
 
 
@@ -329,11 +329,11 @@ Worst Case Available Settling Time: 397.724 ns
 +--------------------------------------------------+--------+-------+----------+---------+---------------------+
 ; Clock                                            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +--------------------------------------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack                                 ; 3.671  ; 0.158 ; N/A      ; N/A     ; 9.530               ;
+; Worst-case Slack                                 ; 5.198  ; 0.161 ; N/A      ; N/A     ; 9.530               ;
 ;  MAX10_CLK1_50                                   ; N/A    ; N/A   ; N/A      ; N/A     ; 9.530               ;
-;  pll|altpll_component|auto_generated|pll1|clk[0] ; 25.363 ; 0.212 ; N/A      ; N/A     ; 99.712              ;
-;  pll|altpll_component|auto_generated|pll1|clk[1] ; 4.922  ; 0.158 ; N/A      ; N/A     ; 99.650              ;
-;  pll|altpll_component|auto_generated|pll1|clk[2] ; 3.671  ; 0.207 ; N/A      ; N/A     ; 19.684              ;
+;  pll|altpll_component|auto_generated|pll1|clk[0] ; 26.734 ; 0.213 ; N/A      ; N/A     ; 99.713              ;
+;  pll|altpll_component|auto_generated|pll1|clk[1] ; 6.492  ; 0.161 ; N/A      ; N/A     ; 99.649              ;
+;  pll|altpll_component|auto_generated|pll1|clk[2] ; 5.198  ; 0.207 ; N/A      ; N/A     ; 19.674              ;
 ; Design-wide TNS                                  ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  MAX10_CLK1_50                                   ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
 ;  pll|altpll_component|auto_generated|pll1|clk[0] ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
@@ -677,15 +677,15 @@ Worst Case Available Settling Time: 397.724 ns
 +-------------------------------------------------+-------------------------------------------------+--------------+----------+----------+----------+
 ; From Clock                                      ; To Clock                                        ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------+-------------------------------------------------+--------------+----------+----------+----------+
-; pll|altpll_component|auto_generated|pll1|clk[0] ; pll|altpll_component|auto_generated|pll1|clk[0] ; 474904874    ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[1] ; pll|altpll_component|auto_generated|pll1|clk[0] ; 27528        ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[2] ; pll|altpll_component|auto_generated|pll1|clk[0] ; 6882         ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[0] ; pll|altpll_component|auto_generated|pll1|clk[0] ; 504055365    ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; pll|altpll_component|auto_generated|pll1|clk[0] ; 28848        ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; pll|altpll_component|auto_generated|pll1|clk[0] ; 7212         ; 0        ; 0        ; 0        ;
 ; pll|altpll_component|auto_generated|pll1|clk[0] ; pll|altpll_component|auto_generated|pll1|clk[1] ; > 2147483647 ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[1] ; pll|altpll_component|auto_generated|pll1|clk[1] ; 491895       ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[2] ; pll|altpll_component|auto_generated|pll1|clk[1] ; 122652       ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[0] ; pll|altpll_component|auto_generated|pll1|clk[2] ; 144356679    ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[1] ; pll|altpll_component|auto_generated|pll1|clk[2] ; 8172         ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[2] ; pll|altpll_component|auto_generated|pll1|clk[2] ; 99892        ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; pll|altpll_component|auto_generated|pll1|clk[1] ; 518967       ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; pll|altpll_component|auto_generated|pll1|clk[1] ; 129420       ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[0] ; pll|altpll_component|auto_generated|pll1|clk[2] ; 154009280    ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; pll|altpll_component|auto_generated|pll1|clk[2] ; 8604         ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; pll|altpll_component|auto_generated|pll1|clk[2] ; 99937        ; 0        ; 0        ; 0        ;
 +-------------------------------------------------+-------------------------------------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -695,15 +695,15 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------------------------------------+-------------------------------------------------+--------------+----------+----------+----------+
 ; From Clock                                      ; To Clock                                        ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------+-------------------------------------------------+--------------+----------+----------+----------+
-; pll|altpll_component|auto_generated|pll1|clk[0] ; pll|altpll_component|auto_generated|pll1|clk[0] ; 474904874    ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[1] ; pll|altpll_component|auto_generated|pll1|clk[0] ; 27528        ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[2] ; pll|altpll_component|auto_generated|pll1|clk[0] ; 6882         ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[0] ; pll|altpll_component|auto_generated|pll1|clk[0] ; 504055365    ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; pll|altpll_component|auto_generated|pll1|clk[0] ; 28848        ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; pll|altpll_component|auto_generated|pll1|clk[0] ; 7212         ; 0        ; 0        ; 0        ;
 ; pll|altpll_component|auto_generated|pll1|clk[0] ; pll|altpll_component|auto_generated|pll1|clk[1] ; > 2147483647 ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[1] ; pll|altpll_component|auto_generated|pll1|clk[1] ; 491895       ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[2] ; pll|altpll_component|auto_generated|pll1|clk[1] ; 122652       ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[0] ; pll|altpll_component|auto_generated|pll1|clk[2] ; 144356679    ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[1] ; pll|altpll_component|auto_generated|pll1|clk[2] ; 8172         ; 0        ; 0        ; 0        ;
-; pll|altpll_component|auto_generated|pll1|clk[2] ; pll|altpll_component|auto_generated|pll1|clk[2] ; 99892        ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; pll|altpll_component|auto_generated|pll1|clk[1] ; 518967       ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; pll|altpll_component|auto_generated|pll1|clk[1] ; 129420       ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[0] ; pll|altpll_component|auto_generated|pll1|clk[2] ; 154009280    ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[1] ; pll|altpll_component|auto_generated|pll1|clk[2] ; 8604         ; 0        ; 0        ; 0        ;
+; pll|altpll_component|auto_generated|pll1|clk[2] ; pll|altpll_component|auto_generated|pll1|clk[2] ; 99937        ; 0        ; 0        ; 0        ;
 +-------------------------------------------------+-------------------------------------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -842,7 +842,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Sep 15 22:49:50 2026
+    Info: Processing started: Wed Sep 16 18:29:37 2026
 Info: Command: quartus_sta hardisa -c hardisa
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -859,42 +859,42 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
-Info (332146): Worst-case setup slack is 3.671
+Info (332146): Worst-case setup slack is 5.198
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.671               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):     4.922               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
-    Info (332119):    25.363               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
-Info (332146): Worst-case hold slack is 0.315
+    Info (332119):     5.198               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):     6.492               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):    26.734               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
+Info (332146): Worst-case hold slack is 0.318
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.315               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
-    Info (332119):     0.420               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):     0.433               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):     0.318               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):     0.419               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):     0.436               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 9.775
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     9.775               0.000 MAX10_CLK1_50 
-    Info (332119):    19.684               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):    99.650               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
-    Info (332119):    99.753               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    19.674               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):    99.649               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):    99.754               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
 Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 1
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 395.545 ns
+    Info (332114): Worst Case Available Settling Time: 396.076 ns
     Info (332114): 
-Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 3.671
+Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 5.198
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[2]}]
     Info (332115): -setup
     Info (332115): -stdout
-Info (332115): Path #1: Setup slack is 3.671 
+Info (332115): Path #1: Setup slack is 5.198 
     Info (332115): ===================================================================
     Info (332115): From Node    : ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated|ram_block1a24~porta_we_reg
-    Info (332115): To Node      : PCU:PCU|VGA:VGAcontroller|flags[6]
+    Info (332115): To Node      : PCU:PCU|SD:SDcontroller|flags[6]
     Info (332115): Launch Clock : pll|altpll_component|auto_generated|pll1|clk[1]
     Info (332115): Latch Clock  : pll|altpll_component|auto_generated|pll1|clk[2]
     Info (332115): 
@@ -903,74 +903,72 @@ Info (332115): Path #1: Setup slack is 3.671
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    100.000    100.000           launch edge time
-    Info (332115):    100.454      0.454  R        clock network delay
-    Info (332115):    100.723      0.269     uTco  ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated|ram_block1a24~porta_we_reg
-    Info (332115):    102.997      2.274 RF  CELL  RAM|RAM_rtl_0|auto_generated|ram_block1a24|portadataout[0]
-    Info (332115):    105.129      2.132 FF    IC  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~0|dataa
-    Info (332115):    105.454      0.325 FF  CELL  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~0|combout
-    Info (332115):    105.677      0.223 FF    IC  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~1|datad
-    Info (332115):    105.776      0.099 FF  CELL  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~1|combout
-    Info (332115):    105.997      0.221 FF    IC  Mux7~2|datad
-    Info (332115):    106.096      0.099 FF  CELL  Mux7~2|combout
-    Info (332115):    107.035      0.939 FF    IC  Mux7|datab
-    Info (332115):    107.372      0.337 FF  CELL  Mux7|combout
-    Info (332115):    107.740      0.368 FF    IC  ALUb[0]~1|datad
-    Info (332115):    107.839      0.099 FF  CELL  ALUb[0]~1|combout
-    Info (332115):    108.064      0.225 FF    IC  ALUb[0]~2|datac
-    Info (332115):    108.291      0.227 FF  CELL  ALUb[0]~2|combout
-    Info (332115):    108.576      0.285 FF    IC  ALU|Add0~0|datab
-    Info (332115):    108.958      0.382 FF  CELL  ALU|Add0~0|cout
-    Info (332115):    108.958      0.000 FF    IC  ALU|Add0~2|cin
-    Info (332115):    109.005      0.047 FR  CELL  ALU|Add0~2|cout
-    Info (332115):    109.005      0.000 RR    IC  ALU|Add0~4|cin
-    Info (332115):    109.052      0.047 RF  CELL  ALU|Add0~4|cout
-    Info (332115):    109.052      0.000 FF    IC  ALU|Add0~6|cin
-    Info (332115):    109.099      0.047 FR  CELL  ALU|Add0~6|cout
-    Info (332115):    109.099      0.000 RR    IC  ALU|Add0~8|cin
-    Info (332115):    109.570      0.471 RF  CELL  ALU|Add0~8|combout
-    Info (332115):    110.229      0.659 FF    IC  ALU|Add1~8|dataa
-    Info (332115):    110.608      0.379 FF  CELL  ALU|Add1~8|cout
-    Info (332115):    110.608      0.000 FF    IC  ALU|Add1~10|cin
-    Info (332115):    110.655      0.047 FR  CELL  ALU|Add1~10|cout
-    Info (332115):    110.655      0.000 RR    IC  ALU|Add1~12|cin
-    Info (332115):    111.126      0.471 RF  CELL  ALU|Add1~12|combout
-    Info (332115):    111.391      0.265 FF    IC  ALU|Selector2~9|datab
-    Info (332115):    111.706      0.315 FF  CELL  ALU|Selector2~9|combout
-    Info (332115):    111.967      0.261 FF    IC  ALU|Selector2~10|datab
-    Info (332115):    112.304      0.337 FF  CELL  ALU|Selector2~10|combout
-    Info (332115):    113.451      1.147 FF    IC  ALU|Selector2~16|datac
-    Info (332115):    113.678      0.227 FF  CELL  ALU|Selector2~16|combout
-    Info (332115):    113.948      0.270 FF    IC  ALU|Selector2~12|dataa
-    Info (332115):    114.270      0.322 FF  CELL  ALU|Selector2~12|combout
-    Info (332115):    114.543      0.273 FF    IC  ALU|Selector2~13|dataa
-    Info (332115):    114.865      0.322 FF  CELL  ALU|Selector2~13|combout
-    Info (332115):    115.104      0.239 FF    IC  ALU|Selector2~14|datad
-    Info (332115):    115.203      0.099 FF  CELL  ALU|Selector2~14|combout
-    Info (332115):    115.917      0.714 FF    IC  PCU|VGAcontroller|flags[6]|asdata
-    Info (332115):    116.286      0.369 FF  CELL  PCU:PCU|VGA:VGAcontroller|flags[6]
+    Info (332115):    100.316      0.316  R        clock network delay
+    Info (332115):    100.585      0.269     uTco  ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated|ram_block1a24~porta_we_reg
+    Info (332115):    102.859      2.274 RF  CELL  RAM|RAM_rtl_0|auto_generated|ram_block1a24|portadataout[0]
+    Info (332115):    104.616      1.757 FF    IC  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~0|dataa
+    Info (332115):    104.941      0.325 FF  CELL  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~0|combout
+    Info (332115):    105.205      0.264 FF    IC  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~1|datab
+    Info (332115):    105.542      0.337 FF  CELL  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~1|combout
+    Info (332115):    105.815      0.273 FF    IC  Mux7~2|dataa
+    Info (332115):    106.140      0.325 FF  CELL  Mux7~2|combout
+    Info (332115):    107.107      0.967 FF    IC  Mux7|datac
+    Info (332115):    107.334      0.227 FF  CELL  Mux7|combout
+    Info (332115):    107.575      0.241 FF    IC  ALUb[0]~1|datad
+    Info (332115):    107.674      0.099 FF  CELL  ALUb[0]~1|combout
+    Info (332115):    107.899      0.225 FF    IC  ALUb[0]~2|datac
+    Info (332115):    108.126      0.227 FF  CELL  ALUb[0]~2|combout
+    Info (332115):    108.415      0.289 FF    IC  ALU|Add0~0|dataa
+    Info (332115):    108.794      0.379 FF  CELL  ALU|Add0~0|cout
+    Info (332115):    108.794      0.000 FF    IC  ALU|Add0~2|cin
+    Info (332115):    108.841      0.047 FR  CELL  ALU|Add0~2|cout
+    Info (332115):    108.841      0.000 RR    IC  ALU|Add0~4|cin
+    Info (332115):    109.312      0.471 RF  CELL  ALU|Add0~4|combout
+    Info (332115):    110.220      0.908 FF    IC  ALU|Add1~4|dataa
+    Info (332115):    110.599      0.379 FF  CELL  ALU|Add1~4|cout
+    Info (332115):    110.599      0.000 FF    IC  ALU|Add1~6|cin
+    Info (332115):    110.646      0.047 FR  CELL  ALU|Add1~6|cout
+    Info (332115):    110.646      0.000 RR    IC  ALU|Add1~8|cin
+    Info (332115):    110.693      0.047 RF  CELL  ALU|Add1~8|cout
+    Info (332115):    110.693      0.000 FF    IC  ALU|Add1~10|cin
+    Info (332115):    110.740      0.047 FR  CELL  ALU|Add1~10|cout
+    Info (332115):    110.740      0.000 RR    IC  ALU|Add1~12|cin
+    Info (332115):    111.211      0.471 RF  CELL  ALU|Add1~12|combout
+    Info (332115):    111.476      0.265 FF    IC  ALU|Selector2~11|datab
+    Info (332115):    111.791      0.315 FF  CELL  ALU|Selector2~11|combout
+    Info (332115):    112.009      0.218 FF    IC  ALU|Selector2~16|datad
+    Info (332115):    112.108      0.099 FF  CELL  ALU|Selector2~16|combout
+    Info (332115):    112.453      0.345 FF    IC  ALU|Selector2~13|datad
+    Info (332115):    112.552      0.099 FF  CELL  ALU|Selector2~13|combout
+    Info (332115):    112.776      0.224 FF    IC  ALU|Selector2~14|datad
+    Info (332115):    112.875      0.099 FF  CELL  ALU|Selector2~14|combout
+    Info (332115):    113.109      0.234 FF    IC  ALU|Selector2~15|datad
+    Info (332115):    113.208      0.099 FF  CELL  ALU|Selector2~15|combout
+    Info (332115):    114.382      1.174 FF    IC  PCU|SDcontroller|flags[6]|asdata
+    Info (332115):    114.751      0.369 FF  CELL  PCU:PCU|SD:SDcontroller|flags[6]
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    120.000    120.000           latch edge time
-    Info (332115):    119.965     -0.035  R        clock network delay
-    Info (332115):    119.945     -0.020           clock uncertainty
-    Info (332115):    119.957      0.012     uTsu  PCU:PCU|VGA:VGAcontroller|flags[6]
+    Info (332115):    119.957     -0.043  R        clock network delay
+    Info (332115):    119.937     -0.020           clock uncertainty
+    Info (332115):    119.949      0.012     uTsu  PCU:PCU|SD:SDcontroller|flags[6]
     Info (332115): 
-    Info (332115): Data Arrival Time  :   116.286
-    Info (332115): Data Required Time :   119.957
-    Info (332115): Slack              :     3.671 
+    Info (332115): Data Arrival Time  :   114.751
+    Info (332115): Data Required Time :   119.949
+    Info (332115): Slack              :     5.198 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 4.922
+Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 6.492
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[1]}]
     Info (332115): -setup
     Info (332115): -stdout
-Info (332115): Path #1: Setup slack is 4.922 
+Info (332115): Path #1: Setup slack is 6.492 
     Info (332115): ===================================================================
-    Info (332115): From Node    : PCU:PCU|SD:SDcontroller|inByte[3]
-    Info (332115): To Node      : PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a22~porta_we_reg
+    Info (332115): From Node    : PCU:PCU|VGA:VGAcontroller|flags[1]
+    Info (332115): To Node      : PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a25~porta_we_reg
     Info (332115): Launch Clock : pll|altpll_component|auto_generated|pll1|clk[2]
     Info (332115): Latch Clock  : pll|altpll_component|auto_generated|pll1|clk[1]
     Info (332115): 
@@ -979,66 +977,70 @@ Info (332115): Path #1: Setup slack is 4.922
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):     80.000     80.000           launch edge time
-    Info (332115):     79.947     -0.053  R        clock network delay
-    Info (332115):     80.141      0.194     uTco  PCU:PCU|SD:SDcontroller|inByte[3]
-    Info (332115):     80.141      0.000 FF  CELL  PCU|SDcontroller|inByte[3]|q
-    Info (332115):     80.941      0.800 FF    IC  Mux4~0|datab
-    Info (332115):     81.278      0.337 FF  CELL  Mux4~0|combout
-    Info (332115):     81.552      0.274 FF    IC  Mux4~1|dataa
-    Info (332115):     81.877      0.325 FF  CELL  Mux4~1|combout
-    Info (332115):     82.149      0.272 FF    IC  Mux4|dataa
-    Info (332115):     82.492      0.343 FF  CELL  Mux4|combout
-    Info (332115):     83.462      0.970 FF    IC  ALUb[3]~13|datab
-    Info (332115):     83.747      0.285 FF  CELL  ALUb[3]~13|combout
-    Info (332115):     84.443      0.696 FF    IC  ALU|Add0~6|dataa
-    Info (332115):     84.747      0.304 FR  CELL  ALU|Add0~6|cout
-    Info (332115):     84.747      0.000 RR    IC  ALU|Add0~8|cin
-    Info (332115):     85.218      0.471 RF  CELL  ALU|Add0~8|combout
-    Info (332115):     85.877      0.659 FF    IC  ALU|Add1~8|dataa
-    Info (332115):     86.256      0.379 FF  CELL  ALU|Add1~8|cout
-    Info (332115):     86.256      0.000 FF    IC  ALU|Add1~10|cin
-    Info (332115):     86.303      0.047 FR  CELL  ALU|Add1~10|cout
-    Info (332115):     86.303      0.000 RR    IC  ALU|Add1~12|cin
-    Info (332115):     86.774      0.471 RF  CELL  ALU|Add1~12|combout
-    Info (332115):     87.039      0.265 FF    IC  ALU|Selector2~9|datab
-    Info (332115):     87.354      0.315 FF  CELL  ALU|Selector2~9|combout
-    Info (332115):     87.615      0.261 FF    IC  ALU|Selector2~10|datab
-    Info (332115):     87.952      0.337 FF  CELL  ALU|Selector2~10|combout
-    Info (332115):     89.099      1.147 FF    IC  ALU|Selector2~16|datac
-    Info (332115):     89.326      0.227 FF  CELL  ALU|Selector2~16|combout
-    Info (332115):     89.596      0.270 FF    IC  ALU|Selector2~12|dataa
-    Info (332115):     89.918      0.322 FF  CELL  ALU|Selector2~12|combout
-    Info (332115):     90.191      0.273 FF    IC  ALU|Selector2~13|dataa
-    Info (332115):     90.513      0.322 FF  CELL  ALU|Selector2~13|combout
-    Info (332115):     90.752      0.239 FF    IC  ALU|Selector2~14|datad
-    Info (332115):     90.851      0.099 FF  CELL  ALU|Selector2~14|combout
-    Info (332115):     91.601      0.750 FF    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|decode2|w_anode572w[3]~0|datab
-    Info (332115):     91.896      0.295 FF  CELL  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|decode2|w_anode572w[3]~0|combout
-    Info (332115):     94.286      2.390 FF    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|ram_block1a22|ena0
-    Info (332115):     94.877      0.591 FF  CELL  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a22~porta_we_reg
+    Info (332115):     79.935     -0.065  R        clock network delay
+    Info (332115):     80.129      0.194     uTco  PCU:PCU|VGA:VGAcontroller|flags[1]
+    Info (332115):     80.129      0.000 FF  CELL  PCU|VGAcontroller|flags[1]|q
+    Info (332115):     81.175      1.046 FF    IC  Mux6~2|dataa
+    Info (332115):     81.497      0.322 FF  CELL  Mux6~2|combout
+    Info (332115):     81.911      0.414 FF    IC  Mux6~3|dataa
+    Info (332115):     82.233      0.322 FF  CELL  Mux6~3|combout
+    Info (332115):     82.455      0.222 FF    IC  Mux6|datad
+    Info (332115):     82.554      0.099 FF  CELL  Mux6|combout
+    Info (332115):     83.232      0.678 FF    IC  ALUb[1]~4|datad
+    Info (332115):     83.331      0.099 FF  CELL  ALUb[1]~4|combout
+    Info (332115):     83.557      0.226 FF    IC  ALUb[1]~5|datad
+    Info (332115):     83.656      0.099 FF  CELL  ALUb[1]~5|combout
+    Info (332115):     84.415      0.759 FF    IC  ALU|Add0~2|datab
+    Info (332115):     84.727      0.312 FR  CELL  ALU|Add0~2|cout
+    Info (332115):     84.727      0.000 RR    IC  ALU|Add0~4|cin
+    Info (332115):     85.198      0.471 RF  CELL  ALU|Add0~4|combout
+    Info (332115):     86.106      0.908 FF    IC  ALU|Add1~4|dataa
+    Info (332115):     86.485      0.379 FF  CELL  ALU|Add1~4|cout
+    Info (332115):     86.485      0.000 FF    IC  ALU|Add1~6|cin
+    Info (332115):     86.532      0.047 FR  CELL  ALU|Add1~6|cout
+    Info (332115):     86.532      0.000 RR    IC  ALU|Add1~8|cin
+    Info (332115):     86.579      0.047 RF  CELL  ALU|Add1~8|cout
+    Info (332115):     86.579      0.000 FF    IC  ALU|Add1~10|cin
+    Info (332115):     86.626      0.047 FR  CELL  ALU|Add1~10|cout
+    Info (332115):     86.626      0.000 RR    IC  ALU|Add1~12|cin
+    Info (332115):     87.097      0.471 RF  CELL  ALU|Add1~12|combout
+    Info (332115):     87.362      0.265 FF    IC  ALU|Selector2~11|datab
+    Info (332115):     87.677      0.315 FF  CELL  ALU|Selector2~11|combout
+    Info (332115):     87.895      0.218 FF    IC  ALU|Selector2~16|datad
+    Info (332115):     87.994      0.099 FF  CELL  ALU|Selector2~16|combout
+    Info (332115):     88.339      0.345 FF    IC  ALU|Selector2~13|datad
+    Info (332115):     88.438      0.099 FF  CELL  ALU|Selector2~13|combout
+    Info (332115):     88.662      0.224 FF    IC  ALU|Selector2~14|datad
+    Info (332115):     88.761      0.099 FF  CELL  ALU|Selector2~14|combout
+    Info (332115):     88.995      0.234 FF    IC  ALU|Selector2~15|datad
+    Info (332115):     89.094      0.099 FF  CELL  ALU|Selector2~15|combout
+    Info (332115):     90.262      1.168 FF    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|decode2|w_anode582w[3]~0|dataa
+    Info (332115):     90.547      0.285 FF  CELL  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|decode2|w_anode582w[3]~0|combout
+    Info (332115):     92.606      2.059 FF    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|ram_block1a25|ena0
+    Info (332115):     93.197      0.591 FF  CELL  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a25~porta_we_reg
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    100.000    100.000           latch edge time
-    Info (332115):    100.234      0.234  R        clock network delay
-    Info (332115):    100.214     -0.020           clock uncertainty
-    Info (332115):     99.799     -0.415     uTsu  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a22~porta_we_reg
+    Info (332115):    100.124      0.124  R        clock network delay
+    Info (332115):    100.104     -0.020           clock uncertainty
+    Info (332115):     99.689     -0.415     uTsu  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a25~porta_we_reg
     Info (332115): 
-    Info (332115): Data Arrival Time  :    94.877
-    Info (332115): Data Required Time :    99.799
-    Info (332115): Slack              :     4.922 
+    Info (332115): Data Arrival Time  :    93.197
+    Info (332115): Data Required Time :    99.689
+    Info (332115): Slack              :     6.492 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 25.363
+Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 26.734
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[0]}]
     Info (332115): -setup
     Info (332115): -stdout
-Info (332115): Path #1: Setup slack is 25.363 
+Info (332115): Path #1: Setup slack is 26.734 
     Info (332115): ===================================================================
-    Info (332115): From Node    : PCU:PCU|SD:SDcontroller|inByte[3]
-    Info (332115): To Node      : register:coutdelay|out[1]
+    Info (332115): From Node    : PCU:PCU|VGA:VGAcontroller|flags[1]
+    Info (332115): To Node      : register:ABhi|out[4]
     Info (332115): Launch Clock : pll|altpll_component|auto_generated|pll1|clk[2]
     Info (332115): Latch Clock  : pll|altpll_component|auto_generated|pll1|clk[0]
     Info (332115): 
@@ -1047,68 +1049,66 @@ Info (332115): Path #1: Setup slack is 25.363
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    160.000    160.000           launch edge time
-    Info (332115):    159.947     -0.053  R        clock network delay
-    Info (332115):    160.141      0.194     uTco  PCU:PCU|SD:SDcontroller|inByte[3]
-    Info (332115):    160.141      0.000 FF  CELL  PCU|SDcontroller|inByte[3]|q
-    Info (332115):    160.941      0.800 FF    IC  Mux4~0|datab
-    Info (332115):    161.278      0.337 FF  CELL  Mux4~0|combout
-    Info (332115):    161.552      0.274 FF    IC  Mux4~1|dataa
-    Info (332115):    161.877      0.325 FF  CELL  Mux4~1|combout
-    Info (332115):    162.149      0.272 FF    IC  Mux4|dataa
-    Info (332115):    162.492      0.343 FF  CELL  Mux4|combout
-    Info (332115):    163.462      0.970 FF    IC  ALUb[3]~13|datab
-    Info (332115):    163.747      0.285 FF  CELL  ALUb[3]~13|combout
-    Info (332115):    164.443      0.696 FF    IC  ALU|Add0~6|dataa
-    Info (332115):    164.747      0.304 FR  CELL  ALU|Add0~6|cout
-    Info (332115):    164.747      0.000 RR    IC  ALU|Add0~8|cin
-    Info (332115):    165.218      0.471 RF  CELL  ALU|Add0~8|combout
-    Info (332115):    165.877      0.659 FF    IC  ALU|Add1~8|dataa
-    Info (332115):    166.256      0.379 FF  CELL  ALU|Add1~8|cout
-    Info (332115):    166.256      0.000 FF    IC  ALU|Add1~10|cin
-    Info (332115):    166.303      0.047 FR  CELL  ALU|Add1~10|cout
-    Info (332115):    166.303      0.000 RR    IC  ALU|Add1~12|cin
-    Info (332115):    166.774      0.471 RF  CELL  ALU|Add1~12|combout
-    Info (332115):    167.039      0.265 FF    IC  ALU|Selector2~9|datab
-    Info (332115):    167.354      0.315 FF  CELL  ALU|Selector2~9|combout
-    Info (332115):    167.615      0.261 FF    IC  ALU|Selector2~10|datab
-    Info (332115):    167.952      0.337 FF  CELL  ALU|Selector2~10|combout
-    Info (332115):    169.099      1.147 FF    IC  ALU|Selector2~16|datac
-    Info (332115):    169.326      0.227 FF  CELL  ALU|Selector2~16|combout
-    Info (332115):    169.596      0.270 FF    IC  ALU|Selector2~12|dataa
-    Info (332115):    169.918      0.322 FF  CELL  ALU|Selector2~12|combout
-    Info (332115):    170.191      0.273 FF    IC  ALU|Selector2~13|dataa
-    Info (332115):    170.524      0.333 FR  CELL  ALU|Selector2~13|combout
-    Info (332115):    170.728      0.204 RR    IC  ALU|Selector2~14|datad
-    Info (332115):    170.852      0.124 RR  CELL  ALU|Selector2~14|combout
-    Info (332115):    171.774      0.922 RR    IC  FR|out~1|dataa
-    Info (332115):    172.107      0.333 RF  CELL  FR|out~1|combout
-    Info (332115):    173.363      1.256 FF    IC  FR|out~2|datac
-    Info (332115):    173.590      0.227 FF  CELL  FR|out~2|combout
-    Info (332115):    174.240      0.650 FF    IC  coutdelay|out[1]|asdata
-    Info (332115):    174.609      0.369 FF  CELL  register:coutdelay|out[1]
+    Info (332115):    159.935     -0.065  R        clock network delay
+    Info (332115):    160.129      0.194     uTco  PCU:PCU|VGA:VGAcontroller|flags[1]
+    Info (332115):    160.129      0.000 FF  CELL  PCU|VGAcontroller|flags[1]|q
+    Info (332115):    161.175      1.046 FF    IC  Mux6~2|dataa
+    Info (332115):    161.497      0.322 FF  CELL  Mux6~2|combout
+    Info (332115):    161.911      0.414 FF    IC  Mux6~3|dataa
+    Info (332115):    162.233      0.322 FF  CELL  Mux6~3|combout
+    Info (332115):    162.455      0.222 FF    IC  Mux6|datad
+    Info (332115):    162.554      0.099 FF  CELL  Mux6|combout
+    Info (332115):    163.232      0.678 FF    IC  ALUb[1]~4|datad
+    Info (332115):    163.331      0.099 FF  CELL  ALUb[1]~4|combout
+    Info (332115):    163.557      0.226 FF    IC  ALUb[1]~5|datad
+    Info (332115):    163.656      0.099 FF  CELL  ALUb[1]~5|combout
+    Info (332115):    164.415      0.759 FF    IC  ALU|Add0~2|datab
+    Info (332115):    164.727      0.312 FR  CELL  ALU|Add0~2|cout
+    Info (332115):    164.727      0.000 RR    IC  ALU|Add0~4|cin
+    Info (332115):    165.198      0.471 RF  CELL  ALU|Add0~4|combout
+    Info (332115):    166.106      0.908 FF    IC  ALU|Add1~4|dataa
+    Info (332115):    166.485      0.379 FF  CELL  ALU|Add1~4|cout
+    Info (332115):    166.485      0.000 FF    IC  ALU|Add1~6|cin
+    Info (332115):    166.532      0.047 FR  CELL  ALU|Add1~6|cout
+    Info (332115):    166.532      0.000 RR    IC  ALU|Add1~8|cin
+    Info (332115):    167.003      0.471 RF  CELL  ALU|Add1~8|combout
+    Info (332115):    167.374      0.371 FF    IC  ALU|Selector4~9|datad
+    Info (332115):    167.473      0.099 FF  CELL  ALU|Selector4~9|combout
+    Info (332115):    167.695      0.222 FF    IC  ALU|Selector4~10|datad
+    Info (332115):    167.794      0.099 FF  CELL  ALU|Selector4~10|combout
+    Info (332115):    168.168      0.374 FF    IC  ALU|Selector4~16|datac
+    Info (332115):    168.395      0.227 FF  CELL  ALU|Selector4~16|combout
+    Info (332115):    168.623      0.228 FF    IC  ALU|Selector4~12|datac
+    Info (332115):    168.850      0.227 FF  CELL  ALU|Selector4~12|combout
+    Info (332115):    169.069      0.219 FF    IC  ALU|Selector4~13|datad
+    Info (332115):    169.191      0.122 FR  CELL  ALU|Selector4~13|combout
+    Info (332115):    171.035      1.844 RR    IC  Acc|out~5|dataa
+    Info (332115):    171.319      0.284 RR  CELL  Acc|out~5|combout
+    Info (332115):    172.836      1.517 RR    IC  ABhi|out[4]|asdata
+    Info (332115):    173.224      0.388 RR  CELL  register:ABhi|out[4]
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    200.000    200.000           latch edge time
-    Info (332115):    199.980     -0.020  R        clock network delay
-    Info (332115):    199.960     -0.020           clock uncertainty
-    Info (332115):    199.972      0.012     uTsu  register:coutdelay|out[1]
+    Info (332115):    199.966     -0.034  R        clock network delay
+    Info (332115):    199.946     -0.020           clock uncertainty
+    Info (332115):    199.958      0.012     uTsu  register:ABhi|out[4]
     Info (332115): 
-    Info (332115): Data Arrival Time  :   174.609
-    Info (332115): Data Required Time :   199.972
-    Info (332115): Slack              :    25.363 
+    Info (332115): Data Arrival Time  :   173.224
+    Info (332115): Data Required Time :   199.958
+    Info (332115): Slack              :    26.734 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.315
+Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.318
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[1]}]
     Info (332115): -hold
     Info (332115): -stdout
-Info (332115): Path #1: Hold slack is 0.315 
+Info (332115): Path #1: Hold slack is 0.318 
     Info (332115): ===================================================================
-    Info (332115): From Node    : PCU:PCU|PS2:PS2controller|inByte[2]
-    Info (332115): To Node      : PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated|ram_block1a0~porta_datain_reg0
+    Info (332115): From Node    : PCU:PCU|VGA:VGAcontroller|x[2]
+    Info (332115): To Node      : PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a60~porta_address_reg0
     Info (332115): Launch Clock : pll|altpll_component|auto_generated|pll1|clk[1]
     Info (332115): Latch Clock  : pll|altpll_component|auto_generated|pll1|clk[1]
     Info (332115): 
@@ -1117,31 +1117,31 @@ Info (332115): Path #1: Hold slack is 0.315
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    100.000    100.000           launch edge time
-    Info (332115):     99.963     -0.037  R        clock network delay
-    Info (332115):    100.157      0.194     uTco  PCU:PCU|PS2:PS2controller|inByte[2]
-    Info (332115):    100.157      0.000 RR  CELL  PCU|PS2controller|inByte[2]|q
-    Info (332115):    100.819      0.662 RR    IC  PCU|PS2controller|queuedKeys_rtl_0|auto_generated|ram_block1a0|portadatain[2]
-    Info (332115):    100.864      0.045 RR  CELL  PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated|ram_block1a0~porta_datain_reg0
+    Info (332115):     99.985     -0.015  R        clock network delay
+    Info (332115):    100.179      0.194     uTco  PCU:PCU|VGA:VGAcontroller|x[2]
+    Info (332115):    100.179      0.000 RR  CELL  PCU|VGAcontroller|x[2]|q
+    Info (332115):    100.845      0.666 RR    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|ram_block1a60|portaaddr[2]
+    Info (332115):    100.891      0.046 RR  CELL  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a60~porta_address_reg0
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    100.000    100.000           latch edge time
-    Info (332115):    100.397      0.397  R        clock network delay
-    Info (332115):    100.397      0.000           clock uncertainty
-    Info (332115):    100.549      0.152      uTh  PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated|ram_block1a0~porta_datain_reg0
+    Info (332115):    100.421      0.421  R        clock network delay
+    Info (332115):    100.421      0.000           clock uncertainty
+    Info (332115):    100.573      0.152      uTh  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a60~porta_address_reg0
     Info (332115): 
-    Info (332115): Data Arrival Time  :   100.864
-    Info (332115): Data Required Time :   100.549
-    Info (332115): Slack              :     0.315 
+    Info (332115): Data Arrival Time  :   100.891
+    Info (332115): Data Required Time :   100.573
+    Info (332115): Slack              :     0.318 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.420
+Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.419
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[2]}]
     Info (332115): -hold
     Info (332115): -stdout
-Info (332115): Path #1: Hold slack is 0.420 
+Info (332115): Path #1: Hold slack is 0.419 
     Info (332115): ===================================================================
     Info (332115): From Node    : PCU:PCU|SD:SDcontroller|MOSI
     Info (332115): To Node      : PCU:PCU|SD:SDcontroller|MOSI
@@ -1153,33 +1153,33 @@ Info (332115): Path #1: Hold slack is 0.420
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):      0.000      0.000           launch edge time
-    Info (332115):     -0.025     -0.025  R        clock network delay
-    Info (332115):      0.169      0.194     uTco  PCU:PCU|SD:SDcontroller|MOSI
-    Info (332115):      0.169      0.000 FF  CELL  PCU|SDcontroller|MOSI|q
-    Info (332115):      0.169      0.000 FF    IC  PCU|SDcontroller|MOSI~1|datac
-    Info (332115):      0.464      0.295 FF  CELL  PCU|SDcontroller|MOSI~1|combout
-    Info (332115):      0.464      0.000 FF    IC  PCU|SDcontroller|MOSI|d
-    Info (332115):      0.530      0.066 FF  CELL  PCU:PCU|SD:SDcontroller|MOSI
+    Info (332115):     -0.009     -0.009  R        clock network delay
+    Info (332115):      0.185      0.194     uTco  PCU:PCU|SD:SDcontroller|MOSI
+    Info (332115):      0.185      0.000 FF  CELL  PCU|SDcontroller|MOSI|q
+    Info (332115):      0.185      0.000 FF    IC  PCU|SDcontroller|MOSI~1|datac
+    Info (332115):      0.480      0.295 FF  CELL  PCU|SDcontroller|MOSI~1|combout
+    Info (332115):      0.480      0.000 FF    IC  PCU|SDcontroller|MOSI|d
+    Info (332115):      0.546      0.066 FF  CELL  PCU:PCU|SD:SDcontroller|MOSI
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):      0.000      0.000           latch edge time
-    Info (332115):     -0.052     -0.052  R        clock network delay
-    Info (332115):     -0.052      0.000           clock uncertainty
-    Info (332115):      0.110      0.162      uTh  PCU:PCU|SD:SDcontroller|MOSI
+    Info (332115):     -0.035     -0.035  R        clock network delay
+    Info (332115):     -0.035      0.000           clock uncertainty
+    Info (332115):      0.127      0.162      uTh  PCU:PCU|SD:SDcontroller|MOSI
     Info (332115): 
-    Info (332115): Data Arrival Time  :     0.530
-    Info (332115): Data Required Time :     0.110
-    Info (332115): Slack              :     0.420 
+    Info (332115): Data Arrival Time  :     0.546
+    Info (332115): Data Required Time :     0.127
+    Info (332115): Slack              :     0.419 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.433
+Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.436
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[0]}]
     Info (332115): -hold
     Info (332115): -stdout
-Info (332115): Path #1: Hold slack is 0.433 
+Info (332115): Path #1: Hold slack is 0.436 
     Info (332115): ===================================================================
     Info (332115): From Node    : register:statereg|out[0]
     Info (332115): To Node      : register:statereg|out[0]
@@ -1191,26 +1191,26 @@ Info (332115): Path #1: Hold slack is 0.433
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):      0.000      0.000           launch edge time
-    Info (332115):     -0.039     -0.039  R        clock network delay
-    Info (332115):      0.155      0.194     uTco  register:statereg|out[0]
-    Info (332115):      0.155      0.000 FF  CELL  statereg|out[0]|q
-    Info (332115):      0.155      0.000 FF    IC  LUT|LUT~1314|datac
-    Info (332115):      0.462      0.307 FR  CELL  LUT|LUT~1314|combout
-    Info (332115):      0.462      0.000 RR    IC  statereg|out[0]|d
-    Info (332115):      0.528      0.066 RR  CELL  register:statereg|out[0]
+    Info (332115):     -0.124     -0.124  R        clock network delay
+    Info (332115):      0.070      0.194     uTco  register:statereg|out[0]
+    Info (332115):      0.070      0.000 FF  CELL  statereg|out[0]|q
+    Info (332115):      0.070      0.000 FF    IC  LUT|LUT~1306|datac
+    Info (332115):      0.377      0.307 FR  CELL  LUT|LUT~1306|combout
+    Info (332115):      0.377      0.000 RR    IC  statereg|out[0]|d
+    Info (332115):      0.443      0.066 RR  CELL  register:statereg|out[0]
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):      0.000      0.000           latch edge time
-    Info (332115):     -0.067     -0.067  R        clock network delay
-    Info (332115):     -0.067      0.000           clock uncertainty
-    Info (332115):      0.095      0.162      uTh  register:statereg|out[0]
+    Info (332115):     -0.155     -0.155  R        clock network delay
+    Info (332115):     -0.155      0.000           clock uncertainty
+    Info (332115):      0.007      0.162      uTh  register:statereg|out[0]
     Info (332115): 
-    Info (332115): Data Arrival Time  :     0.528
-    Info (332115): Data Required Time :     0.095
-    Info (332115): Slack              :     0.433 
+    Info (332115): Data Arrival Time  :     0.443
+    Info (332115): Data Required Time :     0.007
+    Info (332115): Slack              :     0.436 
     Info (332115): ===================================================================
     Info (332115): 
 Info: Analyzing Slow 1200mV 0C Model
@@ -1218,42 +1218,42 @@ Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 10M50DAF484C6GES are preliminary
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 5.171
+Info (332146): Worst-case setup slack is 6.490
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     5.171               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):     6.363               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
-    Info (332119):    26.726               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
-Info (332146): Worst-case hold slack is 0.274
+    Info (332119):     6.490               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):     7.788               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):    27.907               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
+Info (332146): Worst-case hold slack is 0.272
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.274               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
-    Info (332119):     0.347               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):     0.360               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):     0.272               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):     0.346               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):     0.364               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 9.783
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     9.783               0.000 MAX10_CLK1_50 
-    Info (332119):    19.697               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):    19.691               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
     Info (332119):    99.670               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
-    Info (332119):    99.712               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    99.713               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
 Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 1
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 395.897 ns
+    Info (332114): Worst Case Available Settling Time: 396.366 ns
     Info (332114): 
-Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 5.171
+Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 6.490
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[2]}]
     Info (332115): -setup
     Info (332115): -stdout
-Info (332115): Path #1: Setup slack is 5.171 
+Info (332115): Path #1: Setup slack is 6.490 
     Info (332115): ===================================================================
     Info (332115): From Node    : ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated|ram_block1a24~porta_we_reg
-    Info (332115): To Node      : PCU:PCU|VGA:VGAcontroller|flags[6]
+    Info (332115): To Node      : PCU:PCU|SD:SDcontroller|flags[6]
     Info (332115): Launch Clock : pll|altpll_component|auto_generated|pll1|clk[1]
     Info (332115): Latch Clock  : pll|altpll_component|auto_generated|pll1|clk[2]
     Info (332115): 
@@ -1262,74 +1262,72 @@ Info (332115): Path #1: Setup slack is 5.171
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    100.000    100.000           launch edge time
-    Info (332115):    100.905      0.905  R        clock network delay
-    Info (332115):    101.151      0.246     uTco  ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated|ram_block1a24~porta_we_reg
-    Info (332115):    103.258      2.107 RF  CELL  RAM|RAM_rtl_0|auto_generated|ram_block1a24|portadataout[0]
-    Info (332115):    105.167      1.909 FF    IC  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~0|dataa
-    Info (332115):    105.462      0.295 FF  CELL  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~0|combout
-    Info (332115):    105.665      0.203 FF    IC  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~1|datad
-    Info (332115):    105.756      0.091 FF  CELL  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~1|combout
-    Info (332115):    105.957      0.201 FF    IC  Mux7~2|datad
-    Info (332115):    106.048      0.091 FF  CELL  Mux7~2|combout
-    Info (332115):    106.892      0.844 FF    IC  Mux7|datab
-    Info (332115):    107.201      0.309 FF  CELL  Mux7|combout
-    Info (332115):    107.526      0.325 FF    IC  ALUb[0]~1|datad
-    Info (332115):    107.617      0.091 FF  CELL  ALUb[0]~1|combout
-    Info (332115):    107.825      0.208 FF    IC  ALUb[0]~2|datac
-    Info (332115):    108.033      0.208 FF  CELL  ALUb[0]~2|combout
-    Info (332115):    108.292      0.259 FF    IC  ALU|Add0~0|datab
-    Info (332115):    108.637      0.345 FF  CELL  ALU|Add0~0|cout
-    Info (332115):    108.637      0.000 FF    IC  ALU|Add0~2|cin
-    Info (332115):    108.679      0.042 FR  CELL  ALU|Add0~2|cout
-    Info (332115):    108.679      0.000 RR    IC  ALU|Add0~4|cin
-    Info (332115):    108.721      0.042 RF  CELL  ALU|Add0~4|cout
-    Info (332115):    108.721      0.000 FF    IC  ALU|Add0~6|cin
-    Info (332115):    108.763      0.042 FR  CELL  ALU|Add0~6|cout
-    Info (332115):    108.763      0.000 RR    IC  ALU|Add0~8|cin
-    Info (332115):    109.188      0.425 RF  CELL  ALU|Add0~8|combout
-    Info (332115):    109.778      0.590 FF    IC  ALU|Add1~8|dataa
-    Info (332115):    110.119      0.341 FF  CELL  ALU|Add1~8|cout
-    Info (332115):    110.119      0.000 FF    IC  ALU|Add1~10|cin
-    Info (332115):    110.161      0.042 FR  CELL  ALU|Add1~10|cout
-    Info (332115):    110.161      0.000 RR    IC  ALU|Add1~12|cin
-    Info (332115):    110.586      0.425 RF  CELL  ALU|Add1~12|combout
-    Info (332115):    110.826      0.240 FF    IC  ALU|Selector2~9|datab
-    Info (332115):    111.111      0.285 FF  CELL  ALU|Selector2~9|combout
-    Info (332115):    111.350      0.239 FF    IC  ALU|Selector2~10|datab
-    Info (332115):    111.659      0.309 FF  CELL  ALU|Selector2~10|combout
-    Info (332115):    112.677      1.018 FF    IC  ALU|Selector2~16|datac
-    Info (332115):    112.885      0.208 FF  CELL  ALU|Selector2~16|combout
-    Info (332115):    113.129      0.244 FF    IC  ALU|Selector2~12|dataa
-    Info (332115):    113.421      0.292 FF  CELL  ALU|Selector2~12|combout
-    Info (332115):    113.669      0.248 FF    IC  ALU|Selector2~13|dataa
-    Info (332115):    113.961      0.292 FF  CELL  ALU|Selector2~13|combout
-    Info (332115):    114.177      0.216 FF    IC  ALU|Selector2~14|datad
-    Info (332115):    114.268      0.091 FF  CELL  ALU|Selector2~14|combout
-    Info (332115):    114.903      0.635 FF    IC  PCU|VGAcontroller|flags[6]|asdata
-    Info (332115):    115.242      0.339 FF  CELL  PCU:PCU|VGA:VGAcontroller|flags[6]
+    Info (332115):    100.767      0.767  R        clock network delay
+    Info (332115):    101.013      0.246     uTco  ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated|ram_block1a24~porta_we_reg
+    Info (332115):    103.120      2.107 RF  CELL  RAM|RAM_rtl_0|auto_generated|ram_block1a24|portadataout[0]
+    Info (332115):    104.691      1.571 FF    IC  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~0|dataa
+    Info (332115):    104.986      0.295 FF  CELL  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~0|combout
+    Info (332115):    105.228      0.242 FF    IC  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~1|datab
+    Info (332115):    105.537      0.309 FF  CELL  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~1|combout
+    Info (332115):    105.785      0.248 FF    IC  Mux7~2|dataa
+    Info (332115):    106.080      0.295 FF  CELL  Mux7~2|combout
+    Info (332115):    106.954      0.874 FF    IC  Mux7|datac
+    Info (332115):    107.162      0.208 FF  CELL  Mux7|combout
+    Info (332115):    107.384      0.222 FF    IC  ALUb[0]~1|datad
+    Info (332115):    107.475      0.091 FF  CELL  ALUb[0]~1|combout
+    Info (332115):    107.683      0.208 FF    IC  ALUb[0]~2|datac
+    Info (332115):    107.891      0.208 FF  CELL  ALUb[0]~2|combout
+    Info (332115):    108.152      0.261 FF    IC  ALU|Add0~0|dataa
+    Info (332115):    108.493      0.341 FF  CELL  ALU|Add0~0|cout
+    Info (332115):    108.493      0.000 FF    IC  ALU|Add0~2|cin
+    Info (332115):    108.535      0.042 FR  CELL  ALU|Add0~2|cout
+    Info (332115):    108.535      0.000 RR    IC  ALU|Add0~4|cin
+    Info (332115):    108.960      0.425 RF  CELL  ALU|Add0~4|combout
+    Info (332115):    109.772      0.812 FF    IC  ALU|Add1~4|dataa
+    Info (332115):    110.113      0.341 FF  CELL  ALU|Add1~4|cout
+    Info (332115):    110.113      0.000 FF    IC  ALU|Add1~6|cin
+    Info (332115):    110.155      0.042 FR  CELL  ALU|Add1~6|cout
+    Info (332115):    110.155      0.000 RR    IC  ALU|Add1~8|cin
+    Info (332115):    110.197      0.042 RF  CELL  ALU|Add1~8|cout
+    Info (332115):    110.197      0.000 FF    IC  ALU|Add1~10|cin
+    Info (332115):    110.239      0.042 FR  CELL  ALU|Add1~10|cout
+    Info (332115):    110.239      0.000 RR    IC  ALU|Add1~12|cin
+    Info (332115):    110.664      0.425 RF  CELL  ALU|Add1~12|combout
+    Info (332115):    110.904      0.240 FF    IC  ALU|Selector2~11|datab
+    Info (332115):    111.189      0.285 FF  CELL  ALU|Selector2~11|combout
+    Info (332115):    111.389      0.200 FF    IC  ALU|Selector2~16|datad
+    Info (332115):    111.480      0.091 FF  CELL  ALU|Selector2~16|combout
+    Info (332115):    111.794      0.314 FF    IC  ALU|Selector2~13|datad
+    Info (332115):    111.885      0.091 FF  CELL  ALU|Selector2~13|combout
+    Info (332115):    112.089      0.204 FF    IC  ALU|Selector2~14|datad
+    Info (332115):    112.200      0.111 FR  CELL  ALU|Selector2~14|combout
+    Info (332115):    112.379      0.179 RR    IC  ALU|Selector2~15|datad
+    Info (332115):    112.494      0.115 RR  CELL  ALU|Selector2~15|combout
+    Info (332115):    113.558      1.064 RR    IC  PCU|SDcontroller|flags[6]|asdata
+    Info (332115):    113.912      0.354 RR  CELL  PCU:PCU|SD:SDcontroller|flags[6]
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    120.000    120.000           latch edge time
-    Info (332115):    120.421      0.421  R        clock network delay
-    Info (332115):    120.401     -0.020           clock uncertainty
-    Info (332115):    120.413      0.012     uTsu  PCU:PCU|VGA:VGAcontroller|flags[6]
+    Info (332115):    120.410      0.410  R        clock network delay
+    Info (332115):    120.390     -0.020           clock uncertainty
+    Info (332115):    120.402      0.012     uTsu  PCU:PCU|SD:SDcontroller|flags[6]
     Info (332115): 
-    Info (332115): Data Arrival Time  :   115.242
-    Info (332115): Data Required Time :   120.413
-    Info (332115): Slack              :     5.171 
+    Info (332115): Data Arrival Time  :   113.912
+    Info (332115): Data Required Time :   120.402
+    Info (332115): Slack              :     6.490 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 6.363
+Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 7.788
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[1]}]
     Info (332115): -setup
     Info (332115): -stdout
-Info (332115): Path #1: Setup slack is 6.363 
+Info (332115): Path #1: Setup slack is 7.788 
     Info (332115): ===================================================================
-    Info (332115): From Node    : PCU:PCU|SD:SDcontroller|inByte[3]
-    Info (332115): To Node      : PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a22~porta_address_reg0
+    Info (332115): From Node    : PCU:PCU|VGA:VGAcontroller|flags[1]
+    Info (332115): To Node      : PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a25~porta_address_reg0
     Info (332115): Launch Clock : pll|altpll_component|auto_generated|pll1|clk[2]
     Info (332115): Latch Clock  : pll|altpll_component|auto_generated|pll1|clk[1]
     Info (332115): 
@@ -1338,66 +1336,70 @@ Info (332115): Path #1: Setup slack is 6.363
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):     80.000     80.000           launch edge time
-    Info (332115):     80.437      0.437  R        clock network delay
-    Info (332115):     80.618      0.181     uTco  PCU:PCU|SD:SDcontroller|inByte[3]
-    Info (332115):     80.618      0.000 FF  CELL  PCU|SDcontroller|inByte[3]|q
-    Info (332115):     81.330      0.712 FF    IC  Mux4~0|datab
-    Info (332115):     81.639      0.309 FF  CELL  Mux4~0|combout
-    Info (332115):     81.887      0.248 FF    IC  Mux4~1|dataa
-    Info (332115):     82.182      0.295 FF  CELL  Mux4~1|combout
-    Info (332115):     82.431      0.249 FF    IC  Mux4|dataa
-    Info (332115):     82.742      0.311 FF  CELL  Mux4|combout
-    Info (332115):     83.602      0.860 FF    IC  ALUb[3]~13|datab
-    Info (332115):     83.858      0.256 FF  CELL  ALUb[3]~13|combout
-    Info (332115):     84.485      0.627 FF    IC  ALU|Add0~6|dataa
-    Info (332115):     84.759      0.274 FR  CELL  ALU|Add0~6|cout
-    Info (332115):     84.759      0.000 RR    IC  ALU|Add0~8|cin
-    Info (332115):     85.184      0.425 RF  CELL  ALU|Add0~8|combout
-    Info (332115):     85.774      0.590 FF    IC  ALU|Add1~8|dataa
-    Info (332115):     86.115      0.341 FF  CELL  ALU|Add1~8|cout
-    Info (332115):     86.115      0.000 FF    IC  ALU|Add1~10|cin
-    Info (332115):     86.157      0.042 FR  CELL  ALU|Add1~10|cout
-    Info (332115):     86.157      0.000 RR    IC  ALU|Add1~12|cin
-    Info (332115):     86.582      0.425 RF  CELL  ALU|Add1~12|combout
-    Info (332115):     86.822      0.240 FF    IC  ALU|Selector2~9|datab
-    Info (332115):     87.107      0.285 FF  CELL  ALU|Selector2~9|combout
-    Info (332115):     87.346      0.239 FF    IC  ALU|Selector2~10|datab
-    Info (332115):     87.655      0.309 FF  CELL  ALU|Selector2~10|combout
-    Info (332115):     88.673      1.018 FF    IC  ALU|Selector2~16|datac
-    Info (332115):     88.881      0.208 FF  CELL  ALU|Selector2~16|combout
-    Info (332115):     89.125      0.244 FF    IC  ALU|Selector2~12|dataa
-    Info (332115):     89.417      0.292 FF  CELL  ALU|Selector2~12|combout
-    Info (332115):     89.665      0.248 FF    IC  ALU|Selector2~13|dataa
-    Info (332115):     89.957      0.292 FF  CELL  ALU|Selector2~13|combout
-    Info (332115):     90.173      0.216 FF    IC  ALU|Selector2~14|datad
-    Info (332115):     90.264      0.091 FF  CELL  ALU|Selector2~14|combout
-    Info (332115):     90.929      0.665 FF    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|decode2|w_anode572w[3]~0|datab
-    Info (332115):     91.197      0.268 FF  CELL  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|decode2|w_anode572w[3]~0|combout
-    Info (332115):     93.345      2.148 FF    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|ram_block1a22|ena0
-    Info (332115):     93.892      0.547 FF  CELL  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a22~porta_address_reg0
+    Info (332115):     80.425      0.425  R        clock network delay
+    Info (332115):     80.606      0.181     uTco  PCU:PCU|VGA:VGAcontroller|flags[1]
+    Info (332115):     80.606      0.000 FF  CELL  PCU|VGAcontroller|flags[1]|q
+    Info (332115):     81.538      0.932 FF    IC  Mux6~2|dataa
+    Info (332115):     81.830      0.292 FF  CELL  Mux6~2|combout
+    Info (332115):     82.197      0.367 FF    IC  Mux6~3|dataa
+    Info (332115):     82.489      0.292 FF  CELL  Mux6~3|combout
+    Info (332115):     82.691      0.202 FF    IC  Mux6|datad
+    Info (332115):     82.782      0.091 FF  CELL  Mux6|combout
+    Info (332115):     83.392      0.610 FF    IC  ALUb[1]~4|datad
+    Info (332115):     83.483      0.091 FF  CELL  ALUb[1]~4|combout
+    Info (332115):     83.688      0.205 FF    IC  ALUb[1]~5|datad
+    Info (332115):     83.779      0.091 FF  CELL  ALUb[1]~5|combout
+    Info (332115):     84.461      0.682 FF    IC  ALU|Add0~2|datab
+    Info (332115):     84.745      0.284 FR  CELL  ALU|Add0~2|cout
+    Info (332115):     84.745      0.000 RR    IC  ALU|Add0~4|cin
+    Info (332115):     85.170      0.425 RF  CELL  ALU|Add0~4|combout
+    Info (332115):     85.982      0.812 FF    IC  ALU|Add1~4|dataa
+    Info (332115):     86.323      0.341 FF  CELL  ALU|Add1~4|cout
+    Info (332115):     86.323      0.000 FF    IC  ALU|Add1~6|cin
+    Info (332115):     86.365      0.042 FR  CELL  ALU|Add1~6|cout
+    Info (332115):     86.365      0.000 RR    IC  ALU|Add1~8|cin
+    Info (332115):     86.407      0.042 RF  CELL  ALU|Add1~8|cout
+    Info (332115):     86.407      0.000 FF    IC  ALU|Add1~10|cin
+    Info (332115):     86.449      0.042 FR  CELL  ALU|Add1~10|cout
+    Info (332115):     86.449      0.000 RR    IC  ALU|Add1~12|cin
+    Info (332115):     86.874      0.425 RF  CELL  ALU|Add1~12|combout
+    Info (332115):     87.114      0.240 FF    IC  ALU|Selector2~11|datab
+    Info (332115):     87.399      0.285 FF  CELL  ALU|Selector2~11|combout
+    Info (332115):     87.599      0.200 FF    IC  ALU|Selector2~16|datad
+    Info (332115):     87.690      0.091 FF  CELL  ALU|Selector2~16|combout
+    Info (332115):     88.004      0.314 FF    IC  ALU|Selector2~13|datad
+    Info (332115):     88.095      0.091 FF  CELL  ALU|Selector2~13|combout
+    Info (332115):     88.299      0.204 FF    IC  ALU|Selector2~14|datad
+    Info (332115):     88.390      0.091 FF  CELL  ALU|Selector2~14|combout
+    Info (332115):     88.604      0.214 FF    IC  ALU|Selector2~15|datad
+    Info (332115):     88.695      0.091 FF  CELL  ALU|Selector2~15|combout
+    Info (332115):     89.733      1.038 FF    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|decode2|w_anode582w[3]~0|dataa
+    Info (332115):     89.990      0.257 FF  CELL  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|decode2|w_anode582w[3]~0|combout
+    Info (332115):     91.834      1.844 FF    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|ram_block1a25|ena0
+    Info (332115):     92.381      0.547 FF  CELL  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a25~porta_address_reg0
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    100.000    100.000           latch edge time
-    Info (332115):    100.666      0.666  R        clock network delay
-    Info (332115):    100.646     -0.020           clock uncertainty
-    Info (332115):    100.255     -0.391     uTsu  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a22~porta_address_reg0
+    Info (332115):    100.580      0.580  R        clock network delay
+    Info (332115):    100.560     -0.020           clock uncertainty
+    Info (332115):    100.169     -0.391     uTsu  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a25~porta_address_reg0
     Info (332115): 
-    Info (332115): Data Arrival Time  :    93.892
-    Info (332115): Data Required Time :   100.255
-    Info (332115): Slack              :     6.363 
+    Info (332115): Data Arrival Time  :    92.381
+    Info (332115): Data Required Time :   100.169
+    Info (332115): Slack              :     7.788 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 26.726
+Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 27.907
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[0]}]
     Info (332115): -setup
     Info (332115): -stdout
-Info (332115): Path #1: Setup slack is 26.726 
+Info (332115): Path #1: Setup slack is 27.907 
     Info (332115): ===================================================================
-    Info (332115): From Node    : PCU:PCU|SD:SDcontroller|inByte[3]
-    Info (332115): To Node      : register:coutdelay|out[1]
+    Info (332115): From Node    : PCU:PCU|VGA:VGAcontroller|flags[1]
+    Info (332115): To Node      : register:ABhi|out[4]
     Info (332115): Launch Clock : pll|altpll_component|auto_generated|pll1|clk[2]
     Info (332115): Latch Clock  : pll|altpll_component|auto_generated|pll1|clk[0]
     Info (332115): 
@@ -1406,68 +1408,66 @@ Info (332115): Path #1: Setup slack is 26.726
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    160.000    160.000           launch edge time
-    Info (332115):    160.437      0.437  R        clock network delay
-    Info (332115):    160.618      0.181     uTco  PCU:PCU|SD:SDcontroller|inByte[3]
-    Info (332115):    160.618      0.000 FF  CELL  PCU|SDcontroller|inByte[3]|q
-    Info (332115):    161.330      0.712 FF    IC  Mux4~0|datab
-    Info (332115):    161.639      0.309 FF  CELL  Mux4~0|combout
-    Info (332115):    161.887      0.248 FF    IC  Mux4~1|dataa
-    Info (332115):    162.182      0.295 FF  CELL  Mux4~1|combout
-    Info (332115):    162.431      0.249 FF    IC  Mux4|dataa
-    Info (332115):    162.742      0.311 FF  CELL  Mux4|combout
-    Info (332115):    163.602      0.860 FF    IC  ALUb[3]~13|datab
-    Info (332115):    163.858      0.256 FF  CELL  ALUb[3]~13|combout
-    Info (332115):    164.485      0.627 FF    IC  ALU|Add0~6|dataa
-    Info (332115):    164.759      0.274 FR  CELL  ALU|Add0~6|cout
-    Info (332115):    164.759      0.000 RR    IC  ALU|Add0~8|cin
-    Info (332115):    165.184      0.425 RF  CELL  ALU|Add0~8|combout
-    Info (332115):    165.774      0.590 FF    IC  ALU|Add1~8|dataa
-    Info (332115):    166.115      0.341 FF  CELL  ALU|Add1~8|cout
-    Info (332115):    166.115      0.000 FF    IC  ALU|Add1~10|cin
-    Info (332115):    166.157      0.042 FR  CELL  ALU|Add1~10|cout
-    Info (332115):    166.157      0.000 RR    IC  ALU|Add1~12|cin
-    Info (332115):    166.582      0.425 RF  CELL  ALU|Add1~12|combout
-    Info (332115):    166.822      0.240 FF    IC  ALU|Selector2~9|datab
-    Info (332115):    167.107      0.285 FF  CELL  ALU|Selector2~9|combout
-    Info (332115):    167.346      0.239 FF    IC  ALU|Selector2~10|datab
-    Info (332115):    167.655      0.309 FF  CELL  ALU|Selector2~10|combout
-    Info (332115):    168.673      1.018 FF    IC  ALU|Selector2~16|datac
-    Info (332115):    168.881      0.208 FF  CELL  ALU|Selector2~16|combout
-    Info (332115):    169.125      0.244 FF    IC  ALU|Selector2~12|dataa
-    Info (332115):    169.417      0.292 FF  CELL  ALU|Selector2~12|combout
-    Info (332115):    169.665      0.248 FF    IC  ALU|Selector2~13|dataa
-    Info (332115):    169.957      0.292 FF  CELL  ALU|Selector2~13|combout
-    Info (332115):    170.173      0.216 FF    IC  ALU|Selector2~14|datad
-    Info (332115):    170.264      0.091 FF  CELL  ALU|Selector2~14|combout
-    Info (332115):    171.130      0.866 FF    IC  FR|out~1|dataa
-    Info (332115):    171.422      0.292 FR  CELL  FR|out~1|combout
-    Info (332115):    172.555      1.133 RR    IC  FR|out~2|datac
-    Info (332115):    172.766      0.211 RR  CELL  FR|out~2|combout
-    Info (332115):    173.345      0.579 RR    IC  coutdelay|out[1]|asdata
-    Info (332115):    173.699      0.354 RR  CELL  register:coutdelay|out[1]
+    Info (332115):    160.425      0.425  R        clock network delay
+    Info (332115):    160.606      0.181     uTco  PCU:PCU|VGA:VGAcontroller|flags[1]
+    Info (332115):    160.606      0.000 FF  CELL  PCU|VGAcontroller|flags[1]|q
+    Info (332115):    161.538      0.932 FF    IC  Mux6~2|dataa
+    Info (332115):    161.830      0.292 FF  CELL  Mux6~2|combout
+    Info (332115):    162.197      0.367 FF    IC  Mux6~3|dataa
+    Info (332115):    162.489      0.292 FF  CELL  Mux6~3|combout
+    Info (332115):    162.691      0.202 FF    IC  Mux6|datad
+    Info (332115):    162.782      0.091 FF  CELL  Mux6|combout
+    Info (332115):    163.392      0.610 FF    IC  ALUb[1]~4|datad
+    Info (332115):    163.483      0.091 FF  CELL  ALUb[1]~4|combout
+    Info (332115):    163.688      0.205 FF    IC  ALUb[1]~5|datad
+    Info (332115):    163.779      0.091 FF  CELL  ALUb[1]~5|combout
+    Info (332115):    164.461      0.682 FF    IC  ALU|Add0~2|datab
+    Info (332115):    164.745      0.284 FR  CELL  ALU|Add0~2|cout
+    Info (332115):    164.745      0.000 RR    IC  ALU|Add0~4|cin
+    Info (332115):    165.170      0.425 RF  CELL  ALU|Add0~4|combout
+    Info (332115):    165.982      0.812 FF    IC  ALU|Add1~4|dataa
+    Info (332115):    166.323      0.341 FF  CELL  ALU|Add1~4|cout
+    Info (332115):    166.323      0.000 FF    IC  ALU|Add1~6|cin
+    Info (332115):    166.365      0.042 FR  CELL  ALU|Add1~6|cout
+    Info (332115):    166.365      0.000 RR    IC  ALU|Add1~8|cin
+    Info (332115):    166.814      0.449 RR  CELL  ALU|Add1~8|combout
+    Info (332115):    167.136      0.322 RR    IC  ALU|Selector4~9|datad
+    Info (332115):    167.251      0.115 RR  CELL  ALU|Selector4~9|combout
+    Info (332115):    167.422      0.171 RR    IC  ALU|Selector4~10|datad
+    Info (332115):    167.524      0.102 RF  CELL  ALU|Selector4~10|combout
+    Info (332115):    167.856      0.332 FF    IC  ALU|Selector4~16|datac
+    Info (332115):    168.064      0.208 FF  CELL  ALU|Selector4~16|combout
+    Info (332115):    168.273      0.209 FF    IC  ALU|Selector4~12|datac
+    Info (332115):    168.481      0.208 FF  CELL  ALU|Selector4~12|combout
+    Info (332115):    168.682      0.201 FF    IC  ALU|Selector4~13|datad
+    Info (332115):    168.793      0.111 FR  CELL  ALU|Selector4~13|combout
+    Info (332115):    170.493      1.700 RR    IC  Acc|out~5|dataa
+    Info (332115):    170.756      0.263 RR  CELL  Acc|out~5|combout
+    Info (332115):    172.153      1.397 RR    IC  ABhi|out[4]|asdata
+    Info (332115):    172.507      0.354 RR  CELL  register:ABhi|out[4]
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    200.000    200.000           latch edge time
-    Info (332115):    200.433      0.433  R        clock network delay
-    Info (332115):    200.413     -0.020           clock uncertainty
-    Info (332115):    200.425      0.012     uTsu  register:coutdelay|out[1]
+    Info (332115):    200.422      0.422  R        clock network delay
+    Info (332115):    200.402     -0.020           clock uncertainty
+    Info (332115):    200.414      0.012     uTsu  register:ABhi|out[4]
     Info (332115): 
-    Info (332115): Data Arrival Time  :   173.699
-    Info (332115): Data Required Time :   200.425
-    Info (332115): Slack              :    26.726 
+    Info (332115): Data Arrival Time  :   172.507
+    Info (332115): Data Required Time :   200.414
+    Info (332115): Slack              :    27.907 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.274
+Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.272
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[1]}]
     Info (332115): -hold
     Info (332115): -stdout
-Info (332115): Path #1: Hold slack is 0.274 
+Info (332115): Path #1: Hold slack is 0.272 
     Info (332115): ===================================================================
-    Info (332115): From Node    : PCU:PCU|PS2:PS2controller|inByte[2]
-    Info (332115): To Node      : PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated|ram_block1a0~porta_datain_reg0
+    Info (332115): From Node    : PCU:PCU|VGA:VGAcontroller|x[2]
+    Info (332115): To Node      : PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a60~porta_address_reg0
     Info (332115): Launch Clock : pll|altpll_component|auto_generated|pll1|clk[1]
     Info (332115): Latch Clock  : pll|altpll_component|auto_generated|pll1|clk[1]
     Info (332115): 
@@ -1476,31 +1476,31 @@ Info (332115): Path #1: Hold slack is 0.274
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    100.000    100.000           launch edge time
-    Info (332115):    100.416      0.416  R        clock network delay
-    Info (332115):    100.597      0.181     uTco  PCU:PCU|PS2:PS2controller|inByte[2]
-    Info (332115):    100.597      0.000 RR  CELL  PCU|PS2controller|inByte[2]|q
-    Info (332115):    101.215      0.618 RR    IC  PCU|PS2controller|queuedKeys_rtl_0|auto_generated|ram_block1a0|portadatain[2]
-    Info (332115):    101.259      0.044 RR  CELL  PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated|ram_block1a0~porta_datain_reg0
+    Info (332115):    100.436      0.436  R        clock network delay
+    Info (332115):    100.617      0.181     uTco  PCU:PCU|VGA:VGAcontroller|x[2]
+    Info (332115):    100.617      0.000 RR  CELL  PCU|VGAcontroller|x[2]|q
+    Info (332115):    101.232      0.615 RR    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|ram_block1a60|portaaddr[2]
+    Info (332115):    101.276      0.044 RR  CELL  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a60~porta_address_reg0
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    100.000    100.000           latch edge time
-    Info (332115):    100.847      0.847  R        clock network delay
-    Info (332115):    100.847      0.000           clock uncertainty
-    Info (332115):    100.985      0.138      uTh  PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated|ram_block1a0~porta_datain_reg0
+    Info (332115):    100.866      0.866  R        clock network delay
+    Info (332115):    100.866      0.000           clock uncertainty
+    Info (332115):    101.004      0.138      uTh  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a60~porta_address_reg0
     Info (332115): 
-    Info (332115): Data Arrival Time  :   101.259
-    Info (332115): Data Required Time :   100.985
-    Info (332115): Slack              :     0.274 
+    Info (332115): Data Arrival Time  :   101.276
+    Info (332115): Data Required Time :   101.004
+    Info (332115): Slack              :     0.272 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.347
+Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.346
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[2]}]
     Info (332115): -hold
     Info (332115): -stdout
-Info (332115): Path #1: Hold slack is 0.347 
+Info (332115): Path #1: Hold slack is 0.346 
     Info (332115): ===================================================================
     Info (332115): From Node    : PCU:PCU|SD:SDcontroller|MOSI
     Info (332115): To Node      : PCU:PCU|SD:SDcontroller|MOSI
@@ -1512,33 +1512,33 @@ Info (332115): Path #1: Hold slack is 0.347
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):      0.000      0.000           launch edge time
-    Info (332115):      0.428      0.428  R        clock network delay
-    Info (332115):      0.609      0.181     uTco  PCU:PCU|SD:SDcontroller|MOSI
-    Info (332115):      0.609      0.000 FF  CELL  PCU|SDcontroller|MOSI|q
-    Info (332115):      0.609      0.000 FF    IC  PCU|SDcontroller|MOSI~1|datac
-    Info (332115):      0.874      0.265 FF  CELL  PCU|SDcontroller|MOSI~1|combout
-    Info (332115):      0.874      0.000 FF    IC  PCU|SDcontroller|MOSI|d
-    Info (332115):      0.933      0.059 FF  CELL  PCU:PCU|SD:SDcontroller|MOSI
+    Info (332115):      0.444      0.444  R        clock network delay
+    Info (332115):      0.625      0.181     uTco  PCU:PCU|SD:SDcontroller|MOSI
+    Info (332115):      0.625      0.000 FF  CELL  PCU|SDcontroller|MOSI|q
+    Info (332115):      0.625      0.000 FF    IC  PCU|SDcontroller|MOSI~1|datac
+    Info (332115):      0.890      0.265 FF  CELL  PCU|SDcontroller|MOSI~1|combout
+    Info (332115):      0.890      0.000 FF    IC  PCU|SDcontroller|MOSI|d
+    Info (332115):      0.949      0.059 FF  CELL  PCU:PCU|SD:SDcontroller|MOSI
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):      0.000      0.000           latch edge time
-    Info (332115):      0.437      0.437  R        clock network delay
-    Info (332115):      0.437      0.000           clock uncertainty
-    Info (332115):      0.586      0.149      uTh  PCU:PCU|SD:SDcontroller|MOSI
+    Info (332115):      0.454      0.454  R        clock network delay
+    Info (332115):      0.454      0.000           clock uncertainty
+    Info (332115):      0.603      0.149      uTh  PCU:PCU|SD:SDcontroller|MOSI
     Info (332115): 
-    Info (332115): Data Arrival Time  :     0.933
-    Info (332115): Data Required Time :     0.586
-    Info (332115): Slack              :     0.347 
+    Info (332115): Data Arrival Time  :     0.949
+    Info (332115): Data Required Time :     0.603
+    Info (332115): Slack              :     0.346 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.360
+Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.364
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[0]}]
     Info (332115): -hold
     Info (332115): -stdout
-Info (332115): Path #1: Hold slack is 0.360 
+Info (332115): Path #1: Hold slack is 0.364 
     Info (332115): ===================================================================
     Info (332115): From Node    : register:statereg|out[0]
     Info (332115): To Node      : register:statereg|out[0]
@@ -1550,66 +1550,66 @@ Info (332115): Path #1: Hold slack is 0.360
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):      0.000      0.000           launch edge time
-    Info (332115):      0.413      0.413  R        clock network delay
-    Info (332115):      0.594      0.181     uTco  register:statereg|out[0]
-    Info (332115):      0.594      0.000 FF  CELL  statereg|out[0]|q
-    Info (332115):      0.594      0.000 FF    IC  LUT|LUT~1314|datac
-    Info (332115):      0.872      0.278 FR  CELL  LUT|LUT~1314|combout
-    Info (332115):      0.872      0.000 RR    IC  statereg|out[0]|d
-    Info (332115):      0.931      0.059 RR  CELL  register:statereg|out[0]
+    Info (332115):      0.330      0.330  R        clock network delay
+    Info (332115):      0.511      0.181     uTco  register:statereg|out[0]
+    Info (332115):      0.511      0.000 FF  CELL  statereg|out[0]|q
+    Info (332115):      0.511      0.000 FF    IC  LUT|LUT~1306|datac
+    Info (332115):      0.789      0.278 FR  CELL  LUT|LUT~1306|combout
+    Info (332115):      0.789      0.000 RR    IC  statereg|out[0]|d
+    Info (332115):      0.848      0.059 RR  CELL  register:statereg|out[0]
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):      0.000      0.000           latch edge time
-    Info (332115):      0.422      0.422  R        clock network delay
-    Info (332115):      0.422      0.000           clock uncertainty
-    Info (332115):      0.571      0.149      uTh  register:statereg|out[0]
+    Info (332115):      0.335      0.335  R        clock network delay
+    Info (332115):      0.335      0.000           clock uncertainty
+    Info (332115):      0.484      0.149      uTh  register:statereg|out[0]
     Info (332115): 
-    Info (332115): Data Arrival Time  :     0.931
-    Info (332115): Data Required Time :     0.571
-    Info (332115): Slack              :     0.360 
+    Info (332115): Data Arrival Time  :     0.848
+    Info (332115): Data Required Time :     0.484
+    Info (332115): Slack              :     0.364 
     Info (332115): ===================================================================
     Info (332115): 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 12.018
+Info (332146): Worst-case setup slack is 12.753
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    12.018               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):    12.557               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
-    Info (332119):    32.900               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
-Info (332146): Worst-case hold slack is 0.158
+    Info (332119):    12.753               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):    13.356               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):    33.476               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
+Info (332146): Worst-case hold slack is 0.161
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.158               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):     0.161               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
     Info (332119):     0.207               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):     0.212               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):     0.213               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 9.530
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     9.530               0.000 MAX10_CLK1_50 
-    Info (332119):    19.721               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):    99.711               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
-    Info (332119):    99.800               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    19.719               0.000 pll|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):    99.710               0.000 pll|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):    99.799               0.000 pll|altpll_component|auto_generated|pll1|clk[0] 
 Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 1
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 397.724 ns
+    Info (332114): Worst Case Available Settling Time: 397.976 ns
     Info (332114): 
-Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 12.018
+Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 12.753
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[2]}]
     Info (332115): -setup
     Info (332115): -stdout
-Info (332115): Path #1: Setup slack is 12.018 
+Info (332115): Path #1: Setup slack is 12.753 
     Info (332115): ===================================================================
     Info (332115): From Node    : ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated|ram_block1a24~porta_we_reg
-    Info (332115): To Node      : PCU:PCU|VGA:VGAcontroller|flags[6]
+    Info (332115): To Node      : PCU:PCU|SD:SDcontroller|flags[6]
     Info (332115): Launch Clock : pll|altpll_component|auto_generated|pll1|clk[1]
     Info (332115): Latch Clock  : pll|altpll_component|auto_generated|pll1|clk[2]
     Info (332115): 
@@ -1618,74 +1618,72 @@ Info (332115): Path #1: Setup slack is 12.018
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    100.000    100.000           launch edge time
-    Info (332115):    100.295      0.295  R        clock network delay
-    Info (332115):    100.421      0.126     uTco  ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated|ram_block1a24~porta_we_reg
-    Info (332115):    101.500      1.079 RF  CELL  RAM|RAM_rtl_0|auto_generated|ram_block1a24|portadataout[0]
-    Info (332115):    102.636      1.136 FF    IC  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~0|dataa
-    Info (332115):    102.792      0.156 FF  CELL  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~0|combout
-    Info (332115):    102.893      0.101 FF    IC  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~1|datad
-    Info (332115):    102.942      0.049 FF  CELL  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~1|combout
-    Info (332115):    103.041      0.099 FF    IC  Mux7~2|datad
-    Info (332115):    103.090      0.049 FF  CELL  Mux7~2|combout
-    Info (332115):    103.572      0.482 FF    IC  Mux7|datab
-    Info (332115):    103.737      0.165 FF  CELL  Mux7|combout
-    Info (332115):    103.913      0.176 FF    IC  ALUb[0]~1|datad
-    Info (332115):    103.962      0.049 FF  CELL  ALUb[0]~1|combout
-    Info (332115):    104.064      0.102 FF    IC  ALUb[0]~2|datac
-    Info (332115):    104.170      0.106 FF  CELL  ALUb[0]~2|combout
-    Info (332115):    104.305      0.135 FF    IC  ALU|Add0~0|datab
-    Info (332115):    104.490      0.185 FF  CELL  ALU|Add0~0|cout
-    Info (332115):    104.490      0.000 FF    IC  ALU|Add0~2|cin
-    Info (332115):    104.513      0.023 FR  CELL  ALU|Add0~2|cout
-    Info (332115):    104.513      0.000 RR    IC  ALU|Add0~4|cin
-    Info (332115):    104.536      0.023 RF  CELL  ALU|Add0~4|cout
-    Info (332115):    104.536      0.000 FF    IC  ALU|Add0~6|cin
-    Info (332115):    104.559      0.023 FR  CELL  ALU|Add0~6|cout
-    Info (332115):    104.559      0.000 RR    IC  ALU|Add0~8|cin
-    Info (332115):    104.776      0.217 RF  CELL  ALU|Add0~8|combout
-    Info (332115):    105.105      0.329 FF    IC  ALU|Add1~8|dataa
-    Info (332115):    105.290      0.185 FF  CELL  ALU|Add1~8|cout
-    Info (332115):    105.290      0.000 FF    IC  ALU|Add1~10|cin
-    Info (332115):    105.313      0.023 FR  CELL  ALU|Add1~10|cout
-    Info (332115):    105.313      0.000 RR    IC  ALU|Add1~12|cin
-    Info (332115):    105.530      0.217 RF  CELL  ALU|Add1~12|combout
-    Info (332115):    105.653      0.123 FF    IC  ALU|Selector2~9|datab
-    Info (332115):    105.807      0.154 FF  CELL  ALU|Selector2~9|combout
-    Info (332115):    105.929      0.122 FF    IC  ALU|Selector2~10|datab
-    Info (332115):    106.094      0.165 FF  CELL  ALU|Selector2~10|combout
-    Info (332115):    106.682      0.588 FF    IC  ALU|Selector2~16|datac
-    Info (332115):    106.788      0.106 FF  CELL  ALU|Selector2~16|combout
-    Info (332115):    106.914      0.126 FF    IC  ALU|Selector2~12|dataa
-    Info (332115):    107.068      0.154 FF  CELL  ALU|Selector2~12|combout
-    Info (332115):    107.197      0.129 FF    IC  ALU|Selector2~13|dataa
-    Info (332115):    107.351      0.154 FF  CELL  ALU|Selector2~13|combout
-    Info (332115):    107.460      0.109 FF    IC  ALU|Selector2~14|datad
-    Info (332115):    107.509      0.049 FF  CELL  ALU|Selector2~14|combout
-    Info (332115):    107.866      0.357 FF    IC  PCU|VGAcontroller|flags[6]|asdata
-    Info (332115):    108.027      0.161 FF  CELL  PCU:PCU|VGA:VGAcontroller|flags[6]
+    Info (332115):    100.223      0.223  R        clock network delay
+    Info (332115):    100.349      0.126     uTco  ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated|ram_block1a24~porta_we_reg
+    Info (332115):    101.428      1.079 RF  CELL  RAM|RAM_rtl_0|auto_generated|ram_block1a24|portadataout[0]
+    Info (332115):    102.362      0.934 FF    IC  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~0|dataa
+    Info (332115):    102.518      0.156 FF  CELL  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~0|combout
+    Info (332115):    102.643      0.125 FF    IC  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~1|datab
+    Info (332115):    102.808      0.165 FF  CELL  RAM|RAM_rtl_0|auto_generated|mux2|result_node[0]~1|combout
+    Info (332115):    102.937      0.129 FF    IC  Mux7~2|dataa
+    Info (332115):    103.093      0.156 FF  CELL  Mux7~2|combout
+    Info (332115):    103.601      0.508 FF    IC  Mux7|datac
+    Info (332115):    103.707      0.106 FF  CELL  Mux7|combout
+    Info (332115):    103.819      0.112 FF    IC  ALUb[0]~1|datad
+    Info (332115):    103.868      0.049 FF  CELL  ALUb[0]~1|combout
+    Info (332115):    103.970      0.102 FF    IC  ALUb[0]~2|datac
+    Info (332115):    104.076      0.106 FF  CELL  ALUb[0]~2|combout
+    Info (332115):    104.211      0.135 FF    IC  ALU|Add0~0|dataa
+    Info (332115):    104.396      0.185 FF  CELL  ALU|Add0~0|cout
+    Info (332115):    104.396      0.000 FF    IC  ALU|Add0~2|cin
+    Info (332115):    104.419      0.023 FR  CELL  ALU|Add0~2|cout
+    Info (332115):    104.419      0.000 RR    IC  ALU|Add0~4|cin
+    Info (332115):    104.636      0.217 RF  CELL  ALU|Add0~4|combout
+    Info (332115):    105.091      0.455 FF    IC  ALU|Add1~4|dataa
+    Info (332115):    105.276      0.185 FF  CELL  ALU|Add1~4|cout
+    Info (332115):    105.276      0.000 FF    IC  ALU|Add1~6|cin
+    Info (332115):    105.299      0.023 FR  CELL  ALU|Add1~6|cout
+    Info (332115):    105.299      0.000 RR    IC  ALU|Add1~8|cin
+    Info (332115):    105.322      0.023 RF  CELL  ALU|Add1~8|cout
+    Info (332115):    105.322      0.000 FF    IC  ALU|Add1~10|cin
+    Info (332115):    105.345      0.023 FR  CELL  ALU|Add1~10|cout
+    Info (332115):    105.345      0.000 RR    IC  ALU|Add1~12|cin
+    Info (332115):    105.562      0.217 RF  CELL  ALU|Add1~12|combout
+    Info (332115):    105.685      0.123 FF    IC  ALU|Selector2~11|datab
+    Info (332115):    105.839      0.154 FF  CELL  ALU|Selector2~11|combout
+    Info (332115):    105.938      0.099 FF    IC  ALU|Selector2~16|datad
+    Info (332115):    105.987      0.049 FF  CELL  ALU|Selector2~16|combout
+    Info (332115):    106.152      0.165 FF    IC  ALU|Selector2~13|datad
+    Info (332115):    106.201      0.049 FF  CELL  ALU|Selector2~13|combout
+    Info (332115):    106.303      0.102 FF    IC  ALU|Selector2~14|datad
+    Info (332115):    106.352      0.049 FF  CELL  ALU|Selector2~14|combout
+    Info (332115):    106.460      0.108 FF    IC  ALU|Selector2~15|datad
+    Info (332115):    106.509      0.049 FF  CELL  ALU|Selector2~15|combout
+    Info (332115):    107.120      0.611 FF    IC  PCU|SDcontroller|flags[6]|asdata
+    Info (332115):    107.281      0.161 FF  CELL  PCU:PCU|SD:SDcontroller|flags[6]
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    120.000    120.000           latch edge time
-    Info (332115):    120.059      0.059  R        clock network delay
-    Info (332115):    120.039     -0.020           clock uncertainty
-    Info (332115):    120.045      0.006     uTsu  PCU:PCU|VGA:VGAcontroller|flags[6]
+    Info (332115):    120.048      0.048  R        clock network delay
+    Info (332115):    120.028     -0.020           clock uncertainty
+    Info (332115):    120.034      0.006     uTsu  PCU:PCU|SD:SDcontroller|flags[6]
     Info (332115): 
-    Info (332115): Data Arrival Time  :   108.027
-    Info (332115): Data Required Time :   120.045
-    Info (332115): Slack              :    12.018 
+    Info (332115): Data Arrival Time  :   107.281
+    Info (332115): Data Required Time :   120.034
+    Info (332115): Slack              :    12.753 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 12.557
+Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 13.356
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[1]}]
     Info (332115): -setup
     Info (332115): -stdout
-Info (332115): Path #1: Setup slack is 12.557 
+Info (332115): Path #1: Setup slack is 13.356 
     Info (332115): ===================================================================
-    Info (332115): From Node    : PCU:PCU|SD:SDcontroller|inByte[3]
-    Info (332115): To Node      : PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a22~porta_address_reg0
+    Info (332115): From Node    : PCU:PCU|VGA:VGAcontroller|flags[1]
+    Info (332115): To Node      : PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a25~porta_address_reg0
     Info (332115): Launch Clock : pll|altpll_component|auto_generated|pll1|clk[2]
     Info (332115): Latch Clock  : pll|altpll_component|auto_generated|pll1|clk[1]
     Info (332115): 
@@ -1694,66 +1692,70 @@ Info (332115): Path #1: Setup slack is 12.557
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):     80.000     80.000           launch edge time
-    Info (332115):     80.042      0.042  R        clock network delay
-    Info (332115):     80.128      0.086     uTco  PCU:PCU|SD:SDcontroller|inByte[3]
-    Info (332115):     80.128      0.000 FF  CELL  PCU|SDcontroller|inByte[3]|q
-    Info (332115):     80.530      0.402 FF    IC  Mux4~0|datab
-    Info (332115):     80.695      0.165 FF  CELL  Mux4~0|combout
-    Info (332115):     80.824      0.129 FF    IC  Mux4~1|dataa
-    Info (332115):     80.980      0.156 FF  CELL  Mux4~1|combout
-    Info (332115):     81.109      0.129 FF    IC  Mux4|dataa
-    Info (332115):     81.273      0.164 FF  CELL  Mux4|combout
-    Info (332115):     81.763      0.490 FF    IC  ALUb[3]~13|datab
-    Info (332115):     81.903      0.140 FF  CELL  ALUb[3]~13|combout
-    Info (332115):     82.249      0.346 FF    IC  ALU|Add0~6|dataa
-    Info (332115):     82.394      0.145 FR  CELL  ALU|Add0~6|cout
-    Info (332115):     82.394      0.000 RR    IC  ALU|Add0~8|cin
-    Info (332115):     82.611      0.217 RF  CELL  ALU|Add0~8|combout
-    Info (332115):     82.940      0.329 FF    IC  ALU|Add1~8|dataa
-    Info (332115):     83.125      0.185 FF  CELL  ALU|Add1~8|cout
-    Info (332115):     83.125      0.000 FF    IC  ALU|Add1~10|cin
-    Info (332115):     83.148      0.023 FR  CELL  ALU|Add1~10|cout
-    Info (332115):     83.148      0.000 RR    IC  ALU|Add1~12|cin
-    Info (332115):     83.365      0.217 RF  CELL  ALU|Add1~12|combout
-    Info (332115):     83.488      0.123 FF    IC  ALU|Selector2~9|datab
-    Info (332115):     83.642      0.154 FF  CELL  ALU|Selector2~9|combout
-    Info (332115):     83.764      0.122 FF    IC  ALU|Selector2~10|datab
-    Info (332115):     83.929      0.165 FF  CELL  ALU|Selector2~10|combout
-    Info (332115):     84.517      0.588 FF    IC  ALU|Selector2~16|datac
-    Info (332115):     84.623      0.106 FF  CELL  ALU|Selector2~16|combout
-    Info (332115):     84.749      0.126 FF    IC  ALU|Selector2~12|dataa
-    Info (332115):     84.903      0.154 FF  CELL  ALU|Selector2~12|combout
-    Info (332115):     85.032      0.129 FF    IC  ALU|Selector2~13|dataa
-    Info (332115):     85.186      0.154 FF  CELL  ALU|Selector2~13|combout
-    Info (332115):     85.295      0.109 FF    IC  ALU|Selector2~14|datad
-    Info (332115):     85.344      0.049 FF  CELL  ALU|Selector2~14|combout
-    Info (332115):     85.719      0.375 FF    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|decode2|w_anode572w[3]~0|datab
-    Info (332115):     85.860      0.141 FF  CELL  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|decode2|w_anode572w[3]~0|combout
-    Info (332115):     87.135      1.275 FF    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|ram_block1a22|ena0
-    Info (332115):     87.413      0.278 FF  CELL  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a22~porta_address_reg0
+    Info (332115):     80.029      0.029  R        clock network delay
+    Info (332115):     80.115      0.086     uTco  PCU:PCU|VGA:VGAcontroller|flags[1]
+    Info (332115):     80.115      0.000 FF  CELL  PCU|VGAcontroller|flags[1]|q
+    Info (332115):     80.648      0.533 FF    IC  Mux6~2|dataa
+    Info (332115):     80.802      0.154 FF  CELL  Mux6~2|combout
+    Info (332115):     81.004      0.202 FF    IC  Mux6~3|dataa
+    Info (332115):     81.158      0.154 FF  CELL  Mux6~3|combout
+    Info (332115):     81.259      0.101 FF    IC  Mux6|datad
+    Info (332115):     81.308      0.049 FF  CELL  Mux6|combout
+    Info (332115):     81.652      0.344 FF    IC  ALUb[1]~4|datad
+    Info (332115):     81.701      0.049 FF  CELL  ALUb[1]~4|combout
+    Info (332115):     81.805      0.104 FF    IC  ALUb[1]~5|datad
+    Info (332115):     81.854      0.049 FF  CELL  ALUb[1]~5|combout
+    Info (332115):     82.241      0.387 FF    IC  ALU|Add0~2|datab
+    Info (332115):     82.389      0.148 FR  CELL  ALU|Add0~2|cout
+    Info (332115):     82.389      0.000 RR    IC  ALU|Add0~4|cin
+    Info (332115):     82.606      0.217 RF  CELL  ALU|Add0~4|combout
+    Info (332115):     83.061      0.455 FF    IC  ALU|Add1~4|dataa
+    Info (332115):     83.246      0.185 FF  CELL  ALU|Add1~4|cout
+    Info (332115):     83.246      0.000 FF    IC  ALU|Add1~6|cin
+    Info (332115):     83.269      0.023 FR  CELL  ALU|Add1~6|cout
+    Info (332115):     83.269      0.000 RR    IC  ALU|Add1~8|cin
+    Info (332115):     83.292      0.023 RF  CELL  ALU|Add1~8|cout
+    Info (332115):     83.292      0.000 FF    IC  ALU|Add1~10|cin
+    Info (332115):     83.315      0.023 FR  CELL  ALU|Add1~10|cout
+    Info (332115):     83.315      0.000 RR    IC  ALU|Add1~12|cin
+    Info (332115):     83.532      0.217 RF  CELL  ALU|Add1~12|combout
+    Info (332115):     83.655      0.123 FF    IC  ALU|Selector2~11|datab
+    Info (332115):     83.809      0.154 FF  CELL  ALU|Selector2~11|combout
+    Info (332115):     83.908      0.099 FF    IC  ALU|Selector2~16|datad
+    Info (332115):     83.957      0.049 FF  CELL  ALU|Selector2~16|combout
+    Info (332115):     84.122      0.165 FF    IC  ALU|Selector2~13|datad
+    Info (332115):     84.171      0.049 FF  CELL  ALU|Selector2~13|combout
+    Info (332115):     84.273      0.102 FF    IC  ALU|Selector2~14|datad
+    Info (332115):     84.322      0.049 FF  CELL  ALU|Selector2~14|combout
+    Info (332115):     84.430      0.108 FF    IC  ALU|Selector2~15|datad
+    Info (332115):     84.479      0.049 FF  CELL  ALU|Selector2~15|combout
+    Info (332115):     85.075      0.596 FF    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|decode2|w_anode582w[3]~0|dataa
+    Info (332115):     85.213      0.138 FF  CELL  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|decode2|w_anode582w[3]~0|combout
+    Info (332115):     86.303      1.090 FF    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|ram_block1a25|ena0
+    Info (332115):     86.581      0.278 FF  CELL  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a25~porta_address_reg0
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    100.000    100.000           latch edge time
-    Info (332115):    100.198      0.198  R        clock network delay
-    Info (332115):    100.178     -0.020           clock uncertainty
-    Info (332115):     99.970     -0.208     uTsu  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a22~porta_address_reg0
+    Info (332115):    100.165      0.165  R        clock network delay
+    Info (332115):    100.145     -0.020           clock uncertainty
+    Info (332115):     99.937     -0.208     uTsu  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a25~porta_address_reg0
     Info (332115): 
-    Info (332115): Data Arrival Time  :    87.413
-    Info (332115): Data Required Time :    99.970
-    Info (332115): Slack              :    12.557 
+    Info (332115): Data Arrival Time  :    86.581
+    Info (332115): Data Required Time :    99.937
+    Info (332115): Slack              :    13.356 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 32.900
+Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 33.476
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[0]}]
     Info (332115): -setup
     Info (332115): -stdout
-Info (332115): Path #1: Setup slack is 32.900 
+Info (332115): Path #1: Setup slack is 33.476 
     Info (332115): ===================================================================
-    Info (332115): From Node    : PCU:PCU|SD:SDcontroller|inByte[3]
-    Info (332115): To Node      : register:coutdelay|out[1]
+    Info (332115): From Node    : PCU:PCU|VGA:VGAcontroller|flags[1]
+    Info (332115): To Node      : register:ABhi|out[4]
     Info (332115): Launch Clock : pll|altpll_component|auto_generated|pll1|clk[2]
     Info (332115): Latch Clock  : pll|altpll_component|auto_generated|pll1|clk[0]
     Info (332115): 
@@ -1762,68 +1764,66 @@ Info (332115): Path #1: Setup slack is 32.900
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    160.000    160.000           launch edge time
-    Info (332115):    160.042      0.042  R        clock network delay
-    Info (332115):    160.128      0.086     uTco  PCU:PCU|SD:SDcontroller|inByte[3]
-    Info (332115):    160.128      0.000 FF  CELL  PCU|SDcontroller|inByte[3]|q
-    Info (332115):    160.530      0.402 FF    IC  Mux4~0|datab
-    Info (332115):    160.695      0.165 FF  CELL  Mux4~0|combout
-    Info (332115):    160.824      0.129 FF    IC  Mux4~1|dataa
-    Info (332115):    160.980      0.156 FF  CELL  Mux4~1|combout
-    Info (332115):    161.109      0.129 FF    IC  Mux4|dataa
-    Info (332115):    161.273      0.164 FF  CELL  Mux4|combout
-    Info (332115):    161.763      0.490 FF    IC  ALUb[3]~13|datab
-    Info (332115):    161.903      0.140 FF  CELL  ALUb[3]~13|combout
-    Info (332115):    162.249      0.346 FF    IC  ALU|Add0~6|dataa
-    Info (332115):    162.394      0.145 FR  CELL  ALU|Add0~6|cout
-    Info (332115):    162.394      0.000 RR    IC  ALU|Add0~8|cin
-    Info (332115):    162.611      0.217 RF  CELL  ALU|Add0~8|combout
-    Info (332115):    162.940      0.329 FF    IC  ALU|Add1~8|dataa
-    Info (332115):    163.125      0.185 FF  CELL  ALU|Add1~8|cout
-    Info (332115):    163.125      0.000 FF    IC  ALU|Add1~10|cin
-    Info (332115):    163.148      0.023 FR  CELL  ALU|Add1~10|cout
-    Info (332115):    163.148      0.000 RR    IC  ALU|Add1~12|cin
-    Info (332115):    163.365      0.217 RF  CELL  ALU|Add1~12|combout
-    Info (332115):    163.488      0.123 FF    IC  ALU|Selector2~9|datab
-    Info (332115):    163.642      0.154 FF  CELL  ALU|Selector2~9|combout
-    Info (332115):    163.764      0.122 FF    IC  ALU|Selector2~10|datab
-    Info (332115):    163.929      0.165 FF  CELL  ALU|Selector2~10|combout
-    Info (332115):    164.517      0.588 FF    IC  ALU|Selector2~16|datac
-    Info (332115):    164.623      0.106 FF  CELL  ALU|Selector2~16|combout
-    Info (332115):    164.749      0.126 FF    IC  ALU|Selector2~12|dataa
-    Info (332115):    164.903      0.154 FF  CELL  ALU|Selector2~12|combout
-    Info (332115):    165.032      0.129 FF    IC  ALU|Selector2~13|dataa
-    Info (332115):    165.195      0.163 FR  CELL  ALU|Selector2~13|combout
-    Info (332115):    165.285      0.090 RR    IC  ALU|Selector2~14|datad
-    Info (332115):    165.340      0.055 RR  CELL  ALU|Selector2~14|combout
-    Info (332115):    165.764      0.424 RR    IC  FR|out~1|dataa
-    Info (332115):    165.918      0.154 RF  CELL  FR|out~1|combout
-    Info (332115):    166.572      0.654 FF    IC  FR|out~2|datac
-    Info (332115):    166.678      0.106 FF  CELL  FR|out~2|combout
-    Info (332115):    166.995      0.317 FF    IC  coutdelay|out[1]|asdata
-    Info (332115):    167.156      0.161 FF  CELL  register:coutdelay|out[1]
+    Info (332115):    160.029      0.029  R        clock network delay
+    Info (332115):    160.115      0.086     uTco  PCU:PCU|VGA:VGAcontroller|flags[1]
+    Info (332115):    160.115      0.000 FF  CELL  PCU|VGAcontroller|flags[1]|q
+    Info (332115):    160.648      0.533 FF    IC  Mux6~2|dataa
+    Info (332115):    160.802      0.154 FF  CELL  Mux6~2|combout
+    Info (332115):    161.004      0.202 FF    IC  Mux6~3|dataa
+    Info (332115):    161.158      0.154 FF  CELL  Mux6~3|combout
+    Info (332115):    161.259      0.101 FF    IC  Mux6|datad
+    Info (332115):    161.308      0.049 FF  CELL  Mux6|combout
+    Info (332115):    161.652      0.344 FF    IC  ALUb[1]~4|datad
+    Info (332115):    161.701      0.049 FF  CELL  ALUb[1]~4|combout
+    Info (332115):    161.805      0.104 FF    IC  ALUb[1]~5|datad
+    Info (332115):    161.854      0.049 FF  CELL  ALUb[1]~5|combout
+    Info (332115):    162.241      0.387 FF    IC  ALU|Add0~2|datab
+    Info (332115):    162.389      0.148 FR  CELL  ALU|Add0~2|cout
+    Info (332115):    162.389      0.000 RR    IC  ALU|Add0~4|cin
+    Info (332115):    162.606      0.217 RF  CELL  ALU|Add0~4|combout
+    Info (332115):    163.061      0.455 FF    IC  ALU|Add1~4|dataa
+    Info (332115):    163.246      0.185 FF  CELL  ALU|Add1~4|cout
+    Info (332115):    163.246      0.000 FF    IC  ALU|Add1~6|cin
+    Info (332115):    163.269      0.023 FR  CELL  ALU|Add1~6|cout
+    Info (332115):    163.269      0.000 RR    IC  ALU|Add1~8|cin
+    Info (332115):    163.486      0.217 RF  CELL  ALU|Add1~8|combout
+    Info (332115):    163.665      0.179 FF    IC  ALU|Selector4~9|datad
+    Info (332115):    163.714      0.049 FF  CELL  ALU|Selector4~9|combout
+    Info (332115):    163.817      0.103 FF    IC  ALU|Selector4~10|datad
+    Info (332115):    163.866      0.049 FF  CELL  ALU|Selector4~10|combout
+    Info (332115):    164.045      0.179 FF    IC  ALU|Selector4~16|datac
+    Info (332115):    164.151      0.106 FF  CELL  ALU|Selector4~16|combout
+    Info (332115):    164.254      0.103 FF    IC  ALU|Selector4~12|datac
+    Info (332115):    164.360      0.106 FF  CELL  ALU|Selector4~12|combout
+    Info (332115):    164.460      0.100 FF    IC  ALU|Selector4~13|datad
+    Info (332115):    164.509      0.049 FF  CELL  ALU|Selector4~13|combout
+    Info (332115):    165.486      0.977 FF    IC  Acc|out~5|dataa
+    Info (332115):    165.611      0.125 FF  CELL  Acc|out~5|combout
+    Info (332115):    166.409      0.798 FF    IC  ABhi|out[4]|asdata
+    Info (332115):    166.570      0.161 FF  CELL  register:ABhi|out[4]
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    200.000    200.000           latch edge time
-    Info (332115):    200.070      0.070  R        clock network delay
-    Info (332115):    200.050     -0.020           clock uncertainty
-    Info (332115):    200.056      0.006     uTsu  register:coutdelay|out[1]
+    Info (332115):    200.060      0.060  R        clock network delay
+    Info (332115):    200.040     -0.020           clock uncertainty
+    Info (332115):    200.046      0.006     uTsu  register:ABhi|out[4]
     Info (332115): 
-    Info (332115): Data Arrival Time  :   167.156
-    Info (332115): Data Required Time :   200.056
-    Info (332115): Slack              :    32.900 
+    Info (332115): Data Arrival Time  :   166.570
+    Info (332115): Data Required Time :   200.046
+    Info (332115): Slack              :    33.476 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.158
+Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.161
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[1]}]
     Info (332115): -hold
     Info (332115): -stdout
-Info (332115): Path #1: Hold slack is 0.158 
+Info (332115): Path #1: Hold slack is 0.161 
     Info (332115): ===================================================================
-    Info (332115): From Node    : PCU:PCU|PS2:PS2controller|inByte[2]
-    Info (332115): To Node      : PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated|ram_block1a0~porta_datain_reg0
+    Info (332115): From Node    : PCU:PCU|VGA:VGAcontroller|x[2]
+    Info (332115): To Node      : PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a60~porta_address_reg0
     Info (332115): Launch Clock : pll|altpll_component|auto_generated|pll1|clk[1]
     Info (332115): Latch Clock  : pll|altpll_component|auto_generated|pll1|clk[1]
     Info (332115): 
@@ -1832,24 +1832,24 @@ Info (332115): Path #1: Hold slack is 0.158
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    100.000    100.000           launch edge time
-    Info (332115):    100.052      0.052  R        clock network delay
-    Info (332115):    100.138      0.086     uTco  PCU:PCU|PS2:PS2controller|inByte[2]
-    Info (332115):    100.138      0.000 RR  CELL  PCU|PS2controller|inByte[2]|q
-    Info (332115):    100.447      0.309 RR    IC  PCU|PS2controller|queuedKeys_rtl_0|auto_generated|ram_block1a0|portadatain[2]
-    Info (332115):    100.472      0.025 RR  CELL  PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated|ram_block1a0~porta_datain_reg0
+    Info (332115):    100.071      0.071  R        clock network delay
+    Info (332115):    100.157      0.086     uTco  PCU:PCU|VGA:VGAcontroller|x[2]
+    Info (332115):    100.157      0.000 RR  CELL  PCU|VGAcontroller|x[2]|q
+    Info (332115):    100.468      0.311 RR    IC  PCU|VGAcontroller|buffer|RAM_rtl_0|auto_generated|ram_block1a60|portaaddr[2]
+    Info (332115):    100.494      0.026 RR  CELL  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a60~porta_address_reg0
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):    100.000    100.000           latch edge time
-    Info (332115):    100.245      0.245  R        clock network delay
-    Info (332115):    100.245      0.000           clock uncertainty
-    Info (332115):    100.314      0.069      uTh  PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated|ram_block1a0~porta_datain_reg0
+    Info (332115):    100.264      0.264  R        clock network delay
+    Info (332115):    100.264      0.000           clock uncertainty
+    Info (332115):    100.333      0.069      uTh  PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0|altsyncram_hvi1:auto_generated|ram_block1a60~porta_address_reg0
     Info (332115): 
-    Info (332115): Data Arrival Time  :   100.472
-    Info (332115): Data Required Time :   100.314
-    Info (332115): Slack              :     0.158 
+    Info (332115): Data Arrival Time  :   100.494
+    Info (332115): Data Required Time :   100.333
+    Info (332115): Slack              :     0.161 
     Info (332115): ===================================================================
     Info (332115): 
 Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.207
@@ -1868,33 +1868,33 @@ Info (332115): Path #1: Hold slack is 0.207
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):      0.000      0.000           launch edge time
-    Info (332115):      0.066      0.066  R        clock network delay
-    Info (332115):      0.152      0.086     uTco  PCU:PCU|SD:SDcontroller|MOSI
-    Info (332115):      0.152      0.000 RR  CELL  PCU|SDcontroller|MOSI|q
-    Info (332115):      0.152      0.000 RR    IC  PCU|SDcontroller|MOSI~1|datac
-    Info (332115):      0.292      0.140 RR  CELL  PCU|SDcontroller|MOSI~1|combout
-    Info (332115):      0.292      0.000 RR    IC  PCU|SDcontroller|MOSI|d
-    Info (332115):      0.321      0.029 RR  CELL  PCU:PCU|SD:SDcontroller|MOSI
+    Info (332115):      0.077      0.077  R        clock network delay
+    Info (332115):      0.163      0.086     uTco  PCU:PCU|SD:SDcontroller|MOSI
+    Info (332115):      0.163      0.000 RR  CELL  PCU|SDcontroller|MOSI|q
+    Info (332115):      0.163      0.000 RR    IC  PCU|SDcontroller|MOSI~1|datac
+    Info (332115):      0.303      0.140 RR  CELL  PCU|SDcontroller|MOSI~1|combout
+    Info (332115):      0.303      0.000 RR    IC  PCU|SDcontroller|MOSI|d
+    Info (332115):      0.332      0.029 RR  CELL  PCU:PCU|SD:SDcontroller|MOSI
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):      0.000      0.000           latch edge time
-    Info (332115):      0.043      0.043  R        clock network delay
-    Info (332115):      0.043      0.000           clock uncertainty
-    Info (332115):      0.114      0.071      uTh  PCU:PCU|SD:SDcontroller|MOSI
+    Info (332115):      0.054      0.054  R        clock network delay
+    Info (332115):      0.054      0.000           clock uncertainty
+    Info (332115):      0.125      0.071      uTh  PCU:PCU|SD:SDcontroller|MOSI
     Info (332115): 
-    Info (332115): Data Arrival Time  :     0.321
-    Info (332115): Data Required Time :     0.114
+    Info (332115): Data Arrival Time  :     0.332
+    Info (332115): Data Required Time :     0.125
     Info (332115): Slack              :     0.207 
     Info (332115): ===================================================================
     Info (332115): 
-Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.212
+Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.213
     Info (332115): -to_clock [get_clocks {pll|altpll_component|auto_generated|pll1|clk[0]}]
     Info (332115): -hold
     Info (332115): -stdout
-Info (332115): Path #1: Hold slack is 0.212 
+Info (332115): Path #1: Hold slack is 0.213 
     Info (332115): ===================================================================
     Info (332115): From Node    : register:statereg|out[0]
     Info (332115): To Node      : register:statereg|out[0]
@@ -1906,34 +1906,34 @@ Info (332115): Path #1: Hold slack is 0.212
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):      0.000      0.000           launch edge time
-    Info (332115):      0.054      0.054  R        clock network delay
-    Info (332115):      0.140      0.086     uTco  register:statereg|out[0]
-    Info (332115):      0.140      0.000 FF  CELL  statereg|out[0]|q
-    Info (332115):      0.140      0.000 FF    IC  LUT|LUT~1314|datac
-    Info (332115):      0.284      0.144 FR  CELL  LUT|LUT~1314|combout
-    Info (332115):      0.284      0.000 RR    IC  statereg|out[0]|d
-    Info (332115):      0.313      0.029 RR  CELL  register:statereg|out[0]
+    Info (332115):      0.022      0.022  R        clock network delay
+    Info (332115):      0.108      0.086     uTco  register:statereg|out[0]
+    Info (332115):      0.108      0.000 FF  CELL  statereg|out[0]|q
+    Info (332115):      0.108      0.000 FF    IC  LUT|LUT~1306|datac
+    Info (332115):      0.252      0.144 FR  CELL  LUT|LUT~1306|combout
+    Info (332115):      0.252      0.000 RR    IC  statereg|out[0]|d
+    Info (332115):      0.281      0.029 RR  CELL  register:statereg|out[0]
     Info (332115): 
     Info (332115): Data Required Path:
     Info (332115): 
     Info (332115): Total (ns)  Incr (ns)     Type  Element
     Info (332115): ==========  ========= ==  ====  ===================================
     Info (332115):      0.000      0.000           latch edge time
-    Info (332115):      0.030      0.030  R        clock network delay
-    Info (332115):      0.030      0.000           clock uncertainty
-    Info (332115):      0.101      0.071      uTh  register:statereg|out[0]
+    Info (332115):     -0.003     -0.003  R        clock network delay
+    Info (332115):     -0.003      0.000           clock uncertainty
+    Info (332115):      0.068      0.071      uTh  register:statereg|out[0]
     Info (332115): 
-    Info (332115): Data Arrival Time  :     0.313
-    Info (332115): Data Required Time :     0.101
-    Info (332115): Slack              :     0.212 
+    Info (332115): Data Arrival Time  :     0.281
+    Info (332115): Data Required Time :     0.068
+    Info (332115): Slack              :     0.213 
     Info (332115): ===================================================================
     Info (332115): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 5028 megabytes
-    Info: Processing ended: Tue Sep 15 22:49:54 2026
+    Info: Peak virtual memory: 5019 megabytes
+    Info: Processing ended: Wed Sep 16 18:29:41 2026
     Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 
