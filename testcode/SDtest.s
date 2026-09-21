@@ -1,5 +1,6 @@
 &../lib/SD.s
 &../lib/DBG.s
+&../lib/PRS.s
 
 .SP $FFFA
 
@@ -10,25 +11,33 @@ ADDIP $FFF8
 CALL SDinit
 
 IMM buffer
-STRO $02
-IMM ^buffer
-STRO $03
-IMM $00
-STRO $04
 STRO $06
+IMM ^buffer
 STRO $07
-IMM $02
+IMM $00
+STRO $02
 STRO $05
+IMM $DA
+STRO $03
+IMM $01
+STRO $04
 CALL SDwrite
 
+IMM $00
+CALL DBGprintHex
+
 IMM DBGstring
-STRO $02
+STRO $06
 IMM ^DBGstring
-STRO $03
+STRO $07
 CALL SDread
-CALL DBGprint
+
+CALL DBGprintStr
+
+:halt
+JMP halt
 
 :buffer
-"Hola Amor! \"\\\nI love you!"
+"Hola Amorcita! I love you!"
 +0200
 

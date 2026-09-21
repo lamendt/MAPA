@@ -1,5 +1,5 @@
 Analysis & Synthesis report for hardisa
-Wed Sep 16 18:29:15 2026
+Fri Sep 18 22:22:44 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -74,13 +74,13 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Sep 16 18:29:15 2026           ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep 18 22:22:44 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; hardisa                                         ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 1,973                                           ;
-;     Total combinational functions  ; 1,884                                           ;
+; Total logic elements               ; 1,970                                           ;
+;     Total combinational functions  ; 1,881                                           ;
 ;     Dedicated logic registers      ; 235                                             ;
 ; Total registers                    ; 235                                             ;
 ; Total pins                         ; 63                                              ;
@@ -196,9 +196,9 @@ on the Quartus Prime software download page.
 ;     Processor 3            ;   0.1%      ;
 ;     Processor 4            ;   0.1%      ;
 ;     Processor 5            ;   0.1%      ;
-;     Processor 6            ;   0.0%      ;
-;     Processor 7            ;   0.0%      ;
-;     Processor 8            ;   0.0%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
 ;     Processors 9-16        ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -211,10 +211,10 @@ on the Quartus Prime software download page.
 ; top.sv                                                 ; yes             ; User SystemVerilog HDL File                           ; C:/Users/levia/Documents/hardisa/HDL/top.sv                                     ;         ;
 ; PCU.sv                                                 ; yes             ; User SystemVerilog HDL File                           ; C:/Users/levia/Documents/hardisa/HDL/PCU.sv                                     ;         ;
 ; clocks.v                                               ; yes             ; User Wizard-Generated File                            ; C:/Users/levia/Documents/hardisa/HDL/clocks.v                                   ;         ;
-; /users/levia/documents/hardisa/testcode/keytest.hex    ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /users/levia/documents/hardisa/testcode/keytest.hex                             ;         ;
 ; /users/levia/documents/hardisa/boot/boot.hex           ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /users/levia/documents/hardisa/boot/boot.hex                                    ;         ;
 ; /users/levia/documents/hardisa/microcode/microcode.bin ; yes             ; Auto-Found Unspecified File                           ; /users/levia/documents/hardisa/microcode/microcode.bin                          ;         ;
 ; /users/levia/documents/hardisa/kernel/kernel.hex       ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /users/levia/documents/hardisa/kernel/kernel.hex                                ;         ;
+; /users/levia/documents/hardisa/testcode/sdtest.hex     ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /users/levia/documents/hardisa/testcode/sdtest.hex                              ;         ;
 ; altpll.tdf                                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altpll.tdf            ;         ;
 ; aglobal241.inc                                         ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/aglobal241.inc        ;         ;
 ; stratix_pll.inc                                        ; yes             ; Megafunction                                          ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
@@ -255,16 +255,16 @@ on the Quartus Prime software download page.
 +---------------------------------------------+---------------------------+
 ; Resource                                    ; Usage                     ;
 +---------------------------------------------+---------------------------+
-; Estimated Total logic elements              ; 1,973                     ;
+; Estimated Total logic elements              ; 1,970                     ;
 ;                                             ;                           ;
-; Total combinational functions               ; 1884                      ;
+; Total combinational functions               ; 1881                      ;
 ; Logic element usage by number of LUT inputs ;                           ;
-;     -- 4 input functions                    ; 1377                      ;
-;     -- 3 input functions                    ; 301                       ;
+;     -- 4 input functions                    ; 1375                      ;
+;     -- 3 input functions                    ; 300                       ;
 ;     -- <=2 input functions                  ; 206                       ;
 ;                                             ;                           ;
 ; Logic elements by mode                      ;                           ;
-;     -- normal mode                          ; 1771                      ;
+;     -- normal mode                          ; 1768                      ;
 ;     -- arithmetic mode                      ; 113                       ;
 ;                                             ;                           ;
 ; Total registers                             ; 235                       ;
@@ -280,8 +280,8 @@ on the Quartus Prime software download page.
 ;     -- PLLs                                 ; 1                         ;
 ;                                             ;                           ;
 ; Maximum fan-out node                        ; register:opcodereg|out[1] ;
-; Maximum fan-out                             ; 377                       ;
-; Total fan-out                               ; 10539                     ;
+; Maximum fan-out                             ; 378                       ;
+; Total fan-out                               ; 10528                     ;
 ; Average fan-out                             ; 4.37                      ;
 +---------------------------------------------+---------------------------+
 
@@ -291,12 +291,12 @@ on the Quartus Prime software download page.
 +-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                       ; Entity Name     ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |top                                            ; 1884 (115)          ; 235 (0)                   ; 950400      ; 0          ; 0            ; 0       ; 0         ; 63   ; 0            ; 0          ; |top                                                                                                                      ; top             ; work         ;
-;    |PCU:PCU|                                    ; 254 (3)             ; 158 (0)                   ; 491648      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU                                                                                                              ; PCU             ; work         ;
+; |top                                            ; 1881 (115)          ; 235 (0)                   ; 950400      ; 0          ; 0            ; 0       ; 0         ; 63   ; 0            ; 0          ; |top                                                                                                                      ; top             ; work         ;
+;    |PCU:PCU|                                    ; 252 (3)             ; 158 (0)                   ; 491648      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU                                                                                                              ; PCU             ; work         ;
 ;       |PS2:PS2controller|                       ; 49 (49)             ; 52 (52)                   ; 128         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|PS2:PS2controller                                                                                            ; PS2             ; work         ;
 ;          |altsyncram:queuedKeys_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 128         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0                                                                ; altsyncram      ; work         ;
 ;             |altsyncram_jjh1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 128         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|PS2:PS2controller|altsyncram:queuedKeys_rtl_0|altsyncram_jjh1:auto_generated                                 ; altsyncram_jjh1 ; work         ;
-;       |SD:SDcontroller|                         ; 58 (58)             ; 41 (41)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|SD:SDcontroller                                                                                              ; SD              ; work         ;
+;       |SD:SDcontroller|                         ; 56 (56)             ; 41 (41)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|SD:SDcontroller                                                                                              ; SD              ; work         ;
 ;       |VGA:VGAcontroller|                       ; 144 (128)           ; 65 (62)                   ; 491520      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller                                                                                            ; VGA             ; work         ;
 ;          |buffer:buffer|                        ; 16 (0)              ; 3 (0)                     ; 491520      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller|buffer:buffer                                                                              ; buffer          ; work         ;
 ;             |altsyncram:RAM_rtl_0|              ; 16 (0)              ; 3 (0)                     ; 491520      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|PCU:PCU|VGA:VGAcontroller|buffer:buffer|altsyncram:RAM_rtl_0                                                         ; altsyncram      ; work         ;
@@ -318,7 +318,7 @@ on the Quartus Prime software download page.
 ;          |altsyncram_2ce1:auto_generated|       ; 9 (0)               ; 1 (1)                     ; 131072      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|kernel:KER|altsyncram:RAM_rtl_0|altsyncram_2ce1:auto_generated                                                       ; altsyncram_2ce1 ; work         ;
 ;             |decode_97a:decode3|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|kernel:KER|altsyncram:RAM_rtl_0|altsyncram_2ce1:auto_generated|decode_97a:decode3                                    ; decode_97a      ; work         ;
 ;             |mux_p1b:mux2|                      ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|kernel:KER|altsyncram:RAM_rtl_0|altsyncram_2ce1:auto_generated|mux_p1b:mux2                                          ; mux_p1b         ; work         ;
-;    |lut:LUT|                                    ; 1242 (1242)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|lut:LUT                                                                                                              ; lut             ; work         ;
+;    |lut:LUT|                                    ; 1241 (1241)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|lut:LUT                                                                                                              ; lut             ; work         ;
 ;    |ram:RAM|                                    ; 22 (0)              ; 2 (0)                     ; 262144      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|ram:RAM                                                                                                              ; ram             ; work         ;
 ;       |altsyncram:RAM_rtl_0|                    ; 22 (0)              ; 2 (0)                     ; 262144      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|ram:RAM|altsyncram:RAM_rtl_0                                                                                         ; altsyncram      ; work         ;
 ;          |altsyncram_3qd1:auto_generated|       ; 22 (0)              ; 2 (2)                     ; 262144      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|ram:RAM|altsyncram:RAM_rtl_0|altsyncram_3qd1:auto_generated                                                          ; altsyncram_3qd1 ; work         ;
@@ -1387,16 +1387,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SLD               ; 7                           ;
 ;     plain             ; 64                          ;
 ; cycloneiii_io_obuf    ; 36                          ;
-; cycloneiii_lcell_comb ; 1884                        ;
+; cycloneiii_lcell_comb ; 1881                        ;
 ;     arith             ; 113                         ;
 ;         2 data inputs ; 88                          ;
 ;         3 data inputs ; 25                          ;
-;     normal            ; 1771                        ;
+;     normal            ; 1768                        ;
 ;         0 data inputs ; 7                           ;
 ;         1 data inputs ; 15                          ;
 ;         2 data inputs ; 96                          ;
-;         3 data inputs ; 276                         ;
-;         4 data inputs ; 1377                        ;
+;         3 data inputs ; 275                         ;
+;         4 data inputs ; 1375                        ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 128                         ;
 ;                       ;                             ;
@@ -1420,7 +1420,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Wed Sep 16 18:28:42 2026
+    Info: Processing started: Fri Sep 18 22:22:17 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off hardisa -c hardisa
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -1539,7 +1539,7 @@ Warning (10230): Verilog HDL assignment warning at top.sv(162): truncated value 
 Warning (10230): Verilog HDL assignment warning at top.sv(169): truncated value with size 32 to match size of target (9) File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 169
 Warning (10230): Verilog HDL assignment warning at top.sv(170): truncated value with size 32 to match size of target (9) File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 170
 Info (12128): Elaborating entity "ram" for hierarchy "ram:RAM" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 30
-Warning (10850): Verilog HDL warning at top.sv(193): number of words (1927) in memory file does not match the number of elements in the address range [0:32767] File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 193
+Warning (10850): Verilog HDL warning at top.sv(193): number of words (3637) in memory file does not match the number of elements in the address range [0:32767] File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 193
 Info (12128): Elaborating entity "kernel" for hierarchy "kernel:KER" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 31
 Warning (10850): Verilog HDL warning at top.sv(213): number of words (3) in memory file does not match the number of elements in the address range [0:16383] File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 213
 Info (12128): Elaborating entity "lut" for hierarchy "lut:LUT" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 32
@@ -1565,10 +1565,10 @@ Warning (10230): Verilog HDL assignment warning at PCU.sv(169): truncated value 
 Warning (10230): Verilog HDL assignment warning at PCU.sv(179): truncated value with size 32 to match size of target (5) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 179
 Info (12128): Elaborating entity "SD" for hierarchy "PCU:PCU|SD:SDcontroller" File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 9
 Warning (10036): Verilog HDL or VHDL warning at PCU.sv(195): object "init" assigned a value but never read File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 195
-Warning (10230): Verilog HDL assignment warning at PCU.sv(257): truncated value with size 32 to match size of target (7) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 257
-Warning (10230): Verilog HDL assignment warning at PCU.sv(267): truncated value with size 32 to match size of target (7) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 267
-Warning (10230): Verilog HDL assignment warning at PCU.sv(273): truncated value with size 32 to match size of target (7) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 273
-Warning (10230): Verilog HDL assignment warning at PCU.sv(302): truncated value with size 32 to match size of target (4) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 302
+Warning (10230): Verilog HDL assignment warning at PCU.sv(246): truncated value with size 32 to match size of target (7) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 246
+Warning (10230): Verilog HDL assignment warning at PCU.sv(256): truncated value with size 32 to match size of target (7) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 256
+Warning (10230): Verilog HDL assignment warning at PCU.sv(262): truncated value with size 32 to match size of target (7) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 262
+Warning (10230): Verilog HDL assignment warning at PCU.sv(291): truncated value with size 32 to match size of target (4) File: C:/Users/levia/Documents/hardisa/HDL/PCU.sv Line: 291
 Warning (276020): Inferred RAM node "PCU:PCU|PS2:PS2controller|queuedKeys_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "PCU:PCU|VGA:VGAcontroller|buffer:buffer|RAM_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (276014): Found 1 instances of uninferred RAM logic
@@ -1813,17 +1813,17 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (15899): PLL "clocks:pll|altpll:altpll_component|clocks_altpll:auto_generated|pll1" has parameters clk3_multiply_by and clk3_divide_by specified but port CLK[3] is not connected File: C:/Users/levia/Documents/hardisa/HDL/db/clocks_altpll.v Line: 44
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/levia/Documents/hardisa/HDL/top.sv Line: 1
-Info (21057): Implemented 2198 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2195 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 24 output pins
     Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 2006 logic cells
+    Info (21061): Implemented 2003 logic cells
     Info (21064): Implemented 128 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 94 warnings
-    Info: Peak virtual memory: 4903 megabytes
-    Info: Processing ended: Wed Sep 16 18:29:15 2026
-    Info: Elapsed time: 00:00:33
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 4907 megabytes
+    Info: Processing ended: Fri Sep 18 22:22:44 2026
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:31
 
 

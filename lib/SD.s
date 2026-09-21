@@ -9,6 +9,14 @@ CMPI $16
 BNE SDlp7
 RET
 
+:SDstall
+IMM $00
+:SDlp7
+INCI
+CMPI $08
+BNE SDlp7
+RET
+
 :SDsendCmd
 #sends the command from SDcmd in slow mode then waits for and returns R1
 #frame: 2
@@ -19,12 +27,14 @@ STRP SP
 
 IMM $06
 STR SDi
+IMMP SDcmd
+STRP SDcmdP
 :SDlp0
-LDP SDcmd
+LDP SDcmdP
 LDO $00
 STR SD
 INCP
-STRP SDcmd
+STRP SDcmdP
 LDP SP
 CALL SDslowstall
 IMM $FF
@@ -74,19 +84,19 @@ STR SDflags
 
 :SDcmd0
 IMM $40
-STRO SDcmd 0000
+STR SDcmd 0000
 IMM $95
-STRO SDcmd 0005
+STR SDcmd 0005
 CALL SDsendCmd
 CMPI $01
 BNE SDcmd0
 
-:ITLinitloop
+:SDinitloop
 IMM $00
 STR SDflags
 CALL SDslowstall
 IMM $01
-STR SDslowstall
+STR SDflags
 
 :SDcmd55
 IMM $77
@@ -101,7 +111,7 @@ IMM $00
 STR SDflags
 CALL SDslowstall
 IMM $01
-STR SDslowstall
+STR SDflags
 
 :SDacmd41
 IMM $69
@@ -109,7 +119,7 @@ STR SDcmd 0000
 IMM $77
 STR SDcmd 0005
 CALL SDsendCmd
-BANZ ITLinitloop
+BANZ SDinitloop
 
 IMM $02
 STR SDflags
@@ -120,9 +130,10 @@ RET
 :SDwrite
 #writes single sector to card from buffer
 #frame: 8
-#args: 2-3=buffer address, 4-7=sector address
+#args: 2-5=sector address, 6-7=buffer address
 #rets: A=success
 
+ADDIP $FFFE
 IMM $03
 STR SDflags
 
@@ -156,7 +167,7 @@ STR SDcountlo
 STR SDcounthi
 
 STRP SP
-LDPO $02
+LDPO $08
 
 :SDwriteloop
 LDO $00
@@ -169,10 +180,19 @@ ACS SDcounthi
 CMPI $02
 BNE SDwriteloop
 
+LDP SP
+
 IMM $FF
 STR SD
+IMM $FF
 STR SD
+
+:SDlpA
+IMM $FF
 STR SD
+LD SD
+CMPI $FF
+BEQ SDlpA
 
 :SDlp3
 IMM $FF
@@ -184,20 +204,21 @@ BNE SDlp3
 IMM $02
 STR SDflags
 
-LDP SP
+ADDIP $0002
 RET
 
 :SDread
 #reads single sector to card into buffer
 #frame: 8
-#args: 2-3=buffer address, 4-7=sector address
+#args: 2-5=sector address, 6-7=buffer address
 #rets: A=success
 
+ADDIP $FFFE
 IMM $03
 STR SDflags
 
-:SDcmd24
-IMM $58
+:SDcmd17
+IMM $51
 STR SD
 LDO $07 
 STR SD
@@ -228,7 +249,7 @@ STR SDcountlo
 STR SDcounthi
 
 STRP SP
-LDPO $02
+LDPO $08
 
 :SDreadloop
 IMM $FF
@@ -243,14 +264,17 @@ ACS SDcounthi
 CMPI $02
 BNE SDreadloop
 
+LDP SP
+
 IMM $FF
 STR SD
+IMM $FF
 STR SD
 
 IMM $02
 STR SDflags
 
-LDP SP
+ADDIP $0002
 RET
 
 :SDcountlo

@@ -1,7 +1,7 @@
 &../lib/VGA.s
 &../lib/PS2.s
 
-:DBGprint
+:DBGprintStr
 #prints out the string at DBGstring on a single line and waits until enter key is pressed
 #frame: 2
 
@@ -39,10 +39,25 @@ LDP SP
 ADDIP $0006
 RET
 
+:DBGprintHex
+ADDIP $FFFC
+STR DBGtemp
+CALL PRSbyteToHex
+LDO $02
+STR DBGstring 0000
+LDO $03
+STR DBGstring 0001
+CALL DBGprintStr
+IMM $00
+STR DBGstring 0001
+LD DBGtemp
+ADDIP $0004
+RET
+
 :DBGp
 @DBGstring
 :DBGstring
-+0020
++0200
 :DBGx
 $00
 :DBGy

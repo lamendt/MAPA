@@ -190,7 +190,7 @@ input logic [15:0] addr);
 
 (* ramstyle = "M10K" *) logic [7:0] RAM [32767:0];
 initial begin
-    $readmemh("../testcode/keyTest.hex", RAM);
+    $readmemh("../testcode/SDtest.hex", RAM);
 end
 
 //assign out = RAM[addr];

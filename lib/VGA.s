@@ -6,6 +6,8 @@
 #frame: 6
 #args: 2=x, 3=y, 4=char
 
+STRP SP
+
 LDO $02
 STR VGAcurX
 LDO $03
@@ -164,6 +166,7 @@ RET
 #fills screen with black up to row Y
 #frame: 3
 #args: 2=Y
+STRP SP
 
 IMM $00
 STR VGAcurX

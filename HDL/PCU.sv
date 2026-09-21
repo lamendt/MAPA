@@ -223,18 +223,6 @@ end
 always_ff @(posedge SPIclk) begin
 	weff <= we;
 	if (flags[1]) begin
-		/*if (clkcnt == 0) begin
-			clkcnt <= 1;
-			risen <= 1;
-			fallen <= 0;
-			CLKout <= 1;
-		end
-		else begin
-			clkcnt <= 0;
-			fallen <= 1;
-			risen <= 0;
-			CLKout <= 0;
-		end*/
 		if (clkcnt == 0) begin
 			risen <= 0;
 			fallen <= 1;
@@ -243,15 +231,16 @@ always_ff @(posedge SPIclk) begin
 		else if (clkcnt == 7'h01) begin
 			fallen <= 0;
 			CLKout <= 0;
-		end
-		else if (clkcnt == 7'h08) begin
 			risen <= 1;
 		end
-		else begin
+		/*else if (clkcnt == 7'h06) begin
 			fallen <= 0;
-			risen <= 0;
-		end
-		if (clkcnt == 7'h08)
+			CLKout <= 0;
+		end*/
+		/*else if (clkcnt == 7'h01) begin
+			risen <= 1;
+		end*/
+		if (clkcnt == 7'h01)
 				clkcnt <= 0;
 		else
 				clkcnt <= clkcnt + 1;
